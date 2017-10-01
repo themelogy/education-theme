@@ -1,0 +1,71 @@
+@media screen and (min-width: 768px){
+  @for $i from 0 through 100 {
+    .font-#{$i} {
+      font-size: $i+px !important;
+    }
+  }
+}
+
+
+/*font size in extra small devices*/
+@media screen and (max-width: 767px) {
+  .font-30 {
+    font-size: 25px
+  }
+  h1,
+  .font-35,
+  .font-40 {
+    font-size: 30px
+  }
+  @for $i from 0 through 100 {
+    @if $i > 10 {
+      .font-#{$i} {
+        font-size: $i - 2 +px !important;
+      }
+    } @else if $i > 20 {
+      .font-#{$i} {
+        font-size: $i - 12 +px !important;
+      }
+    } @else {
+      .font-#{$i} {
+        font-size: $i+px !important;
+      }
+    }
+  }
+}
+
+
+
+/*Line Height*/
+.line-height-40 {
+  line-height: 40px;
+}
+.line-height-50 {
+  line-height: 50px;
+}
+
+.text-light {
+  font-weight: 300 !important;
+}
+
+.text-regular {
+  font-weight: 400 !important;
+}
+
+.text-medium {
+  font-weight: 500 !important;
+}
+.text-bold {
+  font-weight: 700 !important;
+}
+.text-extrabold {
+  font-weight: 900 !important;
+}
+
+.dark-text {
+  color: #202020 !important;
+}
+
+.light-grey-text {
+  color: #dedede !important;
+}

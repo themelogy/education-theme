@@ -1,0 +1,27 @@
+/*
+Twitter Widget
+------------------------------------------------ */
+.twitter-widget-wrapper {
+  a {
+    color: #fff;
+    word-break: break-all;
+    &:hover{
+      color: #c9f0ff;
+    }
+  }
+  p{
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+  ul li+li {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .user span img{
+    display: none;
+  }
+  .timePosted {
+    font-size: 13px
+  }
+}

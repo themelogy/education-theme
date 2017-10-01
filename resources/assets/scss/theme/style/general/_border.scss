@@ -1,0 +1,35 @@
+/*Border Radious*/
+.radius-2 {
+  border-radius: 2px;
+}
+.radius-3 {
+  border-radius: 3px;
+}
+.radius-4 {
+  border-radius: 4px;
+}
+.circle-border {
+  border: 2px solid $default-theme-color;
+  border-radius: 75px;
+  padding: 15px 10px;
+  height: 75px;
+  width: 75px;
+}
+
+.white-border {
+  border-color: #ffffff;
+}
+
+@for $i from 0 through 30 {
+  .border-bottom-#{$i} {
+    border-bottom: $i+px solid white;
+  }
+}
+
+@each $color in $theme-colors {
+  $key: nth($color, 1);
+  $value: nth($color, 2);
+  .border-color-#{$key} {
+    border-color: $value;
+  }
+}

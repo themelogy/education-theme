@@ -1,0 +1,171 @@
+/*
+Grid News Hover Style
+----------------------------------------------------*/
+.grid-news-hover {
+  h3.title {
+    background-color: $news-slider-bg-color;
+    color: $news-slider-txt-color;
+    @if (lightness($announcement-slider-bg-color)>50) {
+      border: 1px solid $announcement-slider-border-color;
+    }
+  }
+  .news-grid-navigation {
+    a i {
+      color: $news-slider-txt-color;
+    }
+  }
+  .post-wrapper {
+    padding: 0;
+    border: 0;
+    margin-bottom: 30px;
+  }
+  .thumb-wrapper {
+    margin: 0;
+  }
+  .entry-header {
+    margin-bottom: 15px;
+  }
+  .blog-content {
+    padding: 20px 25px 0;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: border 0.4s;
+    -moz-transition: border 0.4s;
+    -ms-transition: border 0.4s;
+    transition: border 0.4s;
+  }
+  .post-wrapper:hover .blog-content {
+    border: 1px solid;
+    border-color: #00aeef;
+  }
+  .post-date {
+    width: 48px;
+    height: 48px;
+    background: $default-reverse-color;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    span {
+      display: block;
+      font-size: 11px;
+      line-height: 12px;
+      text-transform: uppercase;
+    }
+  }
+  .entry-title {
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+    a {
+      color: #202020;
+    }
+  }
+  .entry-meta {
+    li {
+      font-size: 11px;
+      line-height: 12px;
+      text-transform: uppercase;
+      border-right: 1px solid #e0e0e0;
+      padding-right: 10px;
+      &::last-child {
+        border-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  .entry-header-wrapper,
+  .entry-content {
+    position: relative;
+    z-index: 2;
+  }
+  .post-wrapper:hover,
+  .post-wrapper:hover .entry-meta li a,
+  .post-wrapper:hover .entry-title a {
+    color: $grid-news-text-hover;
+  }
+  .post-wrapper .hover-overlay {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    border-radius: 100%;
+    -webkit-transition: all 0.3s cubic-bezier(0.39, 0.575, 0.56499, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.39, 0.575, 0.56499, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.39, 0.575, 0.56499, 1);
+    -o-transition: all 0.3s cubic-bezier(0.39, 0.575, 0.56499, 1);
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.56499, 1);
+
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+  }
+  .post-wrapper:hover:hover .hover-overlay {
+    left: 0;
+    bottom: 0;
+    -webkit-transform: scale(15) translateZ(0);
+    -moz-transform: scale(15) translateZ(0);
+    -ms-transform: scale(15) translateZ(0);
+    -o-transform: scale(15) translateZ(0);
+    transform: scale(15) translateZ(0);
+  }
+  .news-grid-navigation, .announcement-grid-navigation {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    a {
+      font-size: 24px;
+      color: #ffffff;
+      margin-left: 5px;
+    }
+  }
+}
+
+/*Internet Explorar Fixing*/
+.ie9 .grid-news-hover .post-wrapper:hover .hover-overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+/*
+Grid News Hover Rounded Category Style
+----------------------------------------------------*/
+.grid-news-hover.rounded-category .blog-content {
+  padding: 26px 25px 0;
+}
+
+.grid-news-hover.rounded-category .post-wrapper:hover .blog-content {
+  border: 1px solid #512da8; /*border color should same with background color*/
+}
+
+.grid-news-hover.rounded-category .posted-in a {
+  position: absolute;
+  left: 50%;
+  margin-left: -47px;
+  bottom: -13px;
+  padding: 0 20px;
+  display: inline-block;
+  color: #fff;
+  background: #e040fb;
+  font-size: 11px;
+  line-height: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 30px;
+  z-index: 100;
+}
+
+.grid-news-hover.rounded-category .posted-in a:hover {
+  color: #e040fb;
+  background-color: #fff;
+}

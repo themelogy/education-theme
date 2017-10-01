@@ -1,0 +1,127 @@
+/*
+Latest News Card Style
+----------------------------------------------------*/
+.b-info h2 {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.b-info p {
+  line-height: 33px;
+}
+
+.b-info .btn i {
+  margin-right: 10px;
+}
+
+.b-info .btn {
+  padding: 11px 22px;
+  box-shadow: none;
+  color: #101010;
+  background-color: transparent;
+  border: 1px solid #e8e8e8;
+}
+
+.b-info .btn:hover,
+.b-info .btn:focus {
+  background-color: #03a9f4;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.latest-news-card .card {
+  margin: 0;
+  box-shadow: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.latest-news-card .card:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.latest-news-card .card .card-content {
+  border: 1px solid #e8e8e8;
+  border-top: 1px solid transparent;
+}
+
+.latest-news-card .card:hover .card-content {
+  border: 1px solid transparent;
+}
+
+.latest-news-card .card .entry-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.latest-news-card .card-reveal {
+  color: #fff;
+  padding: 20px;
+}
+
+/*change overlay color*/
+.latest-news-card .card-reveal.overlay-blue {
+  background-color: rgba(3, 169, 244, 0.95);
+}
+
+.latest-news-card .card-reveal.overlay-pink {
+  background-color: rgba(237, 20, 91, 0.95);
+}
+
+.latest-news-card .card-reveal .close-button i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 14px;
+}
+
+.latest-news-card .card-reveal .posted-on {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.latest-news-card .card-reveal .entry-title {
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.latest-news-card .card-reveal .entry-title a {
+  color: #fff;
+}
+
+.latest-news-card .card-reveal .readmore {
+  color: #fff;
+  font-weight: 700;
+}
+
+.blog-carousel.owl-carousel .owl-item {
+  padding: 8px 2px;
+}
+
+/*Carousel Control*/
+.blog-carousel.owl-theme .owl-controls {
+  margin-top: 35px;
+}
+
+.blog-carousel.owl-theme .owl-dots .owl-dot.active span,
+.blog-carousel.owl-theme .owl-dots .owl-dot:hover span {
+  background: #03a9f4;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 991px) {
+  .b-info,
+  .latest-news-card .card {
+    margin-bottom: 30px;
+  }
+}

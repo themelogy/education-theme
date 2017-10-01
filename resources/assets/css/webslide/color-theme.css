@@ -1,0 +1,161 @@
+
+/* Color Theme */
+.gry > .wsmenu-list > li:hover>a{background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-list > li > a:hover {background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-list > li > a.active{background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-submenu > li > a:hover {background:#424242; border-radius:0px!important; color:#fff;}
+.gry .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.gry .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.gry .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.orange > .wsmenu-list > li:hover>a{background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-list > li > a:hover {background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-list > li > a.active{background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-submenu > li > a:hover {background:#ff670f; border-radius:0px!important; color:#fff;}
+.orange .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.orange .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.orange .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.blue > .wsmenu-list > li:hover>a{background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-list > li > a:hover {background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-list > li > a.active{background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-submenu li > a:hover {background:#4A89DC !important; border-radius:0px!important; color:#fff !important;}
+.blue .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.blue .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.blue .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.green > .wsmenu-list > li:hover>a{background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-list > li > a:hover {background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-list > li > a.active{background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-submenu > li > a:hover {background:#74a52e !important; border-radius:0px!important; color:#fff !important;}
+.green .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.green .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.green .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.red > .wsmenu-list > li:hover>a{background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-list > li > a:hover {background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-list > li > a.active{background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-submenu > li > a:hover {background:#DA4B38 !important; border-radius:0px!important; color:#fff !important;}
+.red .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.red .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.red .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.yellow > .wsmenu-list > li:hover>a{background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-list > li > a:hover {background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-list > li > a.active{background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-submenu > li > a:hover {background:#F6BB42 !important; border-radius:0px!important; color:#fff !important;}
+.yellow .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.yellow .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.yellow .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.purple > .wsmenu-list > li:hover>a{background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-list > li > a:hover {background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-list > li > a.active{background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-submenu > li > a:hover {background:#967ADC !important; border-radius:0px!important; color:#fff !important;}
+.purple .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.purple .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.purple .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.pink > .wsmenu-list > li:hover>a{background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-list > li > a:hover {background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-list > li > a.active{background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-submenu > li > a:hover {background:#ee1289 !important; border-radius:0px!important; color:#fff !important;}
+.pink .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.pink .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.pink .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.chocolate > .wsmenu-list > li:hover>a{background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-list > li a:hover {background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-list > li a.active{background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-submenu > li a:hover {background:#934915 !important; border-radius:0px!important; color:#fff !important;}
+.chocolate .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.chocolate .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.chocolate .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+
+
+
+/* Gradient Theme */
+
+.red-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.red-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.red-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.gry-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.gry-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.gry-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.blue-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.blue-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.blue-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+
+.green-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.green-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.green-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.orange-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.orange-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.orange-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.yellow-grdt > .wsmenu-list > li > a{color:#424242 !important;}
+.yellow-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.yellow-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#424242 !important;}
+.yellow-grdt > .wsmenu-list li a .fa{color:#424242 !important;}
+
+.purple-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.purple-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.purple-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.pink-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.pink-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.pink-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+ 
+@media only screen and (max-width: 780px) {
+
+.red-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.blue-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.orange-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.green-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.purple-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.pink-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+
+/* Color Theme */
+.gry > .wsmenu-submenu > li:hover>a{ background-color:#424242 !important; color:#fff;}
+.gry > .wsmenu .wsmenu-list > li > a.active{color: #fff; background-color: #424242;}
+.gry > .wsmenu .wsmenu-list > li > a:hover{ color: #fff; background-color: #424242;}
+
+.orange > .wsmenu-submenu > li:hover>a{ background-color:#ff670f !important; color:#fff;}
+.orange > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #ff670f;}
+.orange > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #ff670f;}
+
+.blue > .wsmenu-submenu > li:hover>a{ background-color:#4A89DC !important; color:#fff;}
+.blue > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #4A89DC;}
+.blue > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #4A89DC;}	
+
+.green > .wsmenu-submenu > li:hover>a{ background-color:#74a52e !important; color:#fff;}
+.green > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #74a52e;}
+.green > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #74a52e;}	
+
+.red > .wsmenu-submenu > li:hover>a{ background-color:#DA4B38 !important; color:#fff;}
+.red > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #DA4B38;}
+.red > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #DA4B38;}	
+
+.yellow > .wsmenu-submenu > li:hover>a{ background-color:#F6BB42 !important; color:#fff;}
+.yellow > .wsmenu .wsmenu-list > li > a.active{color: #fff; background-color: #F6BB42;}
+.yellow > .wsmenu .wsmenu-list > li > a:hover{ color: #fff; background-color: #F6BB42;}	
+
+.purple > .wsmenu-submenu > li:hover>a{ background-color:#967ADC !important; color:#fff;}
+.purple > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #967ADC;}
+.purple > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #967ADC;}	
+	
+.pink > .wsmenu-submenu > li:hover>a{ background-color:#ee1289 !important; color:#fff;}
+.pink > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #ee1289;}
+.pink > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #ee1289;}	
+	
+.chocolate > .wsmenu-submenu > li:hover>a{ background-color:#934915 !important; color:#fff;}
+.chocolate > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #934915;}
+.chocolate > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #934915;}	
+
+}

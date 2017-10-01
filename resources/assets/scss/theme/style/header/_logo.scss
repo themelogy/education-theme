@@ -1,0 +1,26 @@
+
+/*
+Alter logo visiblity
+-----------------------------------------------*/
+@media screen and (min-width: 768px) {
+  .transparent-header .logo-dark {
+    display: none;
+  }
+
+  .transparent-header.sticky .logo-dark {
+    display: inline;
+  }
+
+  .transparent-header.sticky .logo-light {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .transparent-header .logo-dark {
+    display: inline;
+  }
+  .transparent-header .logo-light {
+    display: none;
+  }
+}

@@ -1,0 +1,109 @@
+//Colors
+$theme-colors: (
+        color1: #231F6F,
+        color2: #EC1C24
+);
+
+$default-theme-color: map_get($theme-colors, color1);
+$default-reverse-color: map_get($theme-colors, color2);
+
+$default-link-color: $default-theme-color;
+$default-link-hover-color: $default-compare-color;
+
+//Components//
+
+//Grid News
+$grid-news-border-hover: #cccccc;
+$grid-news-text-hover: #000000;
+
+//Clients
+$clients-bg-color: lighten(#cccccc, 15%);
+$clients-grid-border-color: #ebebeb;
+$clients-grid-bg-color: #ffffff;
+
+//Featured Box
+$featured-box-link-color: #ffffff;
+$featured-box-link-hover: $default-compare-color;
+$featured-box-first-bg-color: $default-theme-color;
+$featured-box-second-bg-color: darken($default-reverse-color, 10%);
+$featured-box-icon-color: #ffffff !important;
+$featured-box-txt-color: #ffffff !important;
+$featured-box-overlay-hover-opacity: 0.25;
+$featured-box-overlay-opacity: 0.4;
+
+//News Announcement
+$announcement-slider-bg-color: lighten(grey, 45%);
+$announcement-slider-border-color: #ccc;
+$announcement-slider-txt-color: darken(grey, 20%) !important;
+$news-slider-bg-color: $announcement-slider-bg-color;
+$news-slider-txt-color: darken(grey, 20%) !important;
+
+//Header
+$topbar-bg-color: darken($default-reverse-color, 10%);
+$topbar-txt-color: #ffffff;
+$topbar-link-color: #ffffff;
+$topbar-link-hover: $default-compare-color;
+$topbar-social-color: #ffffff;
+$topbar-social-hover-color: $default-compare-color;
+
+$topbar-ticker-strong-title: $topbar-link-hover;
+$topbar-ticker-title-color: $topbar-txt-color;
+$topbar-ticker-control-color: $topbar-txt-color;
+$topbar-ticker-control-hover-color: $topbar-link-hover;
+
+$quick-menu-bg-color: $default-theme-color;
+$quick-menu-link-color: #ffffff;
+
+//Menu
+$menu-link-hover-color: $default-theme-color;
+$menu-border-bottom-color: $default-theme-color;
+$menu-dropdown-hover-color: $default-reverse-color;
+$menu-dropdown-border-color: $default-reverse-color;
+
+//Breadcrumb
+$breadcrumb-link-color: $default-theme-color;
+$breadcrumb-link-hover: $default-reverse-color;
+
+//Footer
+$footer-bg-color: $default-theme-color;
+$footer-txt-color: #ffffff;
+$footer-link-color: #ffffff;
+$footer-link-hover: $default-compare-color;
+$footer-title-color: $default-compare-color;
+$footer-link-icon-color: $footer-txt-color;
+$footer-link-line-height: 35px;
+$footer-link-line-icon-height: -2px;
+
+$footer-address-ticker-hover-color: $default-compare-color !important;
+$footer-address-ticker-color: #ffffff !important;
+
+$footer-social-link-bg-hover: #ffffff;
+$footer-social-link-color: #ffffff;
+$footer-social-link-hover: $default-theme-color !important;
+$footer-social-link-hover-txt: $default-theme-color;
+
+//Footer Second
+$second-footer-bg-color: $topbar-bg-color;
+$second-footer-txt-color: #ffffff !important;
+$second-footer-link-color: #ffffff !important;
+$second-footer-link-hover: $default-compare-color;
+$second-footer-social-link-color: #ffffff;
+$second-footer-social-link-hover: $default-theme-color;
+
+//Back To Top
+$back-to-top-bg-color: $default-reverse-color;
+$back-to-top-txt-color: #ffffff !important;
+$back-to-top-hover-color: $default-reverse-color;
+
+//Forms
+$button-color: $default-theme-color;
+$link-color: $default-theme-color;
+
+$input-border-color: $default-theme-color;
+$input-box-shadow-color: $default-theme-color;
+$input-txt-color: $default-theme-color;
+
+//Search
+$search-bg-color: $default-theme-color;
+$search-icon-hover-color: $default-reverse-color;
+

@@ -1,0 +1,46 @@
+/*Video Introduction*/
+.video-intro {
+  position: relative;
+}
+.video-intro .external-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.video-intro .external-link .material-icons {
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.video-intro:hover .external-link .material-icons {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.video-trigger i.material-icons {
+  font-size: 68px;
+  color: #fff;
+  margin: 0 20px;
+  position: relative;
+  top: 24px;
+}
+
+
+.mocup-wrapper {
+  position: relative;
+}
+.mocup-wrapper img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+  .mocup-wrapper-sm img{
+    width: 100%;
+  }
+}

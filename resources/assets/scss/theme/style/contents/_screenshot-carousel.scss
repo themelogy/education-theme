@@ -1,0 +1,43 @@
+/*screenshot-carousel*/
+.screenshot-carousel-wrapper .carousel-control {
+  top: 50%;
+  margin-top: -35px;
+  text-shadow: none;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  width: 70px;
+  height: 70px;
+  font-size: 40px;
+  line-height: 70px;
+  background: #fff;
+  background-image: none !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.screenshot-carousel-wrapper .carousel-control:hover {
+  color: #fff;
+  background: #81c784;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (min-width: 850px) {
+  .screenshot-carousel-wrapper .carousel-control.left {
+    left: -70px;
+  }
+  .screenshot-carousel-wrapper .carousel-control.right {
+    right: -70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .screenshot-carousel-wrapper .carousel-control {
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,87 @@
+/* ================= Hero Unit ==================== */
+.intro-title {
+  font-size: 60px;
+  font-weight: 900;
+}
+.sub-intro {
+  display: block;
+  margin: 0 auto 30px;
+}
+@media (min-width: 768px){
+  .sub-intro {
+    width: 60%;
+  }
+}
+
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.section-sub {
+  margin: 0 auto;
+}
+@media (min-width: 992px){
+  .section-sub {
+    width: 60%;
+  }
+}
+
+.width-60 {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+
+  .intro-title {
+    font-size: 35px;
+  }
+  .section-title {
+    font-size: 30px;
+  }
+  .section-title p {
+    width: 100%;
+  }
+  .width-60 {
+    width: 100%;
+  }
+
+}
+
+
+/*Hero Clouds*/
+.hero-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250.625em;
+  height: 100vh;
+  background: url('assets/img/banner/clouds.png') 0px 100% repeat-x;
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
+}
+
+
+/*keyframes for cloud*/
+@-webkit-keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}

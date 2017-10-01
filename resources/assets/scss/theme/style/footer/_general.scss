@@ -1,0 +1,55 @@
+.footer {
+  h2 {
+    margin-bottom: 24px;
+  }
+  p {
+    color: #c9f0ff;
+  }
+}
+
+.footer-one {
+  .primary-footer {
+    /*
+    &:before {
+      content: "";
+      background: url("../img/backgrounds/hr-bg.png") no-repeat center center;
+      width: 100%;
+      left: 0;
+      top: -38px;
+      position: absolute;
+      height: 50px;
+    }
+    */
+    padding-top: 55px;
+    padding-bottom: 50px;
+    position: relative;
+    background-color: $footer-bg-color;
+    @if (lightness($footer-bg-color)<50) {
+      .overlay {
+        background: url("../img/backgrounds/footer-bg.png");
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}
+.secondary-footer {
+  padding: 27px 0;
+  background-color: $second-footer-bg-color;
+}
+
+.copy-text {
+  color: #81ddff;
+  a {
+    color: #fff;
+    &:hover {
+      color: #81ddff;
+    }
+  }
+}

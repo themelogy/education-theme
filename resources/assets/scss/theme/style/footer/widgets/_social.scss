@@ -1,0 +1,31 @@
+
+
+/*
+Social Link Widget
+------------------------------------------------ */
+.social-link {
+  margin-bottom: 0;
+  li {
+    display: inline-block;
+  }
+  li a i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    color: $footer-social-link-color;
+    &:hover {
+      color: $footer-social-link-hover-txt;
+      background: $footer-social-link-bg-hover;
+    }
+  }
+  &.dark li a i{
+    color: #202020;
+    &:hover {
+      color: #fff ;
+      background: #03a9f4;
+    }
+  }
+}

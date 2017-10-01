@@ -1,0 +1,55 @@
+
+/* ====== Food Menu CSS for restaurant and coffee shop ====== */
+/*you can remove this css if you not use restaurant demo or coffee shop demo*/
+.food-menu-category {
+  padding-bottom: 35px;
+}
+.food-menu-category .food-menu-wrapper {
+  -webkit-transition: box-shadow .3s ease-out;
+  -moz-transition: box-shadow .3s ease-out;
+  -o-transition: box-shadow .3s ease-out;
+  -ms-transition: box-shadow .3s ease-out;
+  transition: box-shadow .3s ease-out;
+}
+.food-menu-category:hover .food-menu-wrapper {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.food-menu-intro {
+  padding: 24px;
+}
+.food-menu-intro .material-icons{
+  font-size: 40px;
+}
+.food-menu-list {
+  padding: 30px;
+}
+
+.food-menu {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+  padding: 0 0 15px;
+  margin: 0 0 15px;
+}
+.food-menu-title {
+  margin-bottom: 5px;
+}
+.food-menu-detail {
+  line-height: 20px;
+}
+.food-menu-price {
+  font-style: italic;
+}
+.food-menu-price-detail {
+  position: relative;
+  text-align: right;
+}
+.food-menu-label {
+  background: #fff8f1;
+  color: #03a9f4;
+  display: inline-block;
+  padding: 0 10px;
+  font-style: italic;
+  font-size: 13px;
+  float: right;
+  position: relative;
+}

@@ -1,0 +1,18 @@
+/*
+Tag Cloud Widget
+------------------------------------------------ */
+.widget-tags {
+  a {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 3px 10px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    &:hover {
+      color: #fff;
+      background-color: #0288d1;
+      border: 1px solid transparent;
+    }
+  }
+}

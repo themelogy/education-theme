@@ -1,0 +1,91 @@
+/* ----------------------------------------------------------------
+Single Blog Post
+-----------------------------------------------------------------*/
+.single-post .post-wrapper {
+  margin-bottom: 30px;
+}
+
+.single-post .entry-header .entry-title {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.single-post .author-thumb {
+  float: left;
+  margin-right: 15px;
+}
+
+.single-post .entry-header {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.single-post .author-thumb img {
+  padding: 0;
+}
+
+.entry-meta li {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 479px) {
+  .entry-header .entry-title {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .entry-meta li {
+    margin-right: 2px;
+    font-size: 12px;
+  }
+}
+
+.entry-meta li a {
+  color: #999;
+}
+
+.entry-meta li a:hover {
+  color: #03a9f4;
+}
+
+.entry-meta li i {
+  margin-right: 5px;
+  padding-left: 1px;
+}
+
+.entry-footer {
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.entry-footer .post-tags {
+  float: left;
+}
+
+.entry-footer .post-tags i {
+  margin-right: 5px;
+}
+
+.entry-footer .post-tags a {
+  color: #999;
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+
+.entry-footer .post-tags a:hover {
+  color: #03a9f4;
+}
+
+/*
+Post Share Button
+--------------------------------------------------*/
+.entry-footer .share-post li a {
+  display: block;
+  color: #999;
+}
+
+.entry-footer .share-post li a:hover {
+  color: #03a9f4;
+}

@@ -1,0 +1,217 @@
+
+/* ================= Search Style ==================== */
+
+.has-header-search .menuzord-menu{
+  margin-right: 30px;
+}
+
+.search-trigger {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  cursor: pointer;
+  z-index: 200
+}
+
+.search-trigger:focus {
+  outline: none
+}
+
+.search-trigger i {
+  font-size: 18px;
+  line-height: 102px;
+  color: #202020;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .search-trigger.light i {
+    color: #fff;
+  }
+  .search-trigger.dark i {
+    color: #202020;
+  }
+  .sticky .search-trigger.light i {
+    color: #999;
+  }
+  .sticky .search-trigger.light.semidark i {
+    color: #fff;
+  }
+}
+
+.search-trigger i:hover {
+  color: #03a9f4;
+}
+.tt-nav.sticky .search-trigger i.material-icons {
+  line-height: 62px;
+}
+
+
+.search-trigger .search-btn {
+  padding: 0;
+  outline: 0;
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform-origin: 50%;
+  -webkit-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-trigger .search-btn:active,
+.search-trigger .search-btn:focus {
+  outline: none
+}
+
+.search-trigger .icon-search,
+.search-trigger .search-close {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.icon-search {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 28px
+}
+
+.search-close {
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  visibility: hidden;
+  -webkit-transform: translate(10px, 0) rotate(90deg);
+  -moz-transform: translate(10px, 0) rotate(90deg);
+  -ms-transform: translate(10px, 0) rotate(90deg);
+  -o-transform: translate(10px, 0) rotate(90deg);
+  transform: translate(10px, 0) rotate(90deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1001;
+  cursor: pointer
+}
+
+.search-close:hover {
+  color: #fff;
+}
+
+.search-form-wrapper{
+  position: relative;
+}
+.search-form-wrapper .search-button{
+  position: absolute;
+  top: 30px;
+  right: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0;
+}
+.search-form-wrapper .input-field label,
+.search-form-wrapper .input-field input[type=text] {
+  color: #fff;
+  font-size: 17px;
+}
+.search-form-wrapper .input-field label.active {
+  font-size: 12px;
+}
+
+
+.search-form-wrapper form{
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  pointer-events: none;
+  -moz-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(40px, 0);
+  -moz-transform: translate(40px, 0);
+  -ms-transform: translate(40px, 0);
+  -o-transform: translate(40px, 0);
+  transform: translate(40px, 0);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.active-search {
+  overflow: hidden
+}
+
+.active-search .search-form-wrapper form,
+.active-search .search-close {
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+.active-search .search-trigger .icon-search {
+  -moz-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  visibility: hidden
+}
+
+.active-search .search-trigger .search-btn {
+  position: relative;
+  cursor: default;
+  z-index: 300;
+  background-color: rgba(3, 169, 244, 0.9);
+  -webkit-transform: scale(90);
+  -moz-transform: scale(90);
+  -ms-transform: scale(90);
+  -o-transform: scale(90);
+  transform: scale(90);
+}
+
+
+@media screen and (max-width: 768px) {
+  .search-trigger i {
+    line-height: 48px !important;
+  }
+  .search-trigger .search-btn {
+    margin-top: 6px;
+  }
+}

@@ -1,0 +1,55 @@
+/* ================= 404 Page ==================== */
+.error-wrapper {
+  padding: 50px 0;
+}
+.error-wrapper i {
+  font-size: 130px;
+  line-height: 170px;
+  text-align: center;
+  display: block;
+  color: #dadada;
+}
+
+.error-info {
+  padding-left: 60px;
+  border-left: 1px solid #eee;
+}
+.error-info h1{
+  color: #fff;
+  font-size: 130px;
+  line-height: 100px;
+  font-weight: 700;
+  text-shadow: 5px 5px 0 #dadada, -1px -1px 0 #dadada, 1px -1px 0 #dadada, -1px 1px 0 #dadada, 1px 1px 0 #dadada;
+}
+.ie9 .error-info h1,
+.ie9 .error-wrapper-alt h1{
+  color: #999;
+}
+.error-sub {
+  display: block;
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+  .error-info {
+    padding-left: 0;
+    border-left: 0;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .error-wrapper {
+    padding: 200px 0;
+  }
+}
+
+.error-wrapper-alt h1 {
+  color: #fff;
+  font-size: 130px;
+  line-height: 130px;
+  font-weight: 700;
+  text-shadow: 5px 5px 0 #dadada, -1px -1px 0 #dadada, 1px -1px 0 #dadada, -1px 1px 0 #dadada, 1px 1px 0 #dadada;
+}

@@ -1,0 +1,23 @@
+/*
+Back To Top
+----------------------------------------------------*/
+.footer .container {
+  position: relative;
+}
+.back-top {
+  position: absolute!important;
+  top: -80px;
+  right: 0;
+  background-color: $back-to-top-bg-color;
+  color: $back-to-top-txt-color;
+  &:hover, &:active, &:focus, &:visited {
+    background-color: $back-to-top-hover-color;
+  }
+  i {
+    font-size: 4rem!important;
+    color: $back-to-top-txt-color;
+  }
+  &.white i {
+    color: inherit;
+  }
+}

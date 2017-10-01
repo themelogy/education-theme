@@ -1,0 +1,125 @@
+.section-contact {
+  h2 {
+    img {
+      height: 70px;
+    }
+  }
+  .social-link {
+    margin: 20px 0;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    li a i {
+      display: block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      color: $default-theme-color;
+      border: 1px solid $default-theme-color;
+      &:hover {
+        color: $default-reverse-color;
+        background: $footer-social-link-bg-hover;
+        border-color: $default-reverse-color;
+      }
+    }
+    &.dark li a i{
+      color: #202020;
+      &:hover {
+        color: #fff ;
+        background: #03a9f4;
+      }
+    }
+  }
+}
+.address-grid-navigation {
+  position: relative;
+  i {
+    font-size: 24px;
+    color: lighten(grey, 30%);
+  }
+  .prev, .next {
+    position: absolute;
+    top: 175px;
+  }
+  .prev {
+    left:-10px;
+  }
+  .next {
+    right:-10px;
+  }
+}
+.contact-info {
+  border: 1px solid lighten(grey, 45%);
+  h4.title {
+    border-bottom: 1px solid lighten(grey, 45%);
+    background-color: lighten(grey, 45%);
+    line-height: 60px;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    .logo {
+      height: 50px;
+      width: auto;
+      float: left;
+      padding: 10px 15px 5px 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    h4.title, address {
+      font-size: 12px;
+    }
+  }
+  address {
+    margin: 20px 20px;
+    min-height: 140px;
+    max-height: 140px;
+  }
+  div {
+    margin: 5px;
+  }
+  .map {
+    width: 90%;
+    display: block;
+    margin: 10px 20px;
+  }
+  i {
+    font-size: 20px;
+    line-height: 26px;
+    float: left;
+    margin-right: 18px;
+    padding-left: 2px;
+  }
+  .address,
+  .phone,
+  .mail {
+    overflow: hidden;
+  }
+  .mail a {
+    color: #999;
+    &:hover {
+      color: #03a9f4;
+    }
+
+  }
+}
+
+#mapcontent p {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  #contactForm .submit-button {
+    float: right;
+  }
+}
+
+#client-testimonial {
+  .carousel-control {
+    &:active, &:hover, &:focus {
+      color: $default-theme-color;
+    }
+  }
+}
+
