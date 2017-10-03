@@ -3,7 +3,7 @@
         <div class="overlay-image" style="background-image: url({{ $subpage->present()->firstImage(380,300,'fit',50) }})"></div>
         <div class="featured-wrapper">
             <div class="intro-header">
-                <i class="material-icons white-text">{{ $subpage->icon or null }}</i>
+                <i class="material-icons white-text">{{ $subpage->settings->icon or null }}</i>
                 <h2 class="white-text"><a href="{{ $subpage->url }}">{{ $subpage->title }}</a></h2>
             </div>
             <div class="content white-text">

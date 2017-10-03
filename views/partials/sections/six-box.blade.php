@@ -2,8 +2,8 @@
     <div class="container">
         <div class="text-center">
             <div class="row">
-                @foreach([2,3,4,5,6,7] as $item)
-                    @if($subpage = Page::find($item))
+                @foreach(['yabanci-dil', 'basarilarimiz', 'montessori-sistemi', 'sosyal-etkinlikler', 'mezunlar', 'veli-gorusleri'] as $item)
+                    @if($subpage = Page::findBySlug($item))
                         @include('partials.components.box', $subpage)
                     @endif
                 @endforeach

@@ -50,3 +50,18 @@
         </div>
     </section>
 @endif
+
+@if(isset($page->settings->title_bg_color))
+@push('css_inline')
+<style>
+    .page-title.page-title-bg-overlay .title-bg .overlay.background::before {
+        background: {{ $page->settings->title_bg_color or null }} !important;
+    }
+    .page-title.page-title-bg-overlay .title-bg .title {
+        @if(isset($page->settings->title_font_size))
+        font-size: {{ $page->settings->title_font_size }} !important;
+        @endif
+    }
+</style>
+@endpush
+@endif

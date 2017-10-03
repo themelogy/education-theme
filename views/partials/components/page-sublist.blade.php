@@ -50,3 +50,29 @@
     });
 </script>
 @endpush
+
+@if(isset($parent->settings))
+    @push('css_inline')
+    <style>
+        .page-title.page-title-bg-overlay .title-bg .overlay.background::before {
+            background: {{ $parent->settings->title_bg_color or null }} !important;
+        }
+
+        .section-page .left-side .title {
+            background: {{ $parent->settings->menu_bg_color or null }} !important;
+            border-color: {{ $parent->settings->menu_bg_color or null }} !important;
+            color: {{ $parent->settings->menu_title_color or null }} !important;
+        }
+        .widget_categories {
+            background: {{ $parent->settings->menu_text_bg_color or null}} !important;
+            border-color: {{ $parent->settings->menu_bg_color or null }} !important;
+        }
+        .widget_categories a {
+            color: {{ $parent->settings->menu_text_color or null }} !important;
+        }
+        .widget_categories a:hover {
+            color: {{ $parent->settings->menu_text_hover or null }} !important;
+        }
+    </style>
+    @endpush
+@endif
