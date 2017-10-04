@@ -13,11 +13,11 @@
                                class="toggle-custom"
                                id="btn-4"
                                data-toggle="collapse"
-                               data-target="#submenu4"
+                               data-target="#submenu{{ $child->id }}"
                                aria-expanded="false">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             </a>
-                            <ul class="collapse" id="submenu4" role="menu" aria-labelledby="btn-1">
+                            <ul class="collapse" id="submenu{{ $child->id }}" role="menu" aria-labelledby="btn-1">
                                 @foreach($sub_children as $sub_child)
                                     <li><a href="{{ $sub_child->url }}">{{ $sub_child->title }}</a></li>
                                 @endforeach
@@ -57,7 +57,6 @@
         .page-title.page-title-bg-overlay .title-bg .overlay.background::before {
             background: {{ $parent->settings->title_bg_color or null }} !important;
         }
-
         .section-page .left-side .title {
             background: {{ $parent->settings->menu_bg_color or null }} !important;
             border-color: {{ $parent->settings->menu_bg_color or null }} !important;
@@ -69,6 +68,13 @@
         }
         .widget_categories a {
             color: {{ $parent->settings->menu_text_color or null }} !important;
+        }
+        .widget_categories li, .widget_categories li:before {
+            border-color: {{ $parent->settings->menu_border_color or null }} !important;
+            color: {{ $parent->settings->menu_text_color or null }} !important;
+        }
+        .widget_categories li:hover:before {
+            color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
         .widget_categories a:hover {
             color: {{ $parent->settings->menu_text_hover or null }} !important;

@@ -6,8 +6,8 @@
                 <div class="row">
                     <div class="col-md-9 col-md-offset-3">
                         <div class="title-bg p-lft-rgt-25 p-top-30 p-bot-10">
-                            <h2 class="title white-text font-20 m-bot-5 border-bottom-1 p-bot-10">{{ $page->parent->title or $page->title }}&nbsp;</h2>
-                            <h1 class="title white-text p-top-5 font-32">{{ $slot }}</h1>
+                            <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">{{ $page->parent->title or $page->title }}&nbsp;</h2>
+                            <h1 class="title white-text p-top-5 font-30">{{ $slot }}</h1>
                             @if($breadcrumb)
                                 {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
                             @endif
@@ -24,8 +24,8 @@
                 <div class="row">
                     <div class="col-md-9 col-md-offset-3">
                         <div class="title-bg p-lft-rgt-25 p-top-30 p-bot-10">
-                            <h2 class="title white-text font-20 m-bot-5 border-bottom-1 p-bot-10">{{ $page->parent->title or $page->title }}&nbsp;</h2>
-                            <h1 class="title white-text p-top-5 font-32">{{ $slot }}</h1>
+                            <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">{{ $page->parent->title or $page->title }}&nbsp;</h2>
+                            <h1 class="title white-text p-top-5 font-30">{{ $slot }}</h1>
                             @if($breadcrumb)
                                 {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
                             @endif

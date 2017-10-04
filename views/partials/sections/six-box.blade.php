@@ -2,11 +2,11 @@
     <div class="container">
         <div class="text-center">
             <div class="row">
-                @foreach(['yabanci-dil', 'basarilarimiz', 'montessori-sistemi', 'sosyal-etkinlikler', 'mezunlar', 'veli-gorusleri'] as $item)
-                    @if($subpage = Page::findBySlug($item))
+                @if($subpages = Page::all()->where('settings.show_box', 1))
+                    @foreach($subpages as $subpage)
                         @include('partials.components.box', $subpage)
-                    @endif
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

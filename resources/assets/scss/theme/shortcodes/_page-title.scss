@@ -24,13 +24,10 @@ Page title
         right: 25px;
         margin: -10px 0 0 0;
         padding: 0;
-        font-size: 12px;
+        font-size: 11px;
         z-index: 5;
         &:before {
             display: none;
-        }
-        li {
-            letter-spacing: 0.05em;
         }
     }
     &.no-bg {

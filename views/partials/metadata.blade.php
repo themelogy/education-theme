@@ -1,5 +1,4 @@
 {!! seo_helper()->render() !!}
-{!! Asset::setPrefix(url('themes/'.strtolower(setting('core::template'))).'/') !!}
 
 <!--  favicon -->
 <link rel="shortcut icon" href="{{ Theme::url('img/ico/favicon.png') }}">

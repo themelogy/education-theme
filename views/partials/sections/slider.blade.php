@@ -6,7 +6,7 @@
                     <div class="rev_slider materialize-slider z-depth-4">
                         <ul>
                             @if(count($slide->sliders)>0)
-                                @foreach($slide->sliders as $slider)
+                                @foreach($slide->sliders()->published()->beetweendates()->get() as $slider)
                                     <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{ $slider->present()->firstImage(60,60,'fit',70) }}" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="<span style='font-size:12px;'>{{ ucfirst(mb_strtolower($slider->sub_title)) }}</span>" data-param1="{{ $slider->start_at->formatLocalized('%d %B %Y') }}" data-description="">
                                         <!-- MAIN IMAGE -->
                                         <img src="{{ $slider->present()->firstImage(1140,500,'fit',70) }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-no-retina>

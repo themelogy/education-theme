@@ -1,4 +1,4 @@
-<div class="col-md-4 col-sm-6">
+<div class="col-md-{{ $subpage->settings->column_box or 4 }} col-sm-6 col-xs-12">
     <div class="featured-box text-center z-depth-2">
         <div class="overlay-image" style="background-image: url({{ $subpage->present()->firstImage(380,300,'fit',50) }})"></div>
         <div class="featured-wrapper">

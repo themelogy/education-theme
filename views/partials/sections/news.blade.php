@@ -7,7 +7,7 @@
                 });
             @endphp
             @if(count($latestNews)>1)
-            <h3 class="title padding-20 white-text no-margin z-depth-2"><i class="fa fa-newspaper-o m-rgt-10"></i> HABERLER</h3>
+            <h3 class="title padding-20 white-text no-margin z-depth-2" style="position: relative; z-index: 100;"><i class="fa fa-newspaper-o m-rgt-10"></i> HABERLER</h3>
             <div class="news-grid-navigation">
                 <a class="prev"><i class="fa fa-angle-left"></i></a>
                 <a class="next"><i class="fa fa-angle-right"></i></a>
@@ -41,7 +41,7 @@
             @php $anouncements = app(\Modules\News\Repositories\CategoryRepository::class)->findBySlug('duyuru')->posts()->get() @endphp
             @if(count($anouncements)>1)
             <div class="announcement">
-                <h3 class="title padding-20 no-margin z-depth-2"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> DUYURULAR</h3>
+                <h3 class="title padding-20 no-margin z-depth-2" style="position: relative; z-index: 100;"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> DUYURULAR</h3>
                 <div class="announcement-grid-navigation">
                     <a class="prev"><i class="fa fa-angle-left"></i></a>
                     <a class="next"><i class="fa fa-angle-right"></i></a>
