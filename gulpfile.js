@@ -30,6 +30,16 @@ var assets_fonts_dir = assets_dir + "/fonts";
 var sass_dir = resource_dir + "/scss";
 var vendor_dir = resource_dir + "/vendor";
 
+gulp.task('public', function () {
+    gulp.src([
+        sass_dir + '/**/*.scss'
+    ])
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write(theme_dir+'/maps'))
+    .pipe(gulp.dest(theme_dir+"/css"));
+});
+
 gulp.task('clear', function () {
     del(js_dir + '/**');
     del(css_dir + '/**');

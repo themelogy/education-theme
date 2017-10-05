@@ -36,7 +36,7 @@ Categories Widget
           color: $blog-widget-categories-link-hover;
         }
       }
-      &.active a {
+      &.active > a {
         color: $blog-widget-categories-link-hover;
       }
     }
@@ -59,6 +59,9 @@ Categories Widget
       }
       a {
         padding: 10px 10px 10px 60px !important;
+      }
+      &.active > a {
+        color: $blog-widget-categories-link-hover;
       }
     }
   }

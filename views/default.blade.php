@@ -9,25 +9,7 @@
     <section class="section-padding md-p-top-100 section-page">
         <div class="container">
             <div class="row">
-                @if($parent = @$page->parent->parent)
-                    <div class="col-md-3 left-side">
-                        @include('partials.components.page-sublist', [$parent])
-                    </div>
-                    <div class="col-md-9">
-                        <div class="content md-padding-40 text-justify">
-                            {!! $page->body !!}
-                        </div>
-                    </div>
-                @elseif($parent = @$page->parent)
-                    <div class="col-md-3 left-side">
-                        @include('partials.components.page-sublist', [$parent])
-                    </div>
-                    <div class="col-md-9">
-                        <div class="content md-padding-40 text-justify">
-                            {!! $page->body !!}
-                        </div>
-                    </div>
-                @elseif($parent = $page)
+                @if($parent = $page->parentpage)
                     <div class="col-md-3 left-side">
                         @include('partials.components.page-sublist', [$parent])
                     </div>

@@ -1,6 +1,6 @@
 @if ($breadcrumbs)
     <ol class="breadcrumb">
-        <li><a href="{{ route('homepage') }}">{{ Page::findHomepage()->title }}</a></li>
+        <li><a href="{{ route('homepage') }}"><i class="fa fa-home font-10"></i></a></li>
         @foreach ($breadcrumbs as $crumb)
             <?php
             $icon = isset($crumb->icon) ? '<i class="' . $crumb->icon . '"></i> ' : '';

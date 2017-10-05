@@ -5,6 +5,8 @@ Grid News Hover Style
   h3.title {
     background-color: $news-slider-bg-color;
     color: $news-slider-txt-color;
+    position: relative;
+    z-index: 100;
     @if (lightness($announcement-slider-bg-color)>50) {
       border: 1px solid $announcement-slider-border-color;
     }
@@ -83,6 +85,8 @@ Grid News Hover Style
   .entry-content {
     position: relative;
     z-index: 2;
+    line-height: 16px;
+    margin-bottom: 20px;
   }
   .post-wrapper:hover,
   .post-wrapper:hover .entry-meta li a,

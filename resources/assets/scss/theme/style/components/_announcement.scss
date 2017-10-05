@@ -2,6 +2,8 @@
   h3.title {
     background-color: $announcement-slider-bg-color;
     color: $announcement-slider-txt-color;
+    position: relative;
+    z-index: 100;
     @if (lightness($announcement-slider-bg-color)>50) {
       border: 1px solid $announcement-slider-border-color;
     }

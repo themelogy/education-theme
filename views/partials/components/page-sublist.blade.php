@@ -1,30 +1,30 @@
 @if($parent)
     <div class="widget widget_categories m-bot-20 z-depth-2">
-        <h2 class="title font-16 bold-700">{{ mb_strtoupper($parent->title) }}</h2>
+        <h2 class="title font-16 bold-700 uppercase">{{ $parent->title }}</h2>
         @php $children = $parent->children()->orderBy('position', 'asc')->get() @endphp
         @if(count($children)>0)
             <ul class="list-group">
                 @foreach($children as $child)
                     @php $sub_children = $child->children()->orderBy('position', 'asc')->get() @endphp
                     @if(count($sub_children)>0)
-                        <li>
+                        <li{{ Request::segment(3) == $child->slug ? ' class=active' : '' }}>
                             <a href="{{ $child->url }}">{{ $child->title }}</a>
                             <a href="#"
                                class="toggle-custom"
                                id="btn-4"
                                data-toggle="collapse"
                                data-target="#submenu{{ $child->id }}"
-                               aria-expanded="false">
+                               aria-expanded="{{ Request::segment(3) == $child->slug ? 'true' : 'false' }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             </a>
-                            <ul class="collapse" id="submenu{{ $child->id }}" role="menu" aria-labelledby="btn-1">
+                            <ul class="collapse{{ Request::segment(3) == $child->slug ? ' in' : '' }}" id="submenu{{ $child->id }}" role="menu" aria-labelledby="btn-1">
                                 @foreach($sub_children as $sub_child)
-                                    <li><a href="{{ $sub_child->url }}">{{ $sub_child->title }}</a></li>
+                                    <li{{ Request::segment(4) == $sub_child->slug ? ' class=active' : '' }}><a href="{{ $sub_child->url }}">{{ $sub_child->title }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
                     @else
-                        <li><a href="{{ $child->url }}">{{ $child->title }}</a></li>
+                        <li{{ Request::segment(3) == $child->slug ? ' class=active' : '' }}><a href="{{ $child->url }}">{{ $child->title }}</a></li>
                     @endif
                 @endforeach
             </ul>
@@ -77,6 +77,9 @@
             color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
         .widget_categories a:hover {
+            color: {{ $parent->settings->menu_text_hover or null }} !important;
+        }
+        .widget_categories ul > li.active > a, .widget_categories ul > li.active:before {
             color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
     </style>
