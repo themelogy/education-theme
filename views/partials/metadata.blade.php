@@ -1,4 +1,5 @@
 {!! seo_helper()->render() !!}
+<meta id="token" name="token" value="{{ csrf_token() }}" />
 
 <!--  favicon -->
 <link rel="shortcut icon" href="{{ Theme::url('img/ico/favicon.png') }}">

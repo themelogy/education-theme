@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-left">
-                @if($news = app(\Modules\News\Repositories\CategoryRepository::class)->findBySlug('duyuru'))
+                @if($topNews = app(\Modules\News\Repositories\CategoryRepository::class)->findBySlug('duyuru'))
                 <div id="carousel-ticker" class="carousel vertical slide carousel-ticker" data-ride="carousel" data-interval="5000">
                     <div class="carousel-inner" role="listbox">
-                        @foreach($news->posts as $post)
+                        @foreach($topNews->posts as $topNew)
                         <div class="item @if($loop->first)active @endif">
                             <p class="ticker-headline">
-                                <a href="{{ $post->url }}">
-                                    <strong>{{ $post->category->name or null }}</strong> {{ $post->title }}
+                                <a href="{{ $topNew->url }}">
+                                    <strong>{{ $topNew->category->name or null }}</strong> {{ $topNew->title }}
                                 </a>
                             </p>
                         </div>
@@ -29,9 +29,29 @@
                 @endif
             </div>
             <div class="col-md-6 text-right">
-                <div class="top-social">
-                    @include('partials.components.social', ['class'=>'list-inline social-top tt-animate btt m-rgt-10'])
+                @if($currentUser)
+                <div class="quick-menu">
+                    <a class="dropdown-button btn bold-500 waves-effect waves-light"
+                       href="#" data-activates="user"
+                       data-hover="true"
+                       data-constrainWidth="false"
+                       data-alignment="left"
+                       data-belowOrigin="true" style="margin-right: -1px;">
+                        <i class="fa fa-user m-rgt-10"></i> Hesabım <i class="fa fa-angle-down m-lft-5"></i>
+                    </a>
+                    <ul id="user" class="dropdown-content">
+                        @if(Authentication::hasAccess('dashboard.index'))
+                        <li><a href="{{ route('dashboard.index') }}">{{ trans('dashboard::dashboard.name') }}</a></li>
+                        @endif
+                        <li><a href="{{ route('hr.application.form') }}">{{ trans('hr::hr.title.hr') }}</a></li>
+                        <li><a href="{{ route('logout') }}">{{ trans('core::core.general.sign out') }}</a></li>
+                    </ul>
                 </div>
+                @else
+                    <div class="top-social">
+                        @include('partials.components.social', ['class'=>'list-inline social-top tt-animate btt m-rgt-10'])
+                    </div>
+                @endif
                 <div class="quick-menu">
                     <a class="dropdown-button btn bold-500 waves-effect waves-light"
                        href="#" data-activates="language"

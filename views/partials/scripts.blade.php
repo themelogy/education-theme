@@ -1,5 +1,5 @@
 @stack('styles')
-@stack('css_inline');
+@stack('css_inline')
 <!-- jQuery -->
 {!! Theme::script("js/jquery.min.js") !!}
 {!! Theme::script("js/bootstrap.min.js") !!}
