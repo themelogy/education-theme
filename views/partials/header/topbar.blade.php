@@ -37,10 +37,10 @@
                        data-constrainWidth="false"
                        data-alignment="left"
                        data-belowOrigin="true" style="margin-right: -1px;">
-                        <i class="fa fa-user m-rgt-10"></i> Hesabım <i class="fa fa-angle-down m-lft-5"></i>
+                        <i class="fa fa-user m-rgt-10"></i> {{ trans('user::users.my account') }} <i class="fa fa-angle-down m-lft-5"></i>
                     </a>
                     <ul id="user" class="dropdown-content">
-                        @if(Authentication::hasAccess('dashboard.index'))
+                        @if($currentUser->hasAccess('dashboard.index'))
                         <li><a href="{{ route('dashboard.index') }}">{{ trans('dashboard::dashboard.name') }}</a></li>
                         @endif
                         <li><a href="{{ route('hr.application.form') }}">{{ trans('hr::hr.title.hr') }}</a></li>

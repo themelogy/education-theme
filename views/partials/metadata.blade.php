@@ -1,6 +1,8 @@
 {!! seo_helper()->render() !!}
 <meta id="token" name="token" content="{{ csrf_token() }}" />
-<meta id="authorization" name="authorization" content="{{ $currentUser ? Authentication::user()->getFirstApiKey() : '' }}" />
+@if($currentUser)
+<meta id="authorization" name="authorization" content="{{ $currentUser->getFirstApiKey() }}" />
+@endif
 
 <!--  favicon -->
 <link rel="shortcut icon" href="{{ Theme::url('img/ico/favicon.png') }}">
