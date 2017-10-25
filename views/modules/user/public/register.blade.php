@@ -1,5 +1,10 @@
 @extends('layouts.account')
 
+@php
+    seo_helper()->setTitle(trans('user::auth.register'))
+                ->setDescription(trans('user::auth.register'));
+@endphp
+
 @section('content')
     <section class="section-padding gray-bg p-top-bot-100">
         <div class="container">

@@ -11,8 +11,8 @@
                     <div class="col-md-9 col-md-offset-3">
                         <div class="title-bg p-lft-rgt-25 p-top-30 p-bot-10">
                             <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
-                                @if(isset($page->settings->slogan))
-                                    {{ $page->settings->slogan }}
+                                @if(isset($page->settings->slogan->{locale()}))
+                                    {{ $page->settings->slogan->{locale()} }}
                                 @elseif(isset($page->parent->parent->title))
                                     {{ $page->parent->parent->title }}  /
                                 @else

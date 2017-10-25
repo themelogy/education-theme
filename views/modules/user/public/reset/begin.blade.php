@@ -1,10 +1,16 @@
 @extends('layouts.account')
 
+@php
+    seo_helper()->setTitle(trans('user::auth.reset password'))
+                ->setDescription(trans('user::auth.reset password'));
+@endphp
+
 @section('content')
     <section class="section-padding gray-bg p-top-bot-100">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 z-depth-1 whiten">
+                    <h2 class="login-box-msg brand-bg white-text m-top-10" style="line-height: 50px;text-align: center;">{{ trans('user::auth.reset password') }}</h2>
                     <div class="login-box-body padding-20">
                         {{ trans('user::auth.to reset password complete this form') }}
                         @include('partials.notifications')
