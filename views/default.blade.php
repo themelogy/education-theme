@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
     @component('partials.components.page-title', ['page'=>$page, 'breadcrumb'=>'page'])
     {{ $page->title }}
     @endcomponent

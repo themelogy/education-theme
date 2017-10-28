@@ -6,11 +6,7 @@
 
 <body id="top" class="has-header-search">
 
-@include('partials.header')
-
 @yield('content')
-
-@include('partials.footer')
 
 @include('partials.scripts')
 

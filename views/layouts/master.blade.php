@@ -13,6 +13,8 @@
 @include('partials.footer')
 
 @include('partials.scripts')
+
+@include('partials.components.popup')
 </body>
 
 </html>
