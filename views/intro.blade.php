@@ -3,25 +3,26 @@
 @section('content')
     <div class="section-intro">
         <div class="content">
-            <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg') }}" alt="Jale Tezer Eğitim Kurumları" />
+            <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg') }}" alt="{{ setting('theme::company-name') }}" />
             <div class="language">
                 <ul>
                     @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
                         <li><a href="{{ url($locale) }}"><span class="flag-icon flag-icon-{{ $locale == "en" ? "gb" : $locale }}"></span> {!! mb_strtoupper($supportedLocale['native']) !!}</a></li>
                     @endforeach
                 </ul>
-                <p class="white-text">Please select language / Lütfen dil seçimi yapınız</p>
+                <p class="white-text">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
+                    {{ trans('themes::theme.intro.select language', [], $locale) }} @if(!$loop->last) / @endif
+                    @endforeach
+                </p>s
             </div>
         </div>
     </div>
 
     <ul class="cb-slideshow">
-        <li><span style="background: url({{ Theme::url('img/intro/intro_1.jpg') }});">Intro 01</span></li>
-        <li><span style="background: url({{ Theme::url('img/intro/intro_2.jpg') }});">Intro 02</span></li>
-        <li><span style="background: url({{ Theme::url('img/intro/intro_3.jpg') }});">Intro 02</span></li>
-        <li><span style="background: url({{ Theme::url('img/intro/intro_4.jpg') }});">Intro 02</span></li>
-        <li><span style="background: url({{ Theme::url('img/intro/intro_5.jpg') }});">Intro 02</span></li>
-        <li><span style="background: url({{ Theme::url('img/intro/intro_6.jpg') }});">Intro 02</span></li>
+        @foreach($page->present()->images(1280,854,'fit',50) as $image)
+        <li><span style="background: url({{ $image }});">Intro {{ $loop->iteration }}</span></li>
+        @endforeach
     </ul>
 
     <div class="overlay background bg-fixed"></div>

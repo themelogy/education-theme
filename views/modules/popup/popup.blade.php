@@ -24,7 +24,7 @@
                         </slot>
                     </div>
 
-                    <div class="modal-footer brand-bg" v-if="1 != 1">
+                    <div class="modal-footer brand-bg" v-if="show_footer">
                         <slot name="footer">
                             <button class="btn btn-primary red" @click="$emit('close')">{{ trans('global.buttons.close') }}</button>
                         </slot>
@@ -43,7 +43,22 @@
     @if(isset($popup->settings->show_header))
     <h3 slot="header" class="white-text">{{ $popup->title }}</h3>
     @endif
-    <div slot="body">{!! $popup->present()->content !!}</div>
+    <div slot="body">
+        @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type == 'image')
+            <a href="{{ $popup->present()->link('link_url') }}">
+                {!! $popup->present()->content !!}
+            </a>
+        @else
+            {!! $popup->present()->content !!}
+        @endif
+    </div>
+    @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type != 'image')
+    <div slot="footer">
+        <a class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
+            {{ $popup->present()->link('link_title') }}
+        </a>
+    </div>
+    @endif
     </modal>
 </div>
 
@@ -55,6 +70,7 @@
         data: function(){
             return {
                 show_header: {{ $popup->settings->show_header ?? 0 }},
+                show_footer: {{ $popup->settings->show_footer ?? 0 }},
                 show_close: {{ $popup->settings->show_close ?? 0 }},
                 show_counter: {{ $popup->settings->show_counter ?? 0 }},
                 auto_close: {{ $popup->settings->auto_close ?? 0 }}

@@ -1,6 +1,9 @@
 <?php
 
 return [
+  'intro' => [
+    'select language' => 'Lütfen dil seçimi yapınız'
+  ],
   'header' => [
       'quick-menu' => 'HIZLI ERİŞİM'
   ],

@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'intro' => [
+        'select language' => 'Please select language'
+    ],
   'header' => [
       'quick-menu' => 'QUICK MENU'
   ],
