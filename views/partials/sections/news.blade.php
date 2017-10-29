@@ -38,7 +38,7 @@
             @endif
         </div>
         <div class="col-md-8">
-            @php $anouncements = app(\Modules\News\Repositories\CategoryRepository::class)->findBySlug('duyuru')->posts()->get() @endphp
+            @php $anouncements = NewsCategory::findBySlug('duyuru')->posts()->get() @endphp
             @if(count($anouncements)>1)
             <div class="announcement">
                 <h3 class="title padding-20 no-margin z-depth-2"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> DUYURULAR</h3>

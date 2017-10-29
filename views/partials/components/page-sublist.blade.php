@@ -1,5 +1,5 @@
 @if($parent)
-    <div class="widget widget_categories m-bot-20 z-depth-2">
+    <div class="widget widget_categories_page m-bot-20 z-depth-2">
         <h2 class="title font-16 bold-700 uppercase">{{ $parent->title }}</h2>
         @php $children = $parent->children()->orderBy('position', 'asc')->get() @endphp
         @if(count($children)>0)
@@ -62,24 +62,24 @@
             border-color: {{ $parent->settings->menu_bg_color or null }} !important;
             color: {{ $parent->settings->menu_title_color or null }} !important;
         }
-        .widget_categories {
+        .widget_categories_page {
             background: {{ $parent->settings->menu_text_bg_color or null}} !important;
             border-color: {{ $parent->settings->menu_bg_color or null }} !important;
         }
-        .widget_categories a {
+        .widget_categories_page a {
             color: {{ $parent->settings->menu_text_color or null }} !important;
         }
-        .widget_categories li, .widget_categories li:before {
+        .widget_categories_page li, .widget_categories_page li:before {
             border-color: {{ $parent->settings->menu_border_color or null }} !important;
             color: {{ $parent->settings->menu_text_color or null }} !important;
         }
-        .widget_categories li:hover:before {
+        .widget_categories_page li:hover:before {
             color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
-        .widget_categories a:hover {
+        .widget_categories_page a:hover {
             color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
-        .widget_categories ul > li.active > a, .widget_categories ul > li.active:before {
+        .widget_categories_page ul > li.active > a, .widget_categories_page ul > li.active:before {
             color: {{ $parent->settings->menu_text_hover or null }} !important;
         }
     </style>

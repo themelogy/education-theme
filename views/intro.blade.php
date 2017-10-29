@@ -4,6 +4,7 @@
     <div class="section-intro">
         <div class="content">
             <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg') }}" alt="{{ setting('theme::company-name') }}" />
+            <div class="year">54.yıl</div>
             <div class="language">
                 <ul>
                     @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
@@ -38,3 +39,17 @@
     </div>
     <!-- End Preloader -->
 @endsection
+
+@push('css_inline')
+<link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin-ext" rel="stylesheet">
+<style>
+    .year {
+        font-family: 'Pacifico', cursive;
+        font-size: 2em;
+        text-shadow: 0 0 10px rgba(0,0,0,0.33);
+        color: #ffffff;
+        margin-top: 20px;
+        margin-bottom: -20px;
+    }
+</style>
+@endpush

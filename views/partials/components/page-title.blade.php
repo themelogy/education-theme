@@ -28,7 +28,7 @@
                 </div>
             </div>
         </section>
-@else
+    @else
     <section class="page-title page-title-bg overlay dark-4 p-top-bot-30 md-p-top-70 md-p-bot-70" style="background: url({{ Theme::url('img/slides/slider-2.jpg') }});">
         <div class="container">
             <div class="row">

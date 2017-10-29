@@ -1,7 +1,30 @@
+.widget_categories {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.widget_categories ul li {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.widget_categories ul li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.widget_categories ul li a{
+  display: block;
+  color: #999;
+}
+.widget_categories ul li a:hover{
+  color: #03a9f4;
+}
+
 /*
 Categories Widget
 --------------------------------------------------------*/
-.widget_categories {
+.widget_categories_page {
   border: 1px solid $blog-widget-categories-border-color;
   background-color: $blog-widget-categories-bg;
   > ul {
