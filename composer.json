@@ -2,9 +2,6 @@
   "name": "themelogy/education-theme",
   "type": "asgard-theme",
   "description": "",
-  "keywords": [
-    "asgard-cms"
-  ],
   "license": "MIT",
   "require": {
     "php": ">=5.5",

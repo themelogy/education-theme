@@ -41,7 +41,7 @@
     <modal v-if="showModal" @close="showModal = false">
     <span slot="counter">@{{ counter }}</span>
     @if(isset($popup->settings->show_header))
-    <h3 slot="header" class="white-text">{{ $popup->title }}</h3>
+        <h3 slot="header" class="white-text">{{ $popup->title }}</h3>
     @endif
     <div slot="body">
         @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type == 'image')
@@ -53,13 +53,13 @@
         @endif
     </div>
     @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type != 'image')
-    <div slot="footer">
-        <a class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
-            {{ $popup->present()->link('link_title') }}
-        </a>
-    </div>
-    @endif
-    </modal>
+        <div slot="footer">
+            <a class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
+                {{ $popup->present()->link('link_title') }}
+            </a>
+        </div>
+        @endif
+        </modal>
 </div>
 
 <script src="{{ Module::asset('popup:js/vue.min.js') }}"></script>
@@ -81,6 +81,7 @@
         el: '#popup',
         data: {
             showModal: true,
+            show_once: {{ $popup->settings->show_once ?? 0 }},
             close_delay: {{ $popup->settings->close_delay_at * 1000 }},
             cookie_expire: {{ $popup->settings->cookie_expire }},
             open_delay: {{ $popup->settings->open_delay_at * 1000 }},
@@ -110,7 +111,12 @@
                     if(this.auto_close) {
                         this.autoClose();
                     }
-                    Cookies.set('popup_show_{{ $popup->id }}', 1, { expires: this.cookie_expire } );
+                    if(this.show_once) {
+                        Cookies.set('popup_show_{{ $popup->id }}', 1, { expires: 30 } );
+                    } else {
+                        Cookies.set('popup_show_{{ $popup->id }}', 1, { expires: this.cookie_expire } );
+                    }
+
                 }
             },
             delayModal: function() {

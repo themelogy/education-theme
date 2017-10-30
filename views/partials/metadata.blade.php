@@ -24,7 +24,7 @@
 
 {!! Theme::style("css/materialize.css") !!}
 {!! Theme::style("css/bootstrap.css") !!}
-{!! Theme::style("css/style.css") !!}
+{!! Theme::style("css/style.css?v=3") !!}
 
     <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

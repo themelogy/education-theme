@@ -6,7 +6,7 @@
         })->first();
     }
     if(!isset($popup)) {
-        $popup = collect(app(\Modules\Popup\Repositories\PopupRepository::class)->getPopups(''));
+        $popup = collect(app(\Modules\Popup\Repositories\PopupRepository::class)->getPopups());
         $popup = $popup->filter(function($value, $key) {
             return isset($value->settings->show_session) ? Auth::check() : true;
         })->first();
