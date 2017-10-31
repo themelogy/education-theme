@@ -13,11 +13,12 @@
                             <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
                                 @if(isset($page->settings->slogan->{locale()}))
                                     {{ $page->settings->slogan->{locale()} }}
-                                @elseif(isset($page->parent->parent->title))
-                                    {{ $page->parent->parent->title }}  /
+                                @elseif($subTitles = $page->present()->subTitles)
+                                    {{ $subTitles }}
                                 @else
-                                    {{ $page->parent->title or $page->title }}&nbsp;</h2>
+                                    {{ $page->parent->title or $page->title }}&nbsp;
                                 @endif
+                            </h2>
                             <h1 class="title white-text p-top-5 font-30">{{ $slot }}</h1>
                             @if($breadcrumb)
                                 {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
