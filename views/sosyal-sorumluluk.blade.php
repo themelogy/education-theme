@@ -8,9 +8,8 @@
     <section class="section-padding md-p-top-100 section-page">
         <div class="container">
             <div class="row">
-                @php $parent = $page->parentpage @endphp
-                @if($parent && isset($parent->settings->show_sidebar))
-                    <div class="col-md-3 left-side">
+                @if($parent = $page->parentpage)
+                    <div class="col-md-3">
                         @include('partials.components.page-sublist', [$parent])
                     </div>
                     <div class="col-md-9">

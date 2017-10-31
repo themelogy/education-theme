@@ -1,11 +1,11 @@
 @if($parent)
     <div class="widget widget_categories_page m-bot-20 z-depth-2">
         <h2 class="title font-16 bold-700 uppercase">{{ $parent->title }}</h2>
-        @php $children = $parent->children()->orderBy('position', 'asc')->get() @endphp
+        @php $children = $parent->children()->orderBy('position', 'asc')->get()->where('settings.show_sidebar', 1) @endphp
         @if(count($children)>0)
             <ul class="list-group">
                 @foreach($children as $child)
-                    @php $sub_children = $child->children()->orderBy('position', 'asc')->get() @endphp
+                    @php $sub_children = $child->children()->orderBy('position', 'asc')->get()->where('settings.show_sidebar', 1) @endphp
                     @if(count($sub_children)>0)
                         <li{{ Request::segment(3) == $child->slug ? ' class=active' : '' }}>
                             <a href="{{ $child->url }}">{{ $child->title }}</a>
