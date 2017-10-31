@@ -19,7 +19,7 @@
                                     {{ $page->parent->title or $page->title }}&nbsp;
                                 @endif
                             </h2>
-                            <h1 class="title white-text p-top-5 font-30">{{ $slot }}</h1>
+                            <h1 class="title white-text p-top-5 font-22">{{ $slot }}</h1>
                             @if($breadcrumb)
                                 {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
                             @endif

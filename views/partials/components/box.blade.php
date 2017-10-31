@@ -7,7 +7,8 @@
                 <h2 class="white-text"><a href="{{ $subpage->url }}">{{ $subpage->title }}</a></h2>
             </div>
             <div class="content white-text">
-                <p>{{ $subpage->sub_title or null }}</p>
+                @php $locale = locale() @endphp
+                <p>{{ $subpage->settings->sub_title->{$locale} or null }}</p>
             </div>
         </div>
     </div>

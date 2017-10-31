@@ -14,17 +14,17 @@
                         @include('partials.components.page-sublist', [$parent])
                     </div>
                     <div class="col-md-9">
-                        @if(isset($page->settings->list_page))
+                        @if($page->settings->list_page ?? false)
                             @include('page::partials.sub-page', ['type'=>$page->settings->list_type])
                         @else
-                        <div class="content md-padding-40 text-justify">
-                            {!! $page->body !!}
-                        </div>
+                            <div class="content md-padding-40 text-justify">
+                                {!! $page->body !!}
+                            </div>
                         @endif
                     </div>
                 @else
                     <div class="col-md-12">
-                        @if(isset($page->settings->list_page))
+                        @if($page->settings->list_page ?? false)
                             @include('page::partials.sub-page', ['type'=>$page->settings->list_type])
                         @else
                             <div class="content md-padding-40 text-justify">
