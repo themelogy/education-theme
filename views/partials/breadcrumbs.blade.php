@@ -8,10 +8,10 @@
 
             @if ($crumb->url && ! $crumb->last)
                 <li>
-                    <a href="{{ $crumb->url }}">{!! $icon !!}{!! $crumb->title !!}</a>
+                    <a href="{{ $crumb->url }}">{!! $icon !!}{!! Str::words($crumb->title, 6) !!}</a>
                 </li>
             @else
-                <li>{!! $icon !!}{!! $crumb->title !!}</li>
+                <li>{!! $icon !!}{!! Str::words($crumb->title, 6) !!}</li>
             @endif
         @endforeach
     </ol>

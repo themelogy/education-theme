@@ -97,6 +97,10 @@
       padding-top: $i+px !important;
       padding-bottom: $i+px !important;
     }
+    .md-m-top-bot-#{$i} {
+      margin-top: $i+px !important;
+      margin-bottom: $i+px !important;
+    }
     .md-p-lft-rgt-#{$i} {
       padding-left: $i+px !important;
       padding-right: $i+px !important;
