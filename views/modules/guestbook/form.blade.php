@@ -6,7 +6,7 @@
     {{ trans('themes::guestbook.leave comment') }}
     @endcomponent
 
-    <section class="section-padding p-top-bot-50">
+    <section class="section-padding p-bot-100">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

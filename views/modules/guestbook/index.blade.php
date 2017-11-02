@@ -2,26 +2,26 @@
 
 @section('content')
 
-    @component('partials.components.page-title', ['breadcrumb'=>'guestbook'])
+    @component('partials.components.page-title', ['breadcrumb'=>'guestbook.index'])
     {{ trans('themes::guestbook.title') }}
     @endcomponent
 
-    <section class="section-padding p-top-bot-50">
-        <div class="container">
-            <div class="promo-box gray-bg border-box p-top-bot-20 p-bot-50">
-                <div class="promo-info">
-                    <i class="fa fa-commenting-o promo-icon circle brand-bg"></i>
-                    <h2 class="text-extrabold text-uppercase">{{ trans('themes::guestbook.leave comment') }}</h2>
-                    <p>{{ trans('themes::guestbook.leave comment description') }}</p>
-                </div>
-                <div class="promo-btn">
-                    <a href="{{ route('guestbook.comment.form') }}" class="btn btn-primary brand-bg waves-effect waves-light">{{ trans('themes::guestbook.leave a comment') }}</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="ls ms md-p-bot-50 section-testimonials">
         <div class="container">
+			<div class="row">
+				<div class="col-md-12 p-bot-20">
+					<div class="promo-box gray-bg border-box">
+						<div class="promo-info">
+							<i class="fa fa-commenting-o promo-icon circle brand-bg"></i>
+							<h2 class="text-extrabold text-uppercase">{{ trans('themes::guestbook.leave comment') }}</h2>
+							<p>{{ trans('themes::guestbook.leave comment description') }}</p>
+						</div>
+						<div class="promo-btn">
+							<a href="{{ route('guestbook.comment.form') }}" class="btn btn-primary brand-bg waves-effect waves-light">{{ trans('themes::guestbook.leave a comment') }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
             <div class="row">
                 @if(count($reviews)>0)
                     @foreach($reviews as $review)
@@ -32,7 +32,7 @@
                                 @else
                                     <figure><img src="{{ Theme::url('img/modules/tebrikler.jpg') }}" alt="{{ $review->fullname }}" /></figure>
                                 @endif
-                                <main>{{ $review->message }}</main>
+                                <main>{!! nl2br($review->message) !!}</main>
                                 <footer class="blockquote-footer"><cite title="Source Title">{{ $review->fullname }}</cite></footer>
                             </blockquote>
                             <div class="clear"></div>
