@@ -2,6 +2,9 @@
     $list_per_page  = $page->settings->list_per_page ?? 6;
     $list_grid 		= $page->settings->list_grid ?? 6;
     $list_type 		= $page->settings->list_type ?? 'grid';
+    $list_content   = $page->settings->list_page_content ?? 0;
+    $list_image     = $page->settings->list_page_image ?? 0;
+    $list_button    = $page->settings->list_page_button ?? 0;
     $list_pages     = $page->children()->paginate($list_per_page,['*'],'sayfa');
 @endphp
 
@@ -18,15 +21,22 @@
             @if($list_type == 'grid')
                 <div class="col-md-{{ $list_grid }}">
                     <article class="post-wrapper">
+                        @if($list_image)
                         <div class="thumb-wrapper">
                             <img src="{{ $child->present()->firstImage(330,200,'fit',50) }}" class="img-responsive" alt="{{ $child->title }}">
                             <div class="entry-header">
                                 <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
                             </div>
                         </div>
+                        @endif
                         <div class="entry-content">
                             <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
-                            <p>{!! Str::words(strip_tags(\Patchwork\Utf8::toAscii($child->body)), 15) !!}</p>
+                            @if($list_content)
+                            <p>{!! Str::words(strip_tags($child->body), 15) !!}</p>
+                            @endif
+                            @if($list_button)
+                                <a class="browser-default btn btn-primary btn-xs" href="{{ $child->url }}">{{ trans('global.buttons.read more') }}</a>
+                            @endif
                         </div>
                     </article>
                 </div>
@@ -34,14 +44,20 @@
                 <div class="col-md-12">
                     <article class="post-wrapper">
                         <div class="row">
+                            @if($list_image)
                             <div class="col-md-4">
                                 <img src="{{ $child->present()->firstImage(330,200,'fit',50) }}" class="img-responsive" alt="{{ $child->title }}">
                             </div>
+                            @endif
                             <div class="col-md-8">
                                 <div class="entry-content p-rgt-10">
-                                    <h2 class="entry-title p-bot-10"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
-                                    <p>{!! Str::words(strip_tags(\Patchwork\Utf8::toAscii($child->body)), 15) !!}</p>
-                                    <a class="browser-default btn btn-primary btn-xs" href="{{ $child->url }}">Devamını oku...</a>
+                                    <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
+                                    @if($list_content)
+                                    <p class="m-top-10">{!! Str::words(strip_tags($child->body), 15) !!}</p>
+                                    @endif
+                                    @if($list_button)
+                                        <a class="browser-default btn btn-primary btn-xs" href="{{ $child->url }}">{{ trans('global.buttons.read more') }}</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
