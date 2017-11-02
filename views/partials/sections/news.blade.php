@@ -1,13 +1,11 @@
 <section class="section-padding grid-news-hover p-bot-0">
     <div class="container no-padding">
-        <div class="col-md-4 no-padding p-rgt-10">
+        <div class="col-md-8 no-padding p-rgt-10">
             @php
-                $latestNews = app(\Modules\News\Repositories\PostRepository::class)->all()->filter(function($value, $key) {
-                   return $value->category_id != 1;
-                });
+                $latestNews = collect(News::latest('10'))->whereNotIn('category.slug', ['duyuru','announcements']);
             @endphp
             @if(count($latestNews)>1)
-            <h3 class="title padding-20 white-text no-margin z-depth-2"><i class="fa fa-newspaper-o m-rgt-10"></i> HABERLER</h3>
+            <h3 class="title padding-20 white-text no-margin z-depth-2 text-uppercase"><i class="fa fa-newspaper-o m-rgt-10"></i> {{ trans_choice('themes::news.title',[1]) }}</h3>
             <div class="news-grid-navigation">
                 <a class="prev"><i class="fa fa-angle-left"></i></a>
                 <a class="next"><i class="fa fa-angle-right"></i></a>
@@ -37,17 +35,17 @@
             </div>
             @endif
         </div>
-        <div class="col-md-8">
-            @php $anouncements = NewsCategory::findBySlug('duyuru')->posts()->get() @endphp
-            @if(count($anouncements)>1)
+        <div class="col-md-4">
+            @php $anouncements = NewsCategory::findBySlug('duyuru')->load('posts') @endphp
+            @if(count($anouncements->posts)>1)
             <div class="announcement">
-                <h3 class="title padding-20 no-margin z-depth-2"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> DUYURULAR</h3>
+                <h3 class="title padding-20 no-margin z-depth-2 text-uppercase"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> {{ trans_choice('themes::news.announcement',[1]) }}</h3>
                 <div class="announcement-grid-navigation">
                     <a class="prev"><i class="fa fa-angle-left"></i></a>
                     <a class="next"><i class="fa fa-angle-right"></i></a>
                 </div>
                 <div class="announcement-grid">
-                    @foreach($anouncements as $announcement)
+                    @foreach($anouncements->posts as $announcement)
                         <article class="post-wrapper no-margin">
                             <div class="thumb-wrapper waves-effect waves-block waves-light height-150">
                                 <a href="{{ $announcement->url }}"><img src="{{ $announcement->present()->firstImage(370, 150, 'fit', 80) }}" class="img-responsive img-fit" alt=""></a>
@@ -96,7 +94,7 @@
                     items: 1
                 },
                 1000: {
-                    items: 1
+                    items: 2
                 }
             }
         });
@@ -108,7 +106,7 @@
             news_grid.trigger('next.owl.carousel');
         });
         @endif
-        @if(count($anouncements)>1)
+        @if(count($anouncements->posts)>1)
         var announcement = $('.announcement-grid').owlCarousel({
             loop: true,
             nav: false,
@@ -126,7 +124,7 @@
                     items: 1
                 },
                 1000: {
-                    items: 2
+                    items: 1
                 }
             }
         });

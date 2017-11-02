@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'title'         => 'Haberler',
-    'description'   => 'Tüp bebek bilgi bankası',
+    'title'         => '{0} Haber|[1,*] Haberler',
+    'description'   => 'En son haberler',
     'author posts'  => ':author yazıları',
     'recent posts'  => 'Son Haberler',
     'popular posts' => 'Popüler',
@@ -10,5 +10,5 @@ return [
     'category'      => [
         'title' => 'Kategori'
     ],
-    'announcement'  => 'Duyurular'
+    'announcement'  => '{0} Duyuru|[1,*] Duyurular'
 ];

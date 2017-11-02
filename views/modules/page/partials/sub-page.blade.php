@@ -1,4 +1,5 @@
 @php
+    $page_content   = $page->settings->page_body ?? 0;
     $list_per_page  = $page->settings->list_per_page ?? 6;
     $list_grid 		= $page->settings->list_grid ?? 6;
     $list_type 		= $page->settings->list_type ?? 'grid';
@@ -16,13 +17,18 @@
             </div>
         </div>
     @endif
+    @if($page_content)
+        <div class="text-justify">
+            {!! $page->body !!}
+        </div>
+    @endif
     <div class="row">
         @foreach($list_pages as $child)
             @if($list_type == 'grid')
                 <div class="col-md-{{ $list_grid }}">
-                    <article class="post-wrapper">
+                    <article class="post-wrapper m-bot-20">
                         @if($list_image)
-                        <div class="thumb-wrapper">
+                        <div class="thumb-wrapper" {!! $list_content || $list_button ? '' : 'style="margin-bottom:0 !important;"' !!}>
                             <img src="{{ $child->present()->firstImage(330,200,'fit',50) }}" class="img-responsive" alt="{{ $child->title }}">
                             <div class="entry-header">
                                 <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
@@ -30,7 +36,9 @@
                         </div>
                         @endif
                         <div class="entry-content">
+							@if(!$list_image)
                             <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
+							@endif
                             @if($list_content)
                             <p>{!! Str::words(strip_tags($child->body), 15) !!}</p>
                             @endif
@@ -42,14 +50,14 @@
                 </div>
             @else
                 <div class="col-md-12">
-                    <article class="post-wrapper">
+                    <article class="post-wrapper m-bot-20">
                         <div class="row">
                             @if($list_image)
                             <div class="col-md-4">
                                 <img src="{{ $child->present()->firstImage(330,200,'fit',50) }}" class="img-responsive" alt="{{ $child->title }}">
                             </div>
                             @endif
-                            <div class="col-md-8">
+                            <div class="col-md-{{ $list_image ? 8 : 12 }}">
                                 <div class="entry-content p-rgt-10">
                                     <h2 class="entry-title"><a href="{{ $child->url }}">{{ $child->title }}</a></h2>
                                     @if($list_content)

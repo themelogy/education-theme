@@ -36,4 +36,6 @@
             </div>
         </div>
     </section>
+
+    {!! Widget::get('portfolio_brands', [20]) !!}
 @stop

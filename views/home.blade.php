@@ -8,7 +8,7 @@
 
     @include('partials.sections.news')
 
-    @include('partials.components.clients')
+    {!! Widget::get('portfolio_brands', [20]) !!}
 
 @endsection
 
