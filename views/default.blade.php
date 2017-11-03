@@ -18,6 +18,16 @@
                             @include('page::partials.sub-page', ['type'=>$page->settings->list_type])
                         @else
                             <div class="content md-padding-40 text-justify">
+								@php
+									$cover_image = isset($page->settings->cover_image) ? $page->present()->firstImage(null,300,'resize',50) : 0;
+								@endphp
+								@if($cover_image)
+								<div class="row">
+									<div class="col-md-12 m-bot-20">
+										<img src="{{ $cover_image }}" class="img-responsive" alt="{{ $page->title }}">
+									</div>
+								</div>
+								@endif
                                 {!! $page->body !!}
                             </div>
                         @endif

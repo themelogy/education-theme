@@ -2,14 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-left">
-                @if($topNews = app(\Modules\News\Repositories\CategoryRepository::class)->findBySlug('duyuru'))
+                @if($topNews = NewsCategory::findBySlug('duyuru')->load('posts', 'translations'))
                 <div id="carousel-ticker" class="carousel vertical slide carousel-ticker" data-ride="carousel" data-interval="5000">
                     <div class="carousel-inner" role="listbox">
                         @foreach($topNews->posts as $topNew)
                         <div class="item @if($loop->first)active @endif">
                             <p class="ticker-headline">
                                 <a href="{{ $topNew->url }}">
-                                    <strong>{{ $topNew->category->name or null }}</strong> {{ $topNew->title }}
+                                    <strong><i class="fa fa-bullhorn" aria-hidden="true"></i></strong>
+                                    {{ $topNew->title }}
                                 </a>
                             </p>
                         </div>

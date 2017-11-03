@@ -36,7 +36,7 @@
             @endif
         </div>
         <div class="col-md-4">
-            @php $anouncements = NewsCategory::findBySlug('duyuru')->load('posts') @endphp
+            @php $anouncements = NewsCategory::findBySlug('duyuru')->load('posts', 'translations') @endphp
             @if(count($anouncements->posts)>1)
             <div class="announcement">
                 <h3 class="title padding-20 no-margin z-depth-2 text-uppercase"><i class="fa fa-bullhorn m-rgt-10" aria-hidden="true"></i> {{ trans_choice('themes::news.announcement',[1]) }}</h3>

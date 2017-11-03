@@ -14,6 +14,8 @@
 
 @include('partials.scripts')
 
+@include('partials.p-notify')
+
 @include('partials.components.popup')
 </body>
 

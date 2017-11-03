@@ -1,4 +1,5 @@
 @php
+    $cover_image    = isset($page->settings->cover_image) ? $page->present()->firstImage(900,300,'fit',50) : 0;
     $page_content   = $page->settings->page_body ?? 0;
     $list_per_page  = $page->settings->list_per_page ?? 6;
     $list_grid 		= $page->settings->list_grid ?? 6;
@@ -10,10 +11,10 @@
 @endphp
 
 <div class="content md-padding-40 text-justify default-blog grid-blog grid-page">
-    @if($image = $page->present()->firstImage(900,null,'resize',50))
+    @if($cover_image)
         <div class="row">
             <div class="col-md-12 m-bot-20">
-                <img src="{{ $image }}" class="img-responsive" alt="{{ $page->title }}">
+                <img src="{{ $cover_image }}" class="img-responsive" alt="{{ $page->title }}">
             </div>
         </div>
     @endif
