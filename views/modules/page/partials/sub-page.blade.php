@@ -7,7 +7,7 @@
     $list_content   = $page->settings->list_page_content ?? 0;
     $list_image     = $page->settings->list_page_image ?? 0;
     $list_button    = $page->settings->list_page_button ?? 0;
-    $list_pages     = $page->children()->paginate($list_per_page,['*'],'sayfa');
+    $list_pages     = $page->children()->orderBy('position')->paginate($list_per_page);
 @endphp
 
 <div class="content md-padding-40 text-justify default-blog grid-blog grid-page">

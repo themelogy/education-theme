@@ -4,6 +4,7 @@
             $coverImage = Theme::url('img/slides/slider-2.jpg');
         }
     }
+    $title_show = !empty($title_show) ? true : false;
     $uri = collect(array_slice(Request::segments(), 1))->implode('/');
 @endphp
 @if(isset($page))
@@ -16,7 +17,7 @@
                             <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
                                 @if(isset($page->settings->slogan->{locale()}))
                                     {{ $page->settings->slogan->{locale()} }}
-                                @elseif($subTitles = $page->present()->subTitles)
+                                @elseif($subTitles = $page->present()->subTitles($title_show))
                                     {{ $subTitles }}
                                 @else
                                     {{ $page->parent->title or $page->title }}&nbsp;
@@ -49,7 +50,7 @@
                         <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
                             @if(isset($page->settings->slogan->{locale()}))
                                 {{ $page->settings->slogan->{locale()} }}
-                            @elseif($subTitles = $page->present()->subTitles)
+                            @elseif($subTitles = $page->present()->subTitles($title_show))
                                 {{ $subTitles }}
                             @else
                                 {{ $page->parent->title or $page->title }}&nbsp;
