@@ -64,7 +64,7 @@
         }
         .widget_categories_page {
             background: {{ $parent->settings->menu_text_bg_color or null}} !important;
-            border-color: {{ $parent->settings->menu_bg_color or null }} !important;
+            border-color: {{ $parent->settings->menu_border_color or null }} !important;
         }
         .widget_categories_page a {
             color: {{ $parent->settings->menu_text_color or null }} !important;

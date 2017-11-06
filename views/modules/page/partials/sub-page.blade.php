@@ -78,7 +78,6 @@
     {!! $list_pages->render('page::pagination.default') !!}
 </div>
 
-
 @push('css_inline')
 <style>
     .entry-title {

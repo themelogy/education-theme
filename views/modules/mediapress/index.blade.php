@@ -9,11 +9,11 @@
 
     @if($page)
         @component('partials.components.page-title', ['page'=>$page, 'breadcrumb'=>$breadcrumb, 'title_show'=>'true'])
-        {{ $mediaTypes[$category] ?? 'Basında Biz' }}
+        {{ $mediaTypes[$category] ?? trans('mediapress::mediapress.title.mediapress') }}
         @endcomponent
     @else
         @component('partials.components.page-title', ['breadcrumb'=>$breadcrumb, 'title_show'=>'true'])
-        {{ $mediaTypes[$category] ?? 'Basında Biz' }}
+        {{ $mediaTypes[$category] ?? trans('mediapress::mediapress.title.mediapress') }}
         @endcomponent
     @endif
 
@@ -31,14 +31,15 @@
                             @foreach($medias as $media)
                                 <div class="col-md-12">
                                     <article class="post-wrapper m-bot-20">
+										<span class="label label-default">{{ $media->brand }}</span> 
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img class="img-responsive" src="{{ $media->present()->media_image(240,140) }}" />
+                                                <img class="img-responsive img-thumbnail" src="{{ $media->present()->media_image(240,140,'fit',50) }}" />
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="entry-title"><a href="{{ $media->present()->url }}">{{ $media->title }}</a></h2>
-                                                {!! $media->description !!}
-                                                <a class="browser-default btn btn-primary btn-xs" href="{{ $media->present()->url }}">{{ trans('global.buttons.read more') }}</a>
+                                                {!! Str::words($media->description, 20) !!}<br/>
+                                                <a class="browser-default btn btn-primary btn-xs m-top-5" href="{{ $media->present()->url }}">{{ trans('global.buttons.read more') }}</a>
                                             </div>
                                         </div>
                                     </article>
@@ -52,3 +53,15 @@
         </div>
     </section>
 @endsection
+
+@push('css_inline')
+<style>
+.post-wrapper .label {
+	position: absolute;
+	top:5px;
+	right: 15px;
+	font-size: 10px;
+	z-index: 100;
+}
+</style>
+@endpush
