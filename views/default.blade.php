@@ -29,6 +29,7 @@
 								</div>
 								@endif
                                 {!! $page->body !!}
+                                <div id="image-gallery"></div>
                             </div>
                         @endif
                     </div>
@@ -39,6 +40,7 @@
                         @else
                             <div class="content md-padding-40 text-justify">
                                 {!! $page->body !!}
+                                <div id="image-gallery"></div>
                             </div>
                         @endif
                     </div>
@@ -49,3 +51,7 @@
 
     {!! Widget::get('portfolio_brands', [20]) !!}
 @stop
+
+@if(!isset($page->settings->image_gallery))
+    @include('page::partials.image-gallery')
+@endif
