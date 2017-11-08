@@ -9,7 +9,7 @@
 <div class="form-group{{ $errors->has($name) ? ' has-error' : '' }}">
   <label class="col-md-3 font-12  control-label" for="<?php echo $name ?>"><?php echo $label ?></label>
   <div class="<?php echo $inputsize ?>">
-	 <select id="<?php echo $name ?>" name="<?php echo $name ?>" class="browser-default form-control <?php echo $inputheight ?>" multiple="multiple">
+	 <select id="<?php echo $name ?>" name="<?php echo $name ?>[]" class="browser-default form-control <?php echo $inputheight ?>" multiple="multiple">
 		<?php $i = 1; foreach ($values as $value): ?>
 			<?php if (trim($value)): ?>
 			<option value="<?php echo $value ?>"><?php echo $value ?></option>
