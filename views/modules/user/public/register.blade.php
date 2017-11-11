@@ -14,12 +14,12 @@
                     <div class="register-box-body padding-20">
                         @include('partials.notifications')
                         {!! Form::open(['route' => 'register.post']) !!}
-                        <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error has-feedback' : '' }}">
+                        <div class="form-group has-feedback {{ $errors->has('first_name') ? ' has-error has-feedback' : '' }}">
                             <input type="text" name="first_name" class="form-control" autofocus
                                    placeholder="{{ trans('user::users.form.first_name') }}" value="{{ old('first_name') }}">
                             {!! $errors->first('first_name', '<span class="help-block">:message</span>') !!}
                         </div>
-                        <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error has-feedback' : '' }}">
+                        <div class="form-group has-feedback {{ $errors->has('last_name') ? ' has-error has-feedback' : '' }}">
                             <input type="text" name="last_name" class="form-control" autofocus
                                    placeholder="{{ trans('user::users.form.last_name') }}" value="{{ old('last_name') }}">
                             {!! $errors->first('last_name', '<span class="help-block">:message</span>') !!}
@@ -40,7 +40,7 @@
                             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                             {!! $errors->first('password_confirmation', '<span class="help-block">:message</span>') !!}
                         </div>
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error has-feedback' : '' }}">
                             {!! Captcha::display() !!}
                             {!! $errors->first('g-recaptcha-response', '<span class="help-block">:message</span>') !!}
                         </div>
