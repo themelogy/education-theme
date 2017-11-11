@@ -9,8 +9,8 @@
     <section class="section-padding gray-bg p-top-bot-100">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4 z-depth-1 whiten">
-                    <h2 class="login-box-msg brand-bg white-text m-top-10" style="line-height: 50px;text-align: center;">{{ trans('user::auth.register') }}</h2>
+                <div class="col-md-4 col-md-offset-4 z-depth-2 whiten">
+                    <h2 class="login-box-msg brand-bg white-text m-top-10" style="line-height: 50px;text-align: center;"><i class="fa fa-user-plus"></i> {{ trans('user::auth.register') }}</h2>
                     <div class="register-box-body padding-20">
                         @include('partials.notifications')
                         {!! Form::open(['route' => 'register.post']) !!}
@@ -46,12 +46,16 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('user::auth.register me') }}</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-flat border-5">{{ trans('user::auth.register me') }}</button>
                             </div>
                         </div>
                         {!! Form::close() !!}
-
-                        <a href="{{ route('login') }}" class="text-center">{{ trans('user::auth.I already have a membership') }}</a>
+						
+                        <div class="row">
+                            <div class="col-xs-12 m-top-10">
+								<a href="{{ route('login') }}" class="btn btn-primary btn-block brand-bg btn-flat wave">{{ trans('user::auth.I already have a membership') }}</a>
+							</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,4 +65,13 @@
 
 @push('js_inline')
 {!! Captcha::setLang(locale())->script() !!}
+@endpush
+
+@push('css_inline')
+<style>
+.help-block {
+	font-size: 12px;
+	margin:-5px 0 0 0;
+}
+</style>
 @endpush

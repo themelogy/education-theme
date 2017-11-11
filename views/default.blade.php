@@ -29,7 +29,9 @@
 								</div>
 								@endif
                                 {!! $page->body !!}
-                                <div id="image-gallery"></div>
+                                @if(!isset($page->settings->image_gallery))
+                                <div id="image-gallery" class="m-top-20"></div>
+                                @endif
                             </div>
                         @endif
                     </div>
