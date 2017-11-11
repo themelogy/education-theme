@@ -32,8 +32,7 @@
         new PNotify({
             title: '{{ $alert_title }}',
             text: '{{ $alert_message }}',
-            type: '{{ $alert_type }}',
-            addclass: "stack-bottomright"
+            type: '{{ $alert_type }}'
         });
     </script>
 @endif
