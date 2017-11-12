@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    shell = require('gulp-shell'),
     sass = require('gulp-sass'),
     del = require('del'),
     concat = require('gulp-concat'),
@@ -9,6 +10,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     minify = require('gulp-minify'),
     less = require('gulp-less'),
+    minifyCss = require('gulp-minify-css'),
     themeInfo = require('./theme.json');
 
 var public_dir = '../../public';
@@ -49,6 +51,8 @@ gulp.task('clear', function () {
 gulp.task('copy', function () {
    gulp.src(resource_dir+'/img/**')
        .pipe(gulp.dest(assets_img_dir));
+    gulp.src(resource_dir+'/flags/**')
+        .pipe(gulp.dest(assets_dir+'/flags'));
    gulp.src(resource_dir+'/css/**')
        .pipe(gulp.dest(assets_css_dir));
    gulp.src(resource_dir+'/js/**')
@@ -90,7 +94,7 @@ gulp.task('vendor', function () {
     gulp.src([vendor_dir+'/revo-slider/css/**/*.css']).pipe(gulp.dest(css_dir+'/revoslider/css'));
     //Flag-icons
     gulp.src([vendor_dir+'/flag-icon-css/css/**/*']).pipe(gulp.dest(css_dir+'/flag-icon-css/css'));
-    gulp.src([vendor_dir+'/flag-icon-css/flags/**/*']).pipe(gulp.dest(css_dir+'/flag-icon-css/flags'));
+    gulp.src([vendor_dir+'/flag-icon-css/flags/**/*']).pipe(gulp.dest(resource_dir+'/flags'));
     //Menuzord
     gulp.src([vendor_dir+'/menuzord/css/**/*.css']).pipe(gulp.dest(css_dir));
     gulp.src([vendor_dir+'/menuzord/js/**/*.js']).pipe(gulp.dest(js_dir));
@@ -122,11 +126,21 @@ gulp.task('sass', function () {
 
 gulp.task('combine', function () {
     gulp.src([
+        fonts_dir + '/iconfont/material-icons.css',
+        css_dir + '/font-awesome.css',
+        css_dir + '/vendors/magnific-popup/magnific-popup.css',
+        css_dir + '/vendors/owl.carousel/assets/owl.carousel.css',
+        css_dir + '/vendors/owl.carousel/assets/owl.theme.default.min.css',
+        css_dir + '/vendors/flexSlider/flexslider.css',
+        css_dir + '/flag-icon-css/css/flag-icon.min.css',
+        css_dir + '/materialize.css',
         css_dir + '/bootstrap.css',
         css_dir + '/animate.css',
-        css_dir + '/bootstrap-dropdownhover.css'
+        css_dir + '/bootstrap-dropdownhover.css',
+        css_dir + '/style.css'
     ])
         .pipe(concat('all.min.css'))
+        .pipe(minifyCss())
         .pipe(gulp.dest(css_dir));
 
     gulp.src([
@@ -144,6 +158,25 @@ gulp.task('combine', function () {
     ])
         .pipe(concat('jquery.revolution.min.js'))
         .pipe(gulp.dest(js_dir));
+
+    gulp.src([
+        js_dir + "/jquery.min.js",
+        js_dir + "/materialize.min.js",
+        vendor_dir + "/bootstrap/dist/js/bootstrap.min.js",
+        js_dir + "/vendors/jquery.easing.min.js",
+        js_dir + "/vendors/smoothscroll.min.js",
+        js_dir + "/vendors/bootstrap-tabcollapse.min.js",
+        js_dir + "/vendors/owl.carousel/owl.carousel.min.js",
+        js_dir + "/vendors/jquery.inview.min.js",
+        js_dir + "/vendors/jquery.countTo.min.js",
+        js_dir + "/vendors/imagesloaded.js",
+        js_dir + "/vendors/jquery.shuffle.min.js",
+        js_dir + "/vendors/jquery.stellar.min.js",
+        js_dir + "/vendors/magnific-popup/jquery.magnific-popup.min.js",
+        js_dir + "/jquery.revolution.min.js"
+    ])
+        .pipe(concat('all.min.js'))
+        .pipe(gulp.dest(js_dir));
 });
 
 gulp.task('browserSync', function () {
@@ -156,6 +189,7 @@ gulp.task('browserSync', function () {
 
 gulp.task('default', function (callback) {
     runSequence('vendor', 'sass', 'combine', 'compress', 'copy', callback);
+    gulp.src("").pipe(shell("php ../../artisan stylist:publish " + themeInfo.name));
 });
 
 gulp.task('watch', ['browserSync'], function () {

@@ -10,21 +10,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Theme::url('img/ico/apple-touch-icon-72-precomposed.png') }}">
 <link rel="apple-touch-icon-precomposed" href="{{ Theme::url('img/ico/apple-touch-icon-57-precomposed.png') }}">
 
-{!! Theme::style("fonts/iconfont/material-icons.css") !!}
-@push('styles')
-{!! Theme::style("css/font-awesome.css") !!}
-@endpush
-{!! Theme::style("css/vendors/magnific-popup/magnific-popup.css") !!}
-
-{!! Theme::style("css/vendors/owl.carousel/assets/owl.carousel.css") !!}
-{!! Theme::style("css/vendors/owl.carousel/assets/owl.theme.default.min.css") !!}
-
-{!! Theme::style("css/vendors/flexSlider/flexslider.css") !!}
-{!! Theme::style("css/flag-icon-css/css/flag-icon.min.css") !!}
-
-{!! Theme::style("css/materialize.css") !!}
-{!! Theme::style("css/bootstrap.css") !!}
-{!! Theme::style("css/style.css?v=3") !!}
+{!! Theme::style("css/all.min.css") !!}
 
     <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

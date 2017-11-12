@@ -37,10 +37,10 @@
     jQuery(document).ready(function () {
         var $body = $(document.body);
         var navHeight = $('header').outerHeight(true) + 10;
-        $('.widget_categories').affix({
+        $('.widget_categories_page').affix({
             offset: {
-                top: 245,
-                bottom: $('footer').outerHeight(true) + 100
+                top: navHeight,
+                bottom: $('footer').outerHeight(true) + 300
             }
         });
         $body.scrollspy({
