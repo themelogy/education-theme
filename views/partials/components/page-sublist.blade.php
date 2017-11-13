@@ -32,25 +32,6 @@
     </div>
 @endif
 
-@push('js_inline')
-<script>
-    jQuery(document).ready(function () {
-        var $body = $(document.body);
-        var navHeight = $('header').outerHeight(true) + 10;
-        $('.widget_categories_page').affix({
-            offset: {
-                top: navHeight,
-                bottom: $('footer').outerHeight(true) + 300
-            }
-        });
-        $body.scrollspy({
-            target: '.left-side',
-            offset: navHeight
-        });
-    });
-</script>
-@endpush
-
 @if(isset($parent->settings))
     @push('css_inline')
     <style>

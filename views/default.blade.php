@@ -29,7 +29,7 @@
 								</div>
 								@endif
                                 {!! $page->body !!}
-                                @if(!isset($page->settings->image_gallery))
+                                @if(isset($page->settings->image_gallery))
                                 <div id="image-gallery" class="m-top-20"></div>
                                 @endif
                             </div>
@@ -54,6 +54,6 @@
     {!! Widget::get('portfolio_brands', [20]) !!}
 @stop
 
-@if(!isset($page->settings->image_gallery))
+@if(isset($page->settings->image_gallery))
     @include('page::partials.image-gallery')
 @endif
