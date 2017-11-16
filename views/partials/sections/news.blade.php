@@ -19,15 +19,15 @@
                             {{ $latestNew->created_at->format('d') }}<span>{{ $latestNew->created_at->formatLocalized('%h') }}</span>
                         </div>
                     </div>
-                    <div class="blog-content">
-                        <div class="hover-overlay grey lighten-4"></div>
+                    <div class="blog-content" style="min-height: 170px;">
+                        <div class="hover-overlay grey lighten-4"></div> 
                         <header class="entry-header-wrapper">
                             <div class="entry-header">
                                 <h2 class="entry-title"><a href="{{ $latestNew->url }}">{{ $latestNew->title }}</a></h2>
                             </div>
                         </header>
                         <div class="entry-content">
-                            {!! $latestNew->intro !!}
+                            {!! strip_tags($latestNew->intro) !!}
                         </div>
                     </div>
                 </article>
@@ -53,7 +53,7 @@
                                     {{ $announcement->created_at->format('d') }}<span>{{ $announcement->created_at->formatLocalized('%h') }}</span>
                                 </div>
                             </div>
-                            <div class="blog-content">
+                            <div class="blog-content" style="min-height: 170px;">
                                 <div class="hover-overlay grey lighten-4"></div>
                                 <header class="entry-header-wrapper">
                                     <div class="entry-header">
@@ -61,7 +61,7 @@
                                     </div>
                                 </header>
                                 <div class="entry-content">
-                                    {!! $announcement->intro !!}
+                                    {!! strip_tags($announcement->intro) !!}
                                 </div>
                             </div>
                         </article>

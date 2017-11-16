@@ -28,13 +28,34 @@
                         </div>
                     </div>
                 </header>
-                @if($image = $post->present()->firstImage(720, 300, 'fit', 50))
-                <div class="thumb-wrapper">
-                    <img src="{{ $image }}" class="img-responsive" alt="" >
-                </div>
-                @endif
-                <div class="entry-content">
+                <div class="entry-content" id="image-gallery">
+                    @if($image = $post->present()->firstImage(250, null, 'resize', 50))
+                    <a href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1" data-title="{{ $post->title }}">
+                <img src="{{ $image }}" alt="{{ $post->title }}" style="margin:0 20px 20px 0; float:left;">
+                </a>
+                    @endif
+                
                     {!! $post->content !!}
+
+                @php $images = $post->present()->images(600, 400,'fit',60); @endphp
+                @if(count($images)>1)
+                <div class="row m-top-30">
+                    <div class="col-md-8 col-md-offset-2">
+
+                  <div class="gallery-thumb">
+                    <ul class="slides">
+                      @foreach($images as $image)  
+                      <li data-thumb="{{ $image }}">
+                        <img v-img:group src="{{ $image }}" alt="image">
+                      </li>
+                      @endforeach
+                    </ul>
+                  </div><!-- /.gallery-thumb -->
+                    </div>
+                </div><!-- /.row -->
+                @endif
+
+                    <div class="clearfix"></div>
                 </div>
                 <footer class="entry-footer">
                     <div class="post-tags">
@@ -78,3 +99,20 @@
         </div>
     </div>
 @endsection
+
+@push('js_inline')
+{!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
+{!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+@endpush
+
+@push('js_inline')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/v-img@0.1.9/dist/v-img.min.js"></script>
+<script>
+    new Vue({
+        el: '#image-gallery'
+    });
+</script>
+@endpush

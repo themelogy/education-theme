@@ -1,12 +1,12 @@
-@extends('blog::layout.show')
+@extends('news::layout.show')
 
-@section('blog_title')
-    @component('partials.components.page-title', ['breadcrumb'=>'blog.show'])
-    {{ $post->title }}
+@section('news_title')
+    @component('partials.components.page-title', ['breadcrumb'=>'news.show'])
+        {{ $post->title }}
     @endcomponent
 @endsection
 
-@section('blog_content')
+@section('news_content')
     <div class="row">
         <div class="posts-content single-post">
             <article class="post-wrapper">
@@ -28,20 +28,41 @@
                         </div>
                     </div>
                 </header>
-                @if($image = $post->present()->firstImage(720, 300, 'fit', 50))
-                <div class="thumb-wrapper">
-                    <img src="{{ $image }}" class="img-responsive" alt="" >
-                </div>
-                @endif
                 <div class="entry-content">
+                    @if($image = $post->present()->firstImage(250, null, 'resize', 50))
+                        <a href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1" data-title="{{ $post->title }}">
+                            <img src="{{ $image }}" alt="{{ $post->title }}" style="margin:0 20px 20px 0; float:left;">
+                        </a>
+                    @endif
+
                     {!! $post->content !!}
+
+                    @php $images = $post->present()->images(600, 400,'fit',60); @endphp
+                    @if(count($images)>1)
+                        <div class="row m-top-30">
+                            <div class="col-md-8 col-md-offset-2">
+
+                                <div class="gallery-thumb">
+                                    <ul class="slides">
+                                        @foreach($images as $image)
+                                            <li data-thumb="{{ $image }}">
+                                                <img src="{{ $image }}" alt="image">
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div><!-- /.gallery-thumb -->
+                            </div>
+                        </div><!-- /.row -->
+                    @endif
+
+                    <div class="clearfix"></div>
                 </div>
                 <footer class="entry-footer">
                     <div class="post-tags">
                       <span class="tags-links">
                         <i class="fa fa-tags"></i>
                           @foreach($post->tags()->get() as $tag)
-                          <a href="{{ route('blog.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last),@endif</a>
+                              <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last),@endif</a>
                           @endforeach
                       </span>
                     </div>
@@ -60,16 +81,16 @@
                 <div class="row">
                     <div class="col-xs-6">
                         @if($previous = $post->present()->previous)
-                        <div class="previous-post-link">
-                            <a class="waves-effect waves-light" href="{{ $previous->url }}"><i class="fa fa-long-arrow-left"></i>{{ trans('blog::post.button.previous') }}</a>
-                        </div>
+                            <div class="previous-post-link">
+                                <a class="waves-effect waves-light" href="{{ $previous->url }}"><i class="fa fa-long-arrow-left"></i>{{ trans('blog::post.button.previous') }}</a>
+                            </div>
                         @endif
                     </div>
                     <div class="col-xs-6">
                         @if($next = $post->present()->next)
-                        <div class="next-post-link">
-                            <a class="waves-effect waves-light" href="{{ $next->url }}">{{ trans('blog::post.button.next') }}<i class="fa fa-long-arrow-right"></i></a>
-                        </div>
+                            <div class="next-post-link">
+                                <a class="waves-effect waves-light" href="{{ $next->url }}">{{ trans('blog::post.button.next') }}<i class="fa fa-long-arrow-right"></i></a>
+                            </div>
                         @endif
                     </div>
                 </div>
@@ -78,3 +99,10 @@
         </div>
     </div>
 @endsection
+
+@push('js_inline')
+    {!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
+    {!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+@endpush
