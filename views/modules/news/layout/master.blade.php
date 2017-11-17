@@ -18,3 +18,19 @@
     </section>
 
 @endsection
+
+@push('css_inline')
+<style>
+.news.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.news.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+</style>    
+@endpush

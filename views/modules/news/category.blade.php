@@ -7,7 +7,7 @@
 @endsection
 
 @section('news_content')
-    <div class="row">
+    <div class="news row">
         @foreach($posts as $post)
             @include('news::partials._post')
         @endforeach
