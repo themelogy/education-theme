@@ -2,7 +2,7 @@
 
 @section('news_title')
     @component('partials.components.page-title', ['breadcrumb'=>'news.show'])
-    {{ $post->title }}
+        {{ $post->title }}
     @endcomponent
 @endsection
 
@@ -16,10 +16,12 @@
                         <div class="entry-meta">
                             <ul class="list-inline">
                                 <li>
-                                    <i class="fa fa-user"></i><a href="{{ $post->category->url }}">{{ $post->category->name }}</a>
+                                    <i class="fa fa-user"></i><a
+                                            href="{{ $post->category->url }}">{{ $post->category->name }}</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-clock-o"></i><a href="#">{{ $post->created_at->formatLocalized('%d %B %Y') }}</a>
+                                    <i class="fa fa-clock-o"></i><a
+                                            href="#">{{ $post->created_at->formatLocalized('%d %B %Y') }}</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-comment-o"></i><a href="#">0</a>
@@ -28,32 +30,33 @@
                         </div>
                     </div>
                 </header>
+
                 <div class="entry-content" id="image-gallery">
                     @if($image = $post->present()->firstImage(250, null, 'resize', 50))
-                    <a href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1" data-title="{{ $post->title }}">
-                <img src="{{ $image }}" alt="{{ $post->title }}" style="margin:0 20px 20px 0; float:left;">
-                </a>
+                        <a href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1"
+                           data-title="{{ $post->title }}">
+                            <img src="{{ $image }}" alt="{{ $post->title }}" style="margin:0 20px 20px 0; float:left;">
+                        </a>
                     @endif
-                
                     {!! $post->content !!}
 
-                @php $images = $post->present()->images(600, 400,'fit',60); @endphp
-                @if(count($images)>1)
-                <div class="row m-top-30">
-                    <div class="col-md-8 col-md-offset-2">
+                    @php $images = $post->present()->images(600, 400,'fit',60); @endphp
+                    @if(count($images)>1)
+                        <div class="row m-top-30">
+                            <div class="col-md-8 col-md-offset-2">
 
-                  <div class="gallery-thumb">
-                    <ul class="slides">
-                      @foreach($images as $image)  
-                      <li data-thumb="{{ $image }}">
-                        <img v-img:group src="{{ $image }}" alt="image">
-                      </li>
-                      @endforeach
-                    </ul>
-                  </div><!-- /.gallery-thumb -->
-                    </div>
-                </div><!-- /.row -->
-                @endif
+                                <div class="gallery-thumb">
+                                    <ul class="slides">
+                                        @foreach($images as $image)
+                                            <li data-thumb="{{ $image }}">
+                                                <img v-img:group src="{{ $image }}" alt="image">
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div><!-- /.gallery-thumb -->
+                            </div>
+                        </div><!-- /.row -->
+                    @endif
 
                     <div class="clearfix"></div>
                 </div>
@@ -62,7 +65,8 @@
                       <span class="tags-links">
                         <i class="fa fa-tags"></i>
                           @foreach($post->tags()->get() as $tag)
-                          <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last),@endif</a>
+                              <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last)
+                                      ,@endif</a>
                           @endforeach
                       </span>
                     </div>
@@ -81,16 +85,20 @@
                 <div class="row">
                     <div class="col-xs-6">
                         @if($previous = $post->present()->previous)
-                        <div class="previous-post-link">
-                            <a class="waves-effect waves-light" href="{{ $previous->url }}"><i class="fa fa-long-arrow-left"></i>{{ trans('blog::post.button.previous') }}</a>
-                        </div>
+                            <div class="previous-post-link">
+                                <a class="waves-effect waves-light" href="{{ $previous->url }}"><i
+                                            class="fa fa-long-arrow-left"></i>{{ trans('blog::post.button.previous') }}
+                                </a>
+                            </div>
                         @endif
                     </div>
                     <div class="col-xs-6">
                         @if($next = $post->present()->next)
-                        <div class="next-post-link">
-                            <a class="waves-effect waves-light" href="{{ $next->url }}">{{ trans('blog::post.button.next') }}<i class="fa fa-long-arrow-right"></i></a>
-                        </div>
+                            <div class="next-post-link">
+                                <a class="waves-effect waves-light"
+                                   href="{{ $next->url }}">{{ trans('blog::post.button.next') }}<i
+                                            class="fa fa-long-arrow-right"></i></a>
+                            </div>
                         @endif
                     </div>
                 </div>
@@ -101,18 +109,16 @@
 @endsection
 
 @push('js_inline')
-{!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
-{!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+    {!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
+    {!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
 @endpush
 
 @push('js_inline')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/v-img@0.1.9/dist/v-img.min.js"></script>
-<script>
-    new Vue({
-        el: '#image-gallery'
-    });
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/v-img@0.1.9/dist/v-img.min.js"></script>
+    <script>
+        new Vue({
+            el: '#image-gallery'
+        });
+    </script>
 @endpush
