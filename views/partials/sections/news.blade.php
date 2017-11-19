@@ -9,6 +9,7 @@
             <div class="news-grid-navigation">
                 <a class="prev"><i class="fa fa-angle-left"></i></a>
                 <a class="next"><i class="fa fa-angle-right"></i></a>
+                <a href="{{ route('news.index') }}" class="all"><i class="fa fa-th font-18"></i></a>
             </div>
             <div class="news-grid">
                 @foreach($latestNews as $latestNew)
@@ -43,6 +44,7 @@
                 <div class="announcement-grid-navigation">
                     <a class="prev"><i class="fa fa-angle-left"></i></a>
                     <a class="next"><i class="fa fa-angle-right"></i></a>
+                    <a href="{{ route('news.category', ['duyuru']) }}" class="all"><i class="fa fa-th font-18"></i></a>
                 </div>
                 <div class="announcement-grid">
                     @foreach($anouncements->posts as $announcement)
