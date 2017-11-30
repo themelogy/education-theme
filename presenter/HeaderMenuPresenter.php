@@ -70,7 +70,7 @@ class HeaderMenuPresenter extends Presenter
      */
     public function getActiveStateOnChild($item, $state = ' active')
     {
-        return $item->hasActiveOnChild() ? $state : null;
+        return $item->hasActiveOnChild() || $item->isActive() ? $state : null;
     }
 
     /**
