@@ -109,8 +109,10 @@
 @endsection
 
 @push('js_inline')
-    {!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
-    {!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
+{!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
+{!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
 @endpush
 
 @push('js_inline')
