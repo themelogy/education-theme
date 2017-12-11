@@ -11,7 +11,7 @@
             <span class="post-comments-number"><i class="fa fa-comments"></i><a href="#">0</a></span>
         </div>
         <div class="entry-content">
-            <p>{!! Str::words(strip_tags(\Patchwork\Utf8::toAscii($post->intro)), 15) !!}</p>
+            <p>{!! Str::words(strip_tags($post->intro), 15) !!}</p>
         </div>
     </article>
 </div>
