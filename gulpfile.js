@@ -43,9 +43,7 @@ gulp.task('public', function () {
 });
 
 gulp.task('clear', function () {
-    del(js_dir + '/**');
-    del(css_dir + '/**');
-    del(fonts_dir + '/**');
+    del(theme_dir + '/**', {force:true});
 });
 
 gulp.task('copy', function () {
@@ -187,8 +185,8 @@ gulp.task('browserSync', function () {
     })
 });
 
-gulp.task('default', function (callback) {
-    runSequence('vendor', 'sass', 'combine', 'compress', 'copy', callback);
+gulp.task('default', function () {
+    runSequence('vendor', 'sass', 'combine', 'compress', 'copy');
     gulp.src("").pipe(shell("php ../../artisan stylist:publish " + themeInfo.name));
 });
 
