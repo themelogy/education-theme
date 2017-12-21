@@ -102,6 +102,9 @@ gulp.task('vendor', function () {
     //Flag-icons
     gulp.src([vendor_dir+'/flag-icon-css/css']).pipe(gulp.dest(css_dir+"/flag-icon-css"));
     gulp.src([vendor_dir+'/flag-icon-css/flags']).pipe(gulp.dest(css_dir+"/flag-icon-css"));
+    //Fotorama
+    gulp.src([vendor_dir+'/fotorama/**/*']).pipe(gulp.dest(js_dir+"/vendors/fotorama"));
+
     //Main.js
     gulp.src(vendor_dir + "/main.js").pipe(gulp.dest(js_dir));
 
