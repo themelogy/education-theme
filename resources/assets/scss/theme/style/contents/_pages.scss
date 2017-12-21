@@ -87,15 +87,6 @@
       h2, h3 {
         position: relative;
         margin-bottom: 15px;
-        &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -5px;
-          height: 1px;
-          width: 100%;
-          @include heading-underline(#ffffff, lighten($default-heading-color, 40%));
-        }
       }
       &:before {
         content:"";

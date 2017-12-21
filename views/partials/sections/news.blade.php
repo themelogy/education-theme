@@ -20,7 +20,7 @@
                             {{ $latestNew->created_at->format('d') }}<span>{{ $latestNew->created_at->formatLocalized('%h') }}</span>
                         </div>
                     </div>
-                    <div class="blog-content" style="min-height: 170px;">
+                    <div class="blog-content" style="min-height: 200px;">
                         <div class="hover-overlay grey lighten-4"></div> 
                         <header class="entry-header-wrapper">
                             <div class="entry-header">
@@ -55,7 +55,7 @@
                                     {{ $announcement->created_at->format('d') }}<span>{{ $announcement->created_at->formatLocalized('%h') }}</span>
                                 </div>
                             </div>
-                            <div class="blog-content" style="min-height: 170px;">
+                            <div class="blog-content" style="min-height: 200px;">
                                 <div class="hover-overlay grey lighten-4"></div>
                                 <header class="entry-header-wrapper">
                                     <div class="entry-header">

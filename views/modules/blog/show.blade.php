@@ -37,22 +37,23 @@
 
                     {!! $post->content !!}
 
-                    @php $images = $post->present()->images(600, 400,'fit',60); @endphp
+                    @php $images = $post->present()->images(600, null,'resize',80); @endphp
                     @if(count($images)>1)
-                        <div class="row m-top-30">
-                            <div class="col-md-8 col-md-offset-2">
-
-                                <div class="gallery-thumb">
-                                    <ul class="slides">
-                                        @foreach($images as $image)
-                                            <li data-thumb="{{ $image }}">
-                                                <img src="{{ $image }}" alt="image">
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div><!-- /.gallery-thumb -->
+                            <div class="fotorama m-top-50"
+                                 data-allowfullscreen="true"
+                                 data-keyboard="true"
+                                 data-width="700"
+                                 data-maxwidth="100%"
+                                 data-ratio="16/9"
+                                 data-nav="thumbs">
+                                @foreach($images as $image)
+                                    <img src="{{ $image }}" alt="{{ $post->title }}" />
+                                @endforeach
                             </div>
-                        </div><!-- /.row -->
+                            @push('js_inline')
+                            {!! Theme::style('js/vendors/fotorama/fotorama.css') !!}
+                            {!! Theme::script('js/vendors/fotorama/fotorama.js') !!}
+                            @endpush
                     @endif
 
                     <div class="clearfix"></div>
@@ -99,10 +100,3 @@
         </div>
     </div>
 @endsection
-
-@push('js_inline')
-    {!! Theme::style('js/vendors/flexSlider/flexslider.css') !!}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
-    {!! Theme::script('js/vendors/flexSlider/jquery.flexslider-min.js') !!}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
-@endpush
