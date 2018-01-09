@@ -4,9 +4,9 @@
 
     @include('partials.sections.slider')
 
-    @include('partials.sections.six-box')
-
     @include('partials.sections.news')
+
+    @include('partials.sections.six-box')
 
     {!! Widget::get('portfolio_brands', [20]) !!}
 

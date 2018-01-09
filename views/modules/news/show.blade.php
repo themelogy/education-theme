@@ -64,24 +64,24 @@
 
                     <div class="clearfix"></div>
                 </div>
+                <br/>
                 <footer class="entry-footer">
+                    @if($tags = $post->tags()->get())
+                    @if(count($tags)>0)
                     <div class="post-tags">
                       <span class="tags-links">
                         <i class="fa fa-tags"></i>
-                          @foreach($post->tags()->get() as $tag)
+                          @foreach($tags as $tag)
                               <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last)
                                       ,@endif</a>
                           @endforeach
                       </span>
                     </div>
-                    <ul class="list-inline right share-post">
-                        <li><a href="#"><i class="fa fa-facebook"></i> <span>Paylaş</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> <span>Tweet</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i> <span>Plus</span></a>
-                        </li>
-                    </ul>
+                    <br/>
+                    <hr class="p-top-bot-10" />
+                    @endif
+                    @endif
+                    <div id="share"></div>
                 </footer>
             </article>
 
@@ -115,4 +115,16 @@
 @push('js_inline')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials-theme-classic.min.css">
+<script>
+    $("#share").jsSocials({
+        shareIn: "popup",
+        showLabel: false,
+        showCount: "inside",
+        shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+    });
+</script>
 @endpush

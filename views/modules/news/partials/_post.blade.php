@@ -10,7 +10,7 @@
             </div>
             <span class="post-comments-number"><i class="fa fa-comments"></i><a href="#">0</a></span>
         </div>
-        <div class="entry-content">
+        <div class="entry-content" style="min-height: 90px;">
             <p>{!! Str::words(strip_tags($post->intro), 15) !!}</p>
         </div>
     </article>

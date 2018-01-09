@@ -30,7 +30,7 @@
             </ul>
             <div class="tab-content">
                 <div id="tt-popular-post-tab1" class="tab-pane fade active in">
-                    @foreach(NewsCategory::findBySlug('duyuru')->posts()->where('status', 2)->get() as $latest)
+                    @foreach(NewsCategory::findBySlug('duyuru')->posts()->where('status', 2)->take(5)->get() as $latest)
                         <div class="media">
                             <a class="media-left" href="#">
                                 <img src="{{ $latest->present()->firstImage(50,50,'fit',50) }}" alt="{{ $latest->title }}">
@@ -46,7 +46,7 @@
 
                 <div id="tt-popular-post-tab2" class="tab-pane fade">
 
-                    @foreach(News::popular(5) as $popular)
+                    @foreach(News::latest(5) as $popular)
                         <div class="media">
                             <a class="media-left" href="#">
                                 <img src="{{ $popular->present()->firstImage(50,50,'fit',50) }}" alt="{{ $popular->title }}">

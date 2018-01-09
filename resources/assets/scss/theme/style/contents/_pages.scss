@@ -2,8 +2,6 @@
   &.page-title-bg {
     background-size: cover !important;
     background-position: 50% 50% !important;
-    position: relative;
-    z-index: -10;
   }
   .breadcrumb {
     top:33%;
@@ -12,8 +10,6 @@
     background-repeat: no-repeat !important;
     @media screen and (min-width: 768px){
       background-size: 1300px !important;
-      position: relative;
-      z-index: -5;
     }
     background-position: center center !important;
     &:after {
@@ -88,6 +84,7 @@
       background: #ffffff;
       position: relative;
       margin-bottom: -150px;
+      z-index: 10;
       h2, h3 {
         position: relative;
         margin-bottom: 15px;
@@ -97,8 +94,8 @@
         @include box-shadow(0, -10px, 20px, rgba(0,0,0,0.075));
         width: 100%;
         height: 100px;
-        position: absolute;
-        z-index: -4;
+        position: relative;
+        z-index: 0;
         top: 0;
         left: 0;
       }
