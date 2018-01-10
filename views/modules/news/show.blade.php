@@ -16,15 +16,10 @@
                         <div class="entry-meta">
                             <ul class="list-inline">
                                 <li>
-                                    <i class="fa fa-user"></i><a
-                                            href="{{ $post->category->url }}">{{ $post->category->name }}</a>
+                                    <i class="fa fa-user"></i><a href="{{ $post->category->url }}">{{ $post->category->name }}</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-clock-o"></i><a
-                                            href="#">{{ $post->created_at->formatLocalized('%d %B %Y') }}</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-comment-o"></i><a href="#">0</a>
+                                    <i class="fa fa-clock-o"></i><a href="#">{{ $post->created_at->formatLocalized('%d %B %Y') }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -72,8 +67,8 @@
                       <span class="tags-links">
                         <i class="fa fa-tags"></i>
                           @foreach($tags as $tag)
-                              <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }} @if(!$loop->last)
-                                      ,@endif</a>
+                              <a href="{{ route('news.tag', [$tag->slug]) }}">{{ $tag->name }}
+                                  @if(!$loop->last),@endif</a>
                           @endforeach
                       </span>
                     </div>
@@ -113,12 +108,13 @@
 @endsection
 
 @push('js_inline')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+{!! Theme::style('vendor/lightbox2/css/lightbox.min.css') !!}
+{!! Theme::script('vendor/lightbox2/js/lightbox.min.js') !!}
 
-<script src="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jssocials@1.5.0/dist/jssocials-theme-classic.min.css">
+{!! Theme::script('vendor/jssocials/jssocials.min.js') !!}
+{!! Theme::style('vendor/jssocials/jssocials.css') !!}
+{!! Theme::style('vendor/jssocials/jssocials-theme-classic.css') !!}
+
 <script>
     $("#share").jsSocials({
         shareIn: "popup",

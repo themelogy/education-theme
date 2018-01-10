@@ -28,6 +28,7 @@ var assets_css_dir = assets_dir + "/css";
 var assets_js_dir = assets_dir + "/js";
 var assets_img_dir = assets_dir + "/img";
 var assets_fonts_dir = assets_dir + "/fonts";
+var assets_vendor_dir = assets_dir + "/vendor";
 
 var sass_dir = resource_dir + "/scss";
 var vendor_dir = resource_dir + "/vendor";
@@ -104,6 +105,10 @@ gulp.task('vendor', function () {
     gulp.src([vendor_dir+'/flag-icon-css/flags']).pipe(gulp.dest(css_dir+"/flag-icon-css"));
     //Fotorama
     gulp.src([vendor_dir+'/fotorama/**/*']).pipe(gulp.dest(js_dir+"/vendors/fotorama"));
+    //Jssocials
+    gulp.src([vendor_dir+'/jssocials/dist/**/*']).pipe(gulp.dest(assets_vendor_dir+"/jssocials"));
+    //Lightbox
+    gulp.src([vendor_dir+'/lightbox2/dist/**/*']).pipe(gulp.dest(assets_vendor_dir+"/lightbox2"));
 
     //Main.js
     gulp.src(vendor_dir + "/main.js").pipe(gulp.dest(js_dir));

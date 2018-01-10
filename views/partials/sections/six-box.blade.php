@@ -1,4 +1,4 @@
-<section class="section-padding featured-boxes p-bot-0">
+<section class="section-padding featured-boxes p-top-0">
     <div class="container">
         <div class="text-center">
             <div class="row">
