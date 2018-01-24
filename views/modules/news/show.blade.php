@@ -31,7 +31,7 @@
 
                     @if(count($images)==1)
                         @if($image = $post->present()->firstImage(250, null, 'resize', 50))
-                            <a href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1" data-title="{{ $post->title }}">
+                            <a class="first-image" href="{{ $post->present()->firstImage(600, null, 'resize', 50) }}" data-lightbox="image-1" data-title="{{ $post->title }}">
                                 <img src="{{ $image }}" alt="{{ $post->title }}" style="margin:0 20px 20px 0; float:left;">
                             </a>
                         @endif

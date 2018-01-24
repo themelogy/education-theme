@@ -1,8 +1,18 @@
 /* ----------------------------------------------------------------
 Single Blog Post
 -----------------------------------------------------------------*/
-.single-post .post-wrapper {
-  margin-bottom: 30px;
+.single-post {
+  .post-wrapper {
+    margin-bottom: 30px;
+    .first-image {
+      @media screen and (max-width: 750px) {
+        img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 }
 
 .single-post .entry-header .entry-title {

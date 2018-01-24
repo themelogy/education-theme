@@ -15,14 +15,13 @@
                     @foreach($latestNews as $latestNew)
                         <article class="post-wrapper no-margin">
                             <div class="thumb-wrapper">
-                                <img src="{{ $latestNew->present()->firstImage(360, 270, 'fit', 50) }}"
-                                     class="img-responsive" alt="{{ $latestNew->title }}">
+                                <a href="{{ $latestNew->url }}"><img src="{{ $latestNew->present()->firstImage(360, 270, 'fit', 50) }}"
+                                     class="img-responsive" alt="{{ $latestNew->title }}"></a>
                                 <div class="post-date">
                                     {{ $latestNew->created_at->format('d') }}<span>{{ $latestNew->created_at->formatLocalized('%h') }}</span>
                                 </div>
                                 <div class="entry-header">
-                                    <h2 class="entry-title"><a href="{{ $latestNew->url }}">{{ $latestNew->title }}</a>
-                                    </h2>
+                                    <h2 class="entry-title"><a href="{{ $latestNew->url }}">{{ $latestNew->title }}</a></h2>
                                 </div>
                             </div>
                             <div class="entry-content p-top-bot-10 p-lft-rgt-20 height-130">
@@ -44,11 +43,11 @@
                         <a href="{{ route('news.category', ['duyuru']) }}" class="all"><i class="fa fa-th font-18"></i></a>
                     </div>
                     <div class="announcement-grid default-blog grid-blog">
-                        @foreach($anouncements->posts as $announcement)
+                        @foreach($anouncements->posts()->where('status', 2)->get() as $announcement)
                             <article class="post-wrapper no-margin">
                                 <div class="thumb-wrapper">
-                                    <img src="{{ $announcement->present()->firstImage(360, 280, 'fit', 50) }}"
-                                         class="img-responsive" alt="{{ $announcement->title }}">
+                                    <a href="{{ $announcement->url }}"><img src="{{ $announcement->present()->firstImage(360, 280, 'fit', 50) }}"
+                                         class="img-responsive" alt="{{ $announcement->title }}"></a>
                                     <div class="post-date">
                                         {{ $latestNew->created_at->format('d') }}<span>{{ $latestNew->created_at->formatLocalized('%h') }}</span>
                                     </div>

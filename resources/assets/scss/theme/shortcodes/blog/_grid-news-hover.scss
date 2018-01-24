@@ -93,6 +93,10 @@ Grid News Hover Style
   .post-wrapper:hover .entry-title a {
     color: $grid-news-text-hover;
   }
+  .post-wrapper:hover .entry-meta li a,
+  .post-wrapper:hover .entry-title a {
+    color: #fff !important;
+  }
   .post-wrapper .hover-overlay {
     position: absolute;
     bottom: -100px;

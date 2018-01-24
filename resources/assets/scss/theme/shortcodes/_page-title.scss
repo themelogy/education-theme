@@ -20,7 +20,7 @@ Page title
         background-color: transparent;
         width: auto;
         top: 35px !important;
-        left: auto;
+        left: auto; //auto
         right: 25px;
         margin: -10px 0 0 0;
         padding: 0;
@@ -29,6 +29,25 @@ Page title
         z-index: 5;
         &:before {
             display: none;
+        }
+    }
+    .section-breadcrumb {
+        position:relative;
+        .breadcrumb {
+            position: absolute;
+            background-color: transparent;
+            width: auto;
+            top: 0 !important;
+            left: 0; //auto
+            right: 25px;
+            margin: -10px 0 0 0;
+            padding: 0;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 5;
+            &:before {
+                display: none;
+            }
         }
     }
     &.no-bg {
@@ -90,6 +109,6 @@ Fixed-background page title
         right: 0 !important;
         top: 0 !important;
         margin: 10px 0 0 !important;
-        position: relative !important;   
+        position: relative !important;
     }
 }

@@ -14,19 +14,23 @@
                 <div class="row">
                     <div class="col-md-9 col-md-offset-3">
                         <div class="title-bg p-lft-rgt-25 p-top-30 p-bot-10">
-                            <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
-                                @if(isset($page->settings->slogan->{locale()}))
-                                    {{ $page->settings->slogan->{locale()} }}
-                                @elseif($subTitles = $page->present()->subTitles($title_show))
-                                    {{ $subTitles }}
-                                @else
-                                    {{ $page->parent->title or $page->title }}&nbsp;
+                            @section('yedek')
+                                <h2 class="title white-text font-16 m-bot-5 border-bottom-1 p-bot-10">
+                                    @if(isset($page->settings->slogan->{locale()}))
+                                        {{ $page->settings->slogan->{locale()} }}
+                                    @elseif($subTitles = $page->present()->subTitles($title_show))
+                                        {{ $subTitles }}
+                                    @else
+                                        {{ $page->parent->title or null }}&nbsp;
+                                    @endif
+                                </h2>
+                            @endsection
+                            <div class="section-breadcrumb title white-text font-16 m-bot-5 border-bottom-1 p-bot-20">
+                                @if($breadcrumb)
+                                    {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
                                 @endif
-                            </h2>
+                            </div>
                             <h1 class="title white-text p-top-5 font-22">{{ $slot }}</h1>
-                            @if($breadcrumb)
-                                {!! Breadcrumbs::renderIfExists($breadcrumb) !!}
-                            @endif
                             <span class="overlay background"></span>
                         </div>
                     </div>
