@@ -41,6 +41,30 @@ if($sessPassword == $loginPassword) {
                         @else
                             @include('page::partials.password-form')
                         @endif
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="padding-40 p-top-0 p-bot-0">
+                                        @if($tags = $page->tags()->get())
+                                            @if(count($tags)>0)
+                                                <div class="post-tags">
+                                              <span class="tags-links">
+                                                <i class="fa fa-tags"></i>
+                                                  @foreach($tags as $tag)
+                                                      <a href="{{ route('page.tag', [$tag->slug]) }}">{{ $tag->name }}
+                                                          @if(!$loop->last),@endif</a>
+                                                  @endforeach
+                                              </span>
+                                                </div>
+                                                <br/>
+                                                <hr class="p-top-bot-10" />
+                                            @endif
+                                        @endif
+                                        <div id="share"></div>
+                                    </div>
+                                </div>
+                            </div>
+
                     </div>
                 @else
                     <div class="col-md-12">
@@ -56,6 +80,30 @@ if($sessPassword == $loginPassword) {
                         @else
                             @include('page::partials.password-form')
                         @endif
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="padding-40 p-top-0 p-bot-0">
+                                        @if($tags = $page->tags()->get())
+                                            @if(count($tags)>0)
+                                                <div class="post-tags">
+                                              <span class="tags-links">
+                                                <i class="fa fa-tags"></i>
+                                                  @foreach($tags as $tag)
+                                                      <a href="{{ route('page.tag', [$tag->slug]) }}">{{ $tag->name }}
+                                                          @if(!$loop->last),@endif</a>
+                                                  @endforeach
+                                              </span>
+                                                </div>
+                                                <br/>
+                                                <hr class="p-top-bot-10" />
+                                            @endif
+                                        @endif
+                                        <div id="share"></div>
+                                    </div>
+                                </div>
+                            </div>
+
                     </div>
                 @endif
             </div>
@@ -64,3 +112,17 @@ if($sessPassword == $loginPassword) {
 
     {!! Widget::get('portfolio_brands', [20]) !!}
 @stop
+
+@push('js_inline')
+    {!! Theme::script('vendor/jssocials/jssocials.min.js') !!}
+    {!! Theme::style('vendor/jssocials/jssocials.css') !!}
+    {!! Theme::style('vendor/jssocials/jssocials-theme-classic.css') !!}
+    <script>
+        $("#share").jsSocials({
+            shareIn: "popup",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+        });
+    </script>
+@endpush
