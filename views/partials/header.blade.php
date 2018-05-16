@@ -3,7 +3,7 @@
 <header id="header" class="tt-nav nav-border-bottom">
     <div class="header-sticky light-header ">
         <div class="container">
-            @include('partials.header.search')
+            {{-- @include('partials.header.search') --}}
             <div id="materialize-menu" class="menuzord">
                 <a href="{{ url(locale()) }}" class="logo-brand">
                     <img src="{{ Theme::url('img/logos/logo3.svg') }}" alt="{{ setting('theme::company-name') }}">
