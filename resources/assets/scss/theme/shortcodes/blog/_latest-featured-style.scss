@@ -1,0 +1,64 @@
+/*
+Latest Featured News Style
+----------------------------------------------------*/
+.latest-featured-news .post-wrapper {
+  padding: 0;
+  border: 0;
+  margin-bottom: 30px;
+}
+
+.latest-featured-news .thumb-wrapper {
+  margin: 0;
+}
+
+.latest-featured-news .blog-content {
+  padding: 16px 16px;
+  border: 1px solid #eee;
+}
+
+.latest-featured-news .featured-news .blog-content {
+  padding: 25px 36px;
+}
+
+@media (max-width: 479px) {
+  .latest-featured-news .featured-news .blog-content {
+    padding: 25px 20px;
+  }
+}
+
+.latest-featured-news .post-wrapper:hover .blog-content {
+  border: 1px solid transparent;
+}
+
+.latest-featured-news .entry-title {
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 0;
+}
+
+.latest-featured-news .featured-news .entry-title {
+  margin-bottom: 12px;
+}
+
+.latest-featured-news .entry-title a {
+  color: #202020;
+}
+
+.latest-featured-news .entry-title a:hover {
+  color: #03a9f4;
+}
+
+.latest-featured-news .blog-content .entry-meta {
+  margin-bottom: 18px;
+}
+
+.latest-featured-news .blog-content a.readmore {
+  font-weight: 500;
+  color: #999;
+}
+
+.latest-featured-news .blog-content a.readmore:hover {
+  color: #03a9f4;
+}

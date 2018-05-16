@@ -1,0 +1,7 @@
+@mixin blur-effect($default:5) {
+  -webkit-filter: blur($default+px);
+  -moz-filter: blur($default+px);
+  -o-filter: blur($default+px);
+  -ms-filter: blur($default+px);
+  filter: blur($default+px);
+}

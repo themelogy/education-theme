@@ -1,0 +1,57 @@
+/*
+Twitter Feed Widget
+--------------------------------------------------------*/
+.widget_tt_twitter {
+  padding: 30px;
+  background-color: #55acee;
+  color: #fff;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.widget_tt_twitter i {
+  display: block;
+  font-size: 50px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.widget_tt_twitter a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.widget_tt_twitter a:hover {
+  color: #ed145b;
+}
+
+.twitter-widget.owl-theme .owl-dots .owl-dot.active span,
+.twitter-widget.owl-theme .owl-dots .owl-dot:hover span {
+  background: #1870b2;
+}
+
+/*
+Instagram Photo Feed Widget
+--------------------------------------------------------*/
+.widget_tt_instafeed {
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.widget_tt_instafeed i {
+  font-size: 30px;
+  margin-top: 34px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.widget_tt_instafeed h3 {
+  font-size: 20px !important;
+  text-transform: uppercase;
+  margin-bottom: 32px !important;
+}
+
+.widget_tt_instafeed img {
+  width: 33%;
+}

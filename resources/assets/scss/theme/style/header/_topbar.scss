@@ -1,0 +1,347 @@
+/*-----------------------------------------------------
+Top Bar
+-------------------------------------------------------*/
+/*
+@media screen and (max-width: 768px){
+  .top-bar {
+    padding: 46px 0 0 0;
+    margin: 0;
+    .container {
+
+    }
+    [class*='col-'] {
+      padding: 0;
+      margin: 0;
+    }
+    height: auto !important;
+    .top-social {
+      width: 100%;
+      text-align:center;
+    }
+    .quick-menu {
+      width: 100%;
+      ul {
+        width: 100%;
+      }
+      .dropdown-button, .btn, a {
+        font-size: 10px !important;
+        background-color: transparent !important;
+        width: 100% !important;
+        box-shadow: none;
+      }
+    }
+  }
+}
+*/
+.top-bar {
+  height: 46px;
+  background-color: $topbar-bg-color;
+  .topbar-cta {
+    li {
+      display: inline-block;
+    }
+    a {
+      letter-spacing: 1px;
+      line-height: 46px;
+      color: $topbar-link-color;
+      @include link-hover($topbar-link-hover);
+      i{
+        position: relative;
+        top: 7px;
+      }
+    }
+  }
+  .social-top {
+    margin-top: 13px;
+    margin-bottom: 0;
+    a {
+      i{
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        color: #0379ae;
+        text-align: center;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    &.light a i {
+      color: #fff;
+    }
+  }
+  .top-social {
+    display: inline-block;
+  }
+  .quick-menu {
+    display: inline-block;
+    margin-left: -3px;
+    position: relative;
+    top: -6px;
+    padding-top: 6px;
+    .dropdown-button, .btn {
+     background-color: $quick-menu-bg-color !important;
+     color: $quick-menu-link-color !important;
+    }
+    > a {
+      height: 46px;
+    }
+    ul {
+      li {
+        min-height: 20px;
+        &:hover {
+          a:before {
+            width: 100%;
+          }
+        }
+        a {
+          padding: 10px 20px;
+          color: $default-theme-color;
+          position: relative;
+          font-weight: 500;
+          &:hover {
+            color: $default-reverse-color;
+          }
+          &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: $default-theme-color;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ie9 {
+  .top-bar {
+    .topbar-cta {
+      a{
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.ticker-headline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 15px 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+.carousel.vertical .carousel-inner {
+  height: 100%;
+  width: auto;
+  > .item {
+    width: auto;
+    padding-right: 50px;
+    transition: 0.6s ease-in-out top;
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      transition: 0.6s ease-in-out;
+      &.next,
+      &.active.right {
+        transform: translate3d(0, 100%, 0);
+        top: 0;
+      }
+      &.prev,
+      &.active.left {
+        transform: translate3d(0, -100%, 0);
+        top: 0;
+      }
+      &.next.left,
+      &.prev.right,
+      &.active {
+        transform: translate3d(0, 0, 0);
+        top: 0;
+      }
+    }
+  }
+  > .active,
+  > .next,
+  > .prev {
+    display: block;
+  }
+  > .active {
+    top: 0;
+  }
+  > .next,
+  > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  > .next {
+    top: 100%;
+  }
+  > .prev {
+    top: -100%;
+  }
+  > .next.left,
+  > .prev.right {
+    top: 0;
+  }
+  > .active.left {
+    top: -100%;
+  }
+  > .active.right {
+    top: 100%;
+  }
+}
+
+.carousel-ticker {
+  .ticker-headline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 12px 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    a {
+      color: $topbar-ticker-title-color;
+      text-align: left;
+      strong {
+        color: $topbar-ticker-strong-title;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &.carousel.vertical .carousel-inner {
+    height: 100%;
+    width: auto;
+    > .item {
+      width: auto;
+      padding-right: 50px;
+      transition: 0.6s ease-in-out top;
+      @media all and (transform-3d), (-webkit-transform-3d) {
+        transition: 0.6s ease-in-out;
+        &.next,
+        &.active.right {
+          transform: translate3d(0, 100%, 0);
+          top: 0;
+        }
+        &.prev,
+        &.active.left {
+          transform: translate3d(0, -100%, 0);
+          top: 0;
+        }
+        &.next.left,
+        &.prev.right,
+        &.active {
+          transform: translate3d(0, 0, 0);
+          top: 0;
+        }
+      }
+    }
+    > .active,
+    > .next,
+    > .prev {
+      display: block;
+    }
+    > .active {
+      top: 0;
+    }
+    > .next,
+    > .prev {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    > .next {
+      top: 100%;
+    }
+    > .prev {
+      top: -100%;
+    }
+    > .next.left,
+    > .prev.right {
+      top: 0;
+    }
+    > .active.left {
+      top: -100%;
+    }
+    > .active.right {
+      top: 100%;
+    }
+  }
+
+  &.carousel.vertical {
+    .carousel-control {
+      left: auto;
+      width: 50px;
+      color: $topbar-ticker-control-color;
+      &:hover {
+        color: $topbar-ticker-control-hover-color;
+      }
+      &.up {
+        top: 0;
+        right: 0;
+        bottom: 40%;
+      }
+      &.down {
+        top: 30%;
+        right: 0;
+        bottom: 0;
+      }
+      // Toggles
+      .icon-prev,
+      .icon-next,
+      .glyphicon-chevron-up,
+      .glyphicon-chevron-down {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        display: inline-block;
+      }
+      .icon-prev,
+      .glyphicon-chevron-up {
+        left: 50%;
+        margin-left: -10px;
+        top: 50%;
+        margin-top: -10px;
+      }
+      .icon-next,
+      .glyphicon-chevron-down {
+        left: 50%;
+        margin-left: -10px;
+        top: 50%;
+        margin-top: -10px;
+      }
+      .icon-up,
+      .icon-down {
+        width: 20px;
+        height: 20px;
+        //margin-top: -10px;
+        line-height: 1;
+        font-family: serif;
+      }
+      .icon-prev {
+        &:before {
+          font-family: 'FontAwesome', sans-serif !important;
+          content: "\f105";
+
+        }
+      }
+      .icon-next {
+        &:before {
+          font-family: 'FontAwesome', sans-serif !important;
+          content: "\f105";
+        }
+      }
+    }
+  }
+}

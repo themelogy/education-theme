@@ -1,0 +1,62 @@
+/* ================= Progress bar ==================== */
+.progress-section {
+  position: relative;
+}
+.progress-title {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.progress {
+  box-shadow: none;
+  background-color: #eee;
+  height: 5px;
+  overflow: visible;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+.progress-bar {
+  box-shadow: none;
+  text-align: right;
+}
+
+.progress-bar span {
+  position: absolute;
+  top: -32px;
+  color: #999;
+  font-size: 14px;
+  display: inline-block;
+}
+
+
+/*IE Fixing*/
+.ie11 .progress-bar span,
+.ie10 .progress-bar span,
+.ie9 .progress-bar span {
+  top: -25px;
+  right: 0;
+}
+
+.progress .progress-bar.six-sec-ease-in-out {
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition:  width 2s ease-in-out;
+}
+
+
+/*Progress Dot Style*/
+.progress-dot {
+  position: relative;
+}
+.progress-dot::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  margin-top: -8px;
+  right: -1px;
+}
