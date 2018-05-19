@@ -60,7 +60,7 @@
                        data-constrainWidth="true"
                        data-alignment="left"
                        data-belowOrigin="true" style="margin-right: -1px;">
-                        <span class="flag-icon flag-icon-{{ LaravelLocalization::getCurrentLocale() == "en" ? "us" : LaravelLocalization::getCurrentLocale() }} m-rgt-10"></span> {{ LaravelLocalization::getCurrentLocaleNative() }} <i class="fa fa-angle-down m-lft-5"></i>
+                        <span class="flag-icon flag-icon-{{ LaravelLocalization::getCurrentLocale() == "en" ? "gb" : LaravelLocalization::getCurrentLocale() }} m-rgt-10"></span> {{ LaravelLocalization::getCurrentLocaleNative() }} <i class="fa fa-angle-down m-lft-5"></i>
                     </a>
                     <ul id="language" class="dropdown-content">
                         @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
