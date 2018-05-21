@@ -125,4 +125,7 @@ if($sessPassword == $loginPassword) {
             shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
         });
     </script>
+    @if(isset($page->settings->tracking_code))
+        {!! $page->settings->tracking_code !!}
+    @endif
 @endpush
