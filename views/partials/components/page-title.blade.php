@@ -37,7 +37,7 @@
                 </div>
             </div>
         </section>
-    @elseif($page = Page::findByUriInLocale($uri, locale()))
+    @elseif($page = Page::findBySlug($uri, locale()))
     @php
         if(isset($page)) {
             if(!$coverImage = $page->present()->coverImage(1280,368,'fit',80)) {
