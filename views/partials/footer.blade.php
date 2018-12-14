@@ -13,6 +13,8 @@
 
                     @include('partials.components.social', ['class'=>'social-link tt-animate ltr text-left m-top-10'])
 
+                    <p style="font-size: 0.8em; line-height: 1.5em; text-align: justify;">"(Okulumuz Özel Jale Tezer Anadolu Lisesi iki ders yılı boyunca türlü denetimleri kapsayan zorlu yetkilendirme sürecini başarıyla tamamlayarak 19.07.2018 tarihi itibariyle Uluslararası Bakalorya Dünya Okulu / International Baccalaureate (IB) World School olmuştur. Bu gelişmeyi gururla ve büyük mutlulukla siz değerli velilerimiz, sevgili öğrencilerimiz ve elbette özverili öğretmenlerimizle paylaşıyoruz.)"</p>
+
                     <div id="address-carousel" class="address carousel vertical slide p-top-30 p-bot-20 address-ticker" data-ride="carousel" data-interval="5000">
                         <div class="carousel-inner">
                             @foreach(app('locations') as $location)
@@ -89,3 +91,5 @@
         </div>
     </div>
 </div>
+
+@includeIf('core::cookie-law')
