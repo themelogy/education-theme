@@ -2,7 +2,8 @@
 
 return [
     'intro'   => [
-        'select language' => 'Please select language'
+        'select language' => 'Please select language',
+        'year'            => '54 years'
     ],
     'header'  => [
         'quick-menu' => 'QUICK MENU'

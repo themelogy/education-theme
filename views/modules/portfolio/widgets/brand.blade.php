@@ -1,19 +1,18 @@
-@if(count($brands)>0)
-    <section class="section-padding clients">
-        <div class="container">
-            <div class="clients-grid p-top-bot-20">
-                @foreach($brands as $brand)
-                    <div class="border-box">
-                        <a target="_blank" href="{{ $brand->website }}">
-                            <img src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}"
-                                 alt="{{ $brand->title }}">
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+<section class="section-padding clients">
+    <div class="container">
+        <div class="clients-grid p-top-bot-20">
+            @foreach($brands as $brand)
+                <div class="border-box">
+                    <a target="_blank" href="{{ $brand->website }}">
+                        <img src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}"
+                             alt="{{ $brand->title }}">
+                    </a>
+                </div>
+            @endforeach
         </div>
-    </section>
-    @push('js_inline')
+    </div>
+</section>
+@push('js_inline')
     <script type="text/javascript">
         jQuery(document).ready(function () {
             $('.clients-grid').owlCarousel({
@@ -38,5 +37,4 @@
             });
         });
     </script>
-    @endpush
-@endif
+@endpush

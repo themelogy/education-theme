@@ -2,7 +2,8 @@
 
 return [
   'intro' => [
-    'select language' => 'Lütfen dil seçimi yapınız'
+    'select language' => 'Lütfen dil seçimi yapınız',
+    'year'            => '54.yıl'
   ],
   'header' => [
       'quick-menu' => 'HIZLI ERİŞİM'

@@ -4,7 +4,7 @@
     <div class="section-intro">
         <div class="content">
             <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg') }}" alt="{{ setting('theme::company-name') }}" />
-            <div class="year">54.yıl</div>
+            <div class="year">{{ trans('themes::theme.intro.year') }}</div>
             <div class="language">
                 <ul>
                     @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
@@ -28,7 +28,6 @@
 
     <div class="overlay background bg-fixed"></div>
 
-    <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-position">
             <img src="{{ Theme::url('img/logos/logo3.svg') }}" height="100" alt="logo">
@@ -37,7 +36,6 @@
             </div>
         </div>
     </div>
-    <!-- End Preloader -->
 @endsection
 
 @push('css_inline')

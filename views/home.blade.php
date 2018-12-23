@@ -2,13 +2,13 @@
 
 @section('content')
 
-    @include('partials.sections.slider')
+    @themeSlide('anasayfa')
 
-    @include('partials.sections.news')
+    @include('news::widgets.home.news')
 
-    @include('partials.sections.six-box')
+    @pageFindByOptions('settings.show_box', 'home.box')
 
-    {!! Widget::get('portfolio_brands', [20]) !!}
+    @portfolioBrands(20, 'brand')
 
 @endsection
 
