@@ -1,5 +1,19 @@
 <h3 class="title">{{ trans('themes::contact.write us') }}</h3>
 <p>{{ trans('themes::contact.write us desc') }}</p>
+@if (Session::has('success'))
+    <div class="alert alert-success fade in alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        {{ Session::get('success') }}
+    </div>
+@endif
+@if(Session::has('errors'))
+    <div class="alert alert-danger fade in alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        @foreach($errors->all() as $error)
+            <span style="font-size: 11px;">{{ $error }}</span>
+        @endforeach
+    </div>
+@endif
 {!! Form::open(['route' => 'contact.send', 'class' => 'contact-form', 'method'=>'post']) !!}
 {!! Form::hidden('from', Request::path()) !!}
 <div class="row">
@@ -53,5 +67,5 @@
 {!! Form::close() !!}
 
 @push('js_inline')
-{!! Captcha::script() !!}
+    {!! Captcha::script() !!}
 @endpush

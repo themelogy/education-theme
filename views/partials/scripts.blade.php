@@ -22,6 +22,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {!! Theme::script("js/vendors/jquery.shuffle.min.js") !!}
 {!! Theme::script("js/vendors/jquery.stellar.min.js") !!}
 {!! Theme::script("js/vendors/magnific-popup/jquery.magnific-popup.min.js") !!}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("img").unveil();
+});
+</script>
 @stack('scripts')
 {!! Theme::script("js/scripts.js") !!}
 <script async>
