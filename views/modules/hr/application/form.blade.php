@@ -3,7 +3,7 @@
 @section('content')
 
     @component('partials.components.page-title', ['breadcrumb'=>'hr.application.form'])
-    {{ trans('hr::applications.title.application') }}
+        {{ trans('hr::applications.title.application') }}
     @endcomponent
 
     <section class="section-padding md-p-top-bot-50 section-page" id="app">
@@ -863,22 +863,22 @@
 @endsection
 
 @push('scripts')
-<script src="{!! Module::asset('hr:js/underscore-min.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/loadingoverlay.min.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/loadingoverlay_progress.min.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/pnotify.js') !!}"></script>
-<link rel="stylesheet" href="{!! Module::asset('hr:css/pnotify.css') !!}"/>
-<script src="{!! Module::asset('hr:js/moment.min.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/tr.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/bootstrap-datetimepicker.min.js') !!}"></script>
-<link rel="stylesheet" href="{!! Module::asset('hr:css/bootstrap-datetimepicker.min.css') !!}" />
-@if(App::environment()=='production')
-    <script src="{!! Module::asset('hr:js/vue.min.js') !!}"></script>
-@else
-    <script src="{!! Module::asset('hr:js/vue.js') !!}"></script>
-@endif
-<script src="{!! Module::asset('hr:js/axios.min.js') !!}"></script>
-<script src="{!! Module::asset('hr:js/vue-bootstrap-datetimepicker.min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/underscore-min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/loadingoverlay.min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/loadingoverlay_progress.min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/pnotify.js') !!}"></script>
+    <link rel="stylesheet" href="{!! Module::asset('hr:css/pnotify.css') !!}"/>
+    <script src="{!! Module::asset('hr:js/moment.min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/tr.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/bootstrap-datetimepicker.min.js') !!}"></script>
+    <link rel="stylesheet" href="{!! Module::asset('hr:css/bootstrap-datetimepicker.min.css') !!}" />
+    @if(App::environment()=='production')
+        <script src="{!! Module::asset('hr:js/vue.min.js') !!}"></script>
+    @else
+        <script src="{!! Module::asset('hr:js/vue.js') !!}"></script>
+    @endif
+    <script src="{!! Module::asset('hr:js/axios.min.js') !!}"></script>
+    <script src="{!! Module::asset('hr:js/vue-bootstrap-datetimepicker.min.js') !!}"></script>
 @endpush
 
 @push('js_inline')
@@ -988,6 +988,10 @@
                 },
                 submitForm: function (e) {
                     e.preventDefault();
+                    if(this.hasCaptcha) {
+                        this.application.captcha_hr = grecaptcha.getResponse(captcha_hr);
+                    }
+                    this.application.captcha_hr = grecaptcha.getResponse(captcha_hr);
                     this.applicationUpdate('{{ route('api.hr.application.create') }}', this.application);
                 },
                 ajaxStart: function (loading) {
@@ -1021,6 +1025,10 @@
                         this.formErrors = {};
                         this.pnotify(response.data.message, "success");
                         this.application = this.getDefaults();
+                        if(this.hasCaptcha) {
+                            this.application.captcha_hr = grecaptcha.getResponse(captcha_hr);
+                            grecaptcha.reset(captcha_hr);
+                        }
                     }).catch(error => {
                         this.ajaxStart(false);
                         this.pnotify(error.response.data.message);
@@ -1075,46 +1083,46 @@
 @endpush
 
 @push('css_inline')
-<style>
-    .has-error label {
-        color: darkred;
-    }
+    <style>
+        .has-error label {
+            color: darkred;
+        }
 
-    fieldset {
-        margin-top: 20px;
-    }
+        fieldset {
+            margin-top: 20px;
+        }
 
-    label {
-        font-size: 12px;
-    }
+        label {
+            font-size: 12px;
+        }
 
-    [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
-        padding-left: 25px;
-        padding-right: 5px;
-    }
+        [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+            padding-left: 25px;
+            padding-right: 5px;
+        }
 
-    .btn-floating {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-    }
+        .btn-floating {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
 
-    .btn-floating i {
-        line-height: 30px;
-    }
+        .btn-floating i {
+            line-height: 30px;
+        }
 
-    .notify {
-        padding: 10px 5px 0 5px;
-    }
+        .notify {
+            padding: 10px 5px 0 5px;
+        }
 
-    .notify p {
-        line-height: 12px;
-    }
-</style>
+        .notify p {
+            line-height: 12px;
+        }
+    </style>
 @endpush
 
 @if(!setting('hr::user-login'))
     @push('js_inline')
-    {!! Captcha::setLang(locale())->scriptWithCallback(['captcha_hr']) !!}
+        {!! Captcha::setLang(locale())->scriptWithCallback(['captcha_hr']) !!}
     @endpush
 @endif

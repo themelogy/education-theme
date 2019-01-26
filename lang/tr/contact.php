@@ -6,4 +6,8 @@ return [
     'write us'      => 'Bize Yazın',
     'write us desc' => 'Öneri, şikayet ve isteklerinizi bize iletmek için aşağıdaki formu doldurmanızı rica ederiz.',
     'follow us'     => 'Bizi takip edin',
+    'messages' => [
+        'error'   => 'Bir hata oluştu lütfen tekrar deneyiniz!',
+        'success' => 'Mesajınız için teşekkür ederiz. İncelenerek tarafınıza en kısa zamanda geri dönüş yapılacaktır.'
+    ],
 ];

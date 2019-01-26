@@ -15,7 +15,7 @@ $active = $children->contains(function($value, $key){
     </a>
     <ul class="collapse{{ $active ? ' in' : '' }}" id="submenu{{ $page->id }}" role="menu" aria-labelledby="btn-1">
         @foreach($children as $child)
-            @if(isset($child->settings->show_sidebar))
+            @if($child->settings->show_sidebar ?? false)
                 @php
                     $child_active = $children->contains(function($value) use ($child){
                         return Request::segment(2) == $child->slug;
