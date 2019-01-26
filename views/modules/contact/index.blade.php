@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-form md-p-lft-20">
-                        @include('contact::form')
+                        @include('contact::ajax-form')
                     </div>
                 </div>
 

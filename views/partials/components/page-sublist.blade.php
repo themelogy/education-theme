@@ -36,32 +36,32 @@
     @push('css_inline')
     <style>
         .page-title.page-title-bg-overlay .title-bg .overlay.background::before {
-            background: {{ $parent->settings->title_bg_color or null }} !important;
+            background: {{ $parent->settings->title_bg_color ?? null }} !important;
         }
         .section-page .left-side .title {
-            background: {{ $parent->settings->menu_bg_color or null }} !important;
-            border-color: {{ $parent->settings->menu_bg_color or null }} !important;
-            color: {{ $parent->settings->menu_title_color or null }} !important;
+            background: {{ $parent->settings->menu_bg_color ?? null }} !important;
+            border-color: {{ $parent->settings->menu_bg_color ?? null }} !important;
+            color: {{ $parent->settings->menu_title_color ?? null }} !important;
         }
         .widget_categories_page {
-            background: {{ $parent->settings->menu_text_bg_color or null}} !important;
-            border-color: {{ $parent->settings->menu_border_color or null }} !important;
+            background: {{ $parent->settings->menu_text_bg_color ?? null}} !important;
+            border-color: {{ $parent->settings->menu_border_color ?? null }} !important;
         }
         .widget_categories_page a {
-            color: {{ $parent->settings->menu_text_color or null }} !important;
+            color: {{ $parent->settings->menu_text_color ?? null }} !important;
         }
         .widget_categories_page li, .widget_categories_page li:before {
-            border-color: {{ $parent->settings->menu_border_color or null }} !important;
-            color: {{ $parent->settings->menu_text_color or null }} !important;
+            border-color: {{ $parent->settings->menu_border_color ?? null }} !important;
+            color: {{ $parent->settings->menu_text_color ?? null }} !important;
         }
         .widget_categories_page li:hover:before {
-            color: {{ $parent->settings->menu_text_hover or null }} !important;
+            color: {{ $parent->settings->menu_text_hover ?? null }} !important;
         }
         .widget_categories_page a:hover {
-            color: {{ $parent->settings->menu_text_hover or null }} !important;
+            color: {{ $parent->settings->menu_text_hover ?? null }} !important;
         }
         .widget_categories_page ul > li.active > a, .widget_categories_page ul > li.active:before {
-            color: {{ $parent->settings->menu_text_hover or null }} !important;
+            color: {{ $parent->settings->menu_text_hover ?? null }} !important;
         }
     </style>
     @endpush
