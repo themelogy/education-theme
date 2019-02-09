@@ -5,7 +5,7 @@
         <a class="next"><i class="fa fa-angle-right"></i></a>
         <a href="{{ route('news.category', ['duyuru']) }}" class="all"><i class="fa fa-th font-18"></i></a>
     </div>
-    <div class="slick-carousel default-blog grid-blog">
+    <div class="announcement-grid default-blog grid-blog">
         @foreach($posts as $post)
             <article class="post-wrapper no-margin">
                 <div class="thumb-wrapper">
