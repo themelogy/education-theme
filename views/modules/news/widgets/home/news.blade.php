@@ -1,10 +1,10 @@
-<section class="section-padding grid-news-hover m-top-25 p-bot-0">
+<section class="section-padding grid-news-hover m-top-25 p-bot-0 m-bot-50">
     <div class="container no-padding">
         <div class="col-md-8 no-padding p-rgt-10">
             @newsLatestPosts(12, 'home.latest')
         </div>
         <div class="col-md-4">
-            @newsFindByCategory('duyuru', 6, 'home.announcements')
+            @newsFindByCategory('duyuru', 8, 'home.announcements')
         </div>
     </div>
 </section>

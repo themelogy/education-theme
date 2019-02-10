@@ -8,9 +8,9 @@
     @foreach($posts->chunk(2) as $chunk)
         <div>
             @foreach($chunk as $post)
-            <article class="post-wrapper no-margin">
+            <article class="post-wrapper no-margin m-bot-10">
                 <div class="thumb-wrapper">
-                    <a href="{{ $post->url }}"><img src="{{ $post->present()->firstImage(360, 270, 'fit', 50) }}"
+                    <a href="{{ $post->url }}"><img src="{{ $post->present()->firstImage(360, 225, 'fit', 50) }}"
                                                     class="img-responsive" alt="{{ $post->title }}"></a>
                     <div class="post-date">
                         {{ $post->created_at->format('d') }}<span>{{ $post->created_at->formatLocalized('%h') }}</span>
@@ -19,9 +19,11 @@
                         <h2 class="entry-title"><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
                     </div>
                 </div>
+                <!--
                 <div class="entry-content p-top-bot-10 p-lft-rgt-20 height-130">
                     <p>{!! Str::words(strip_tags($post->intro), 15) !!}</p>
                 </div>
+                -->
             </article>
             @endforeach
         </div>
