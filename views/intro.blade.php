@@ -15,7 +15,7 @@
                     @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
                     {{ trans('themes::theme.intro.select language', [], $locale) }} @if(!$loop->last) / @endif
                     @endforeach
-                </p>s
+                </p>
             </div>
         </div>
     </div>

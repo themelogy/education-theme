@@ -1,6 +1,6 @@
 <div class="content md-padding-40 text-justify">
 
-    @includeWhen($page->settings->cover_image ?? false, 'page::partials.components.cover_image')
+    @includeWhen($page->settings->cover_image ?? false, 'page::partials.components.cover-image')
 
     {!! $page->body !!}
 

@@ -10,7 +10,7 @@
             @foreach($chunk as $post)
             <article class="post-wrapper no-margin m-bot-10">
                 <div class="thumb-wrapper">
-                    <a href="{{ $post->url }}"><img src="{{ $post->present()->firstImage(360, 225, 'fit', 50) }}"
+                    <a href="{{ $post->url }}"><img src="{{ $post->present()->firstImage(750, 469, 'fit', 80) }}"
                                                     class="img-responsive" alt="{{ $post->title }}"></a>
                     <div class="post-date">
                         {{ $post->created_at->format('d') }}<span>{{ $post->created_at->formatLocalized('%h') }}</span>
