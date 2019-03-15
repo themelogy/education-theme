@@ -37,9 +37,9 @@
                                                 <img class="img-responsive img-thumbnail" src="{{ $media->present()->media_image(240,140,'fit',50) }}" />
                                             </div>
                                             <div class="col-md-8">
-                                                <h2 class="entry-title"><a href="{{ $media->present()->url }}">{{ $media->title }}</a></h2>
+                                                <h2 class="entry-title"><a href="{{ $media->url }}">{{ $media->title }}</a></h2>
                                                 <p>{!! Str::words(strip_tags($media->description), 20) !!}</p>
-                                                <a class="browser-default btn btn-primary btn-xs m-top-5" href="{{ $media->present()->url }}">{{ trans('global.buttons.read more') }}</a>
+                                                <a class="browser-default btn btn-primary btn-xs m-top-5" href="{{ $media->url }}">{{ trans('global.buttons.read more') }}</a>
                                             </div>
                                         </div>
                                     </article>
