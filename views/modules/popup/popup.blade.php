@@ -45,7 +45,7 @@
     @endif
     <div slot="body">
         @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type == 'image')
-            <a href="{{ $popup->present()->link('link_url') }}">
+            <a target="{{ $popup->present()->link('link_target') }}" href="{{ $popup->present()->link('link_url') }}">
                 {!! $popup->present()->content !!}
             </a>
         @else
@@ -54,7 +54,7 @@
     </div>
     @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type != 'image')
         <div slot="footer">
-            <a class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
+            <a target="{{ $popup->present()->link('link_target') }}" class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
                 {{ $popup->present()->link('link_title') }}
             </a>
         </div>
