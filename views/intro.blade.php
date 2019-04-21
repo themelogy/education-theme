@@ -3,7 +3,7 @@
 @section('content')
     <div class="section-intro">
         <div class="content">
-            <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg') }}" alt="{{ setting('theme::company-name') }}" />
+            <img class="logo" src="{{ Theme::url('img/logos/logo3-white-vertical.svg?v=1') }}" alt="{{ setting('theme::company-name') }}" />
             <div class="year">{{ trans('themes::theme.intro.year') }}</div>
             <div class="language">
                 <ul>

@@ -1,10 +1,10 @@
 <section class="section-padding grid-news-hover m-top-25 p-bot-0 m-bot-50">
     <div class="container no-padding">
-        <div class="col-md-8 no-padding p-rgt-10">
+        <div class="col-md-9 no-padding p-rgt-10">
             @newsLatestPosts(12, 'home.latest')
         </div>
-        <div class="col-md-4">
-            @newsFindByCategory('duyuru', 8, 'home.announcements')
+        <div class="col-md-3">
+            @newsFindByCategory('duyuru', 6, 'home.announcements')
         </div>
     </div>
 </section>
@@ -31,7 +31,7 @@
                             items: 1
                         },
                         1000: {
-                            items: 2
+                            items: 3
                         }
                     }
                 });
@@ -46,8 +46,8 @@
                 infinite: false,
                 vertical:true,
                 verticalSwiping:true,
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                slidesToShow: 3,
+                slidesToScroll: 3,
                 autoplay: true,
                 mobileFirst: true,
                 prevArrow: $('.prev'),

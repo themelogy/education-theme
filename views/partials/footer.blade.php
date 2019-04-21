@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-3 widget">
                     <div class="footer-logo">
-                        <img src="{{ Theme::url('img/logos/logo3-white.svg') }}" alt="" style="width: 100%;"/>
+                        <img src="{{ Theme::url('img/logos/logo3-white.svg?v=1') }}" alt="" style="width: 100%;"/>
                     </div>
 
                     @include('partials.components.social', ['class'=>'social-link tt-animate ltr text-left m-top-10'])

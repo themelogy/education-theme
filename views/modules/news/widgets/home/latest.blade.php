@@ -5,7 +5,7 @@
     <a href="{{ route('news.index') }}" class="all"><i class="fa fa-th font-18"></i></a>
 </div>
 <div class="news-grid default-blog grid-blog">
-    @foreach($posts->chunk(2) as $chunk)
+    @foreach($posts->chunk(3) as $chunk)
         <div>
             @foreach($chunk as $post)
             <article class="post-wrapper no-margin m-bot-10">
