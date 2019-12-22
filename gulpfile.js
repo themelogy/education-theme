@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
     sass = require('gulp-sass'),
-    del = require('del'),
+    //del = require('del'),
     concat = require('gulp-concat'),
     browserSync = require('browser-sync').create(),
     runSequence = require('run-sequence'),
@@ -29,6 +29,7 @@ var assets_js_dir = assets_dir + "/js";
 var assets_img_dir = assets_dir + "/img";
 var assets_fonts_dir = assets_dir + "/fonts";
 var assets_vendor_dir = assets_dir + "/vendor";
+var assets_map_dir = assets_dir + "/maps";
 
 var sass_dir = resource_dir + "/scss";
 var vendor_dir = resource_dir + "/vendor";
@@ -39,7 +40,7 @@ gulp.task('public', function () {
     ])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(sourcemaps.write(theme_dir+'/maps'))
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(theme_dir+"/css"));
 });
 
@@ -58,6 +59,8 @@ gulp.task('copy', function () {
        .pipe(gulp.dest(assets_js_dir));
    gulp.src(resource_dir+'/fonts/**')
        .pipe(gulp.dest(assets_fonts_dir));
+    gulp.src(resource_dir+'/maps/**')
+        .pipe(gulp.dest(assets_map_dir));
 });
 
 gulp.task('compress', function() {
@@ -125,7 +128,7 @@ gulp.task('sass', function () {
         ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(sourcemaps.write(assets_dir+'/maps'))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(css_dir))
         .pipe(browserSync.reload({
             stream: true
@@ -187,12 +190,26 @@ gulp.task('combine', function () {
         .pipe(gulp.dest(js_dir));
 });
 
-gulp.task('browserSync', function () {
+// Configure the proxy server for livereload
+var proxyServer = "http://dev.jaletezer.com";
+
+var arrAddFiles = [
+    'views/**/*.php'
+];
+
+gulp.task('browserSync', function() {
     browserSync.init({
-        server: {
-            baseDir: 'app'
-        }
-    })
+        proxy: proxyServer,
+        files: arrAddFiles,
+        ghostMode: {
+            clicks: true,
+            location: true,
+            forms: true,
+            scroll: true
+        },
+        notify: true,
+        open: false
+    });
 });
 
 gulp.task('default', function () {
@@ -201,7 +218,7 @@ gulp.task('default', function () {
 });
 
 gulp.task('watch', ['browserSync'], function () {
-    gulp.watch([sass_dir + '/**/*.scss'], ['sass']);
+    gulp.watch([sass_dir + '/**/*.scss'], ['public']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
 });
