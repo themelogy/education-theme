@@ -115,6 +115,8 @@ gulp.task('vendor', function () {
 
     gulp.src(vendor_dir + "/css/vendors/**/*.css").pipe(gulp.dest(css_dir+"/vendors"));
     gulp.src(vendor_dir + "/js/vendors/**/*.js").pipe(gulp.dest(js_dir+"/vendors"));
+
+    gulp.src(vendor_dir + "/youtubeurl/**/*").pipe(gulp.dest(assets_vendor_dir+"/youtubeurl"));
 });
 
 gulp.task('sass', function () {

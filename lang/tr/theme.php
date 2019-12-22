@@ -12,6 +12,7 @@ return [
       'copyrights' => '<span class="copy-text font-12">Tüm hakları saklıdır. © :date <br class="visible-xs" /><a href=":url">:company</a> </span>'
   ],
   'buttons' => [
-      'read more' => 'Devamını oku...'
+      'read more' => 'Devamını oku...',
+      'video'     => 'Video'
   ]
 ];

@@ -1,4 +1,4 @@
-<section class="section-padding grid-news-hover m-top-25 p-bot-0 m-bot-50">
+<section class="section-padding grid-news-hover p-bot-0 m-bot-20">
     <div class="container no-padding">
         <div class="col-md-9 no-padding p-rgt-10">
             @newsLatestPosts(12, 'home.latest')

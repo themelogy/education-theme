@@ -16,7 +16,7 @@
                         {{ $post->created_at->format('d') }}<span>{{ $post->created_at->formatLocalized('%h') }}</span>
                     </div>
                     <div class="entry-header">
-                        <h2 class="entry-title"><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
+                        <h2 class="entry-title" style="font-size: 1.5rem;"><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
                     </div>
                 </div>
                 <!--

@@ -17,6 +17,7 @@
                         <li><a href="#sub-menu" data-toggle="tab">Menü</a></li>
                         <li><a href="#page-list" data-toggle="tab">Sayfa</a></li>
                         <li><a href="#images" data-toggle="tab">Resim</a></li>
+                        <li><a href="#videos" data-toggle="tab">Video</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="home-box">
@@ -33,6 +34,9 @@
                         </div>
                         <div class="tab-pane" id="images">
                             @include('page::admin.partials.settings.image')
+                        </div>
+                        <div class="tab-pane" id="videos">
+                            @include('page::admin.partials.settings.video')
                         </div>
                     </div>
                  </div>

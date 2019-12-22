@@ -10,6 +10,29 @@
                                     <li data-transition="fade" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{{ $slider->present()->firstImage(60,60,'fit',70) }}" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="<span style='font-size:12px;'>{{ ucfirst(mb_strtolower($slider->sub_title)) }}</span>" data-param1="{{ $slider->start_at->formatLocalized('%d %B %Y') }}" data-description="">
                                         <!-- MAIN IMAGE -->
                                         <img src="{{ $slider->present()->firstImage(1140,500,'fit',70) }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-no-retina>
+                                        @if(!empty($slider->video))
+                                            <div class="rs-background-video-layer"
+                                                 data-forcerewind="on"
+                                                 data-volume="{{ $slider->settings->video_sound == 'on' ? 70 : 'mute' }}"
+                                                 data-{{ $slider->settings->video_type }}="{{ $slider->video }}"
+                                                 @if($slider->settings->video_type=='ytid')
+                                                 data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&origin={{ url('/') }};"
+                                                 @else
+                                                 data-videoattributes="background=1&title=0&byline=0&portrait=0&api=1"
+                                                 @endif
+                                                 data-videorate="1.0"
+                                                 data-videowidth="100%"
+                                                 data-videoheight="100%"
+                                                 data-videocontrols="none"
+                                                 data-videostartat="{{ $slider->settings->video_startat ?? '00:00' }}"
+                                                 data-videoendat="{{ $slider->settings->video_endat ?? '00:10' }}"
+                                                 data-videoloop="{{ $slider->settings->video_loop ?? 'loopandnoslidestop' }}"
+                                                 data-forceCover="1"
+                                                 data-aspectratio="16:9"
+                                                 data-autoplay="true"
+                                                 data-nextslideatend="true"
+                                            ></div>
+                                        @endif
 
                                     @if(!empty($slider->sub_title))
                                         <!-- LAYER NR. 1 -->
@@ -97,8 +120,13 @@
         {!! Theme::script("js/jquery.revolution.min.js") !!}
     @endpush
     @push('js_inline')
+        <style>
+            .rs-background-video-layer iframe {
+                visibility:inherit !important;
+            }
+        </style>
         <script type="text/javascript">
-            jQuery(document).ready(function () {
+            var revapi1 = jQuery(document).ready(function () {
                 jQuery(".materialize-slider").revolution({
                     sliderType: "standard",
                     sliderLayout: "auto",
@@ -149,8 +177,8 @@
                         }
                     },
                     responsiveLevels: [1140, 1024, 768, 480],
-                    gridwidth: [1140, 1024, 768, 480],
-                    gridheight: [500, 450, 400, 350],
+                    gridwidth: [1140, 1026, 768, 480],
+                    gridheight: [500, 450, 336, 210],
                     disableProgressBar: "on",
                     parallax: {
                         type: "mouse",
@@ -163,9 +191,14 @@
         </script>
     @endpush
     @push('js_inline_old')
+        <style>
+            .rs-background-video-layer iframe {
+                visibility:inherit !important;
+            }
+        </style>
         <script type="text/javascript">
             jQuery(document).ready(function () {
-                jQuery(".materialize-slider").revolution({
+                var revapi1 = jQuery(".materialize-slider").revolution({
                     sliderType: "standard",
                     sliderLayout: "auto",
                     delay: 9000,
@@ -248,6 +281,10 @@
                         speed: 2000,
                         levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50]
                     }
+                });
+                revapi1.bind("revolution.slide.onvideostop",function (e,data) {
+                    var player = data.video;
+                    player.play();
                 });
             });
         </script>

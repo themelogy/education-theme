@@ -18,6 +18,7 @@
 
 <div class="col-md-3 left-side">
     @findChildren($parent, 'sidebar.menu')
+    @includeWhen($page->settings->video, 'page::widgets.sidebar.video')
 </div>
 
 <div class="col-md-9">
