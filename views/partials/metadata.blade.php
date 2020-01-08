@@ -10,6 +10,15 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Theme::url('img/ico/apple-touch-icon-72-precomposed.png') }}">
 <link rel="apple-touch-icon-precomposed" href="{{ Theme::url('img/ico/apple-touch-icon-57-precomposed.png') }}">
 
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TGP25CM');</script>
+<!-- End Google Tag Manager -->
+
 <script async>
     WebFontConfig = { google: {
             families: ['Roboto:400,300,100,500,700:latin-ext', 'Great Vibes'
@@ -40,7 +49,7 @@
     {!! Theme::style("css/bootstrap.css") !!}
     {!! Theme::style("css/style.css?v=3") !!}
 @else
-    {!! Theme::style("css/all.min.css?v=".Carbon::now()->format('dmY')) !!}
+    {!! Theme::style("css/all.min.css?v=159") !!}
 @endif
 
 <!--[if lt IE 9]>

@@ -1,4 +1,6 @@
-<a style="display: block; text-align: left;" class="play-1 waves-effect waves-light btn mt-30" href="{{ $page->settings->video ?? '' }}"><i class="fa fa-play"></i>&nbsp; {{ trans('themes::theme.buttons.video') }}</a>
+<div class="widget widget_categories_page">
+<a style="display: block; text-align: left; padding: 15px 20px;" class="title play-1 waves-effect waves-light btn mt-30" href="{{ $page->settings->video ?? '' }}"><i class="fa fa-play"></i>&nbsp; {{ trans('themes::theme.buttons.video') }}</a>
+</div>
 
 @push('scripts')
     {!! Theme::style('vendor/youtubeurl/jquery.yu2fvl.css') !!}
