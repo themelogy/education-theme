@@ -1,4 +1,5 @@
-@extends('layouts.master')
+@php $template = Request::query('template') ? 'custom' : 'master'; @endphp
+@extends('layouts.'.$template)
 
 @section('content')
 
