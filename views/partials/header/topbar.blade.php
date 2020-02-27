@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-left">
-                @newsFindByCategory('duyuru', 6, 'annoucements')
+                {{-- @newsFindByCategory('duyuru', 6, 'annoucements') --}}
             </div>
             <div class="col-md-6 text-right">
                 @if($currentUser)
@@ -28,6 +28,7 @@
                         @include('partials.components.social', ['class'=>'list-inline social-top tt-animate btt m-rgt-10'])
                     </div>
                 @endif
+                @if(count(LaravelLocalization::getSupportedLocales())>1)
                 <div class="quick-menu">
                     <a class="dropdown-button btn bold-500 waves-effect waves-light"
                        href="#" data-activates="language"
@@ -48,6 +49,7 @@
                         @endforeach
                     </ul>
                 </div>
+                @endif
                 @inject("menu", "\Modules\Menu\Services\MenuService")
                 <div class="quick-menu">
                     <a class="dropdown-button btn bold-500 waves-effect waves-light"

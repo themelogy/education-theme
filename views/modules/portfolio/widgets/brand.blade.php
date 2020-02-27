@@ -1,11 +1,10 @@
-<section class="section-padding clients">
+<section class="section-padding clients" style="background-color: #fbfbf9;">
     <div class="container">
         <div class="clients-grid p-top-bot-20">
             @foreach($brands as $brand)
                 <div class="border-box">
                     <a target="_blank" href="{{ $brand->website }}">
-                        <img data-src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}"
-                             alt="{{ $brand->title }}">
+                        <img class="lazy" data-src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
                     </a>
                 </div>
             @endforeach

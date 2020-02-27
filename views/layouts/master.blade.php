@@ -16,7 +16,9 @@
 
 @include('partials.p-notify')
 
-@include('partials.components.popup')
+@if(isset($page))
+	@include('partials.components.popup')
+@endif
 </body>
 
 </html>

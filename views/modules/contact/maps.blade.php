@@ -5,7 +5,7 @@
 <div class="address-grid m-bot-30">
     @foreach(app('locations') as $location)
         <div class="contact-info z-depth-1">
-            <h4 class="title"><img class="logo" src="{{ Theme::url('img/logos/ikon.svg') }}" alt="logo"/> {{ $location->name }}</h4>
+            <h4 class="title" style="font-size: 13px;"><img class="logo" src="{{ Theme::url('img/logos/ikon.svg') }}" alt="logo" /> {{ $location->name }}</h4>
             <address>
                 @if($location->address)
                     <i class="material-icons brand-color">&#xE55F;</i>
@@ -31,6 +31,7 @@
             </address>
             <div style="width:100%; margin: 0; padding: 0 15px 15px;">
                 <div style="width:100%; margin:0; height: 150px; border:1px solid #ebebeb;" id="map{{ $location->id }}"></div>
+                <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/{{ $location->lat }},{{ $location->long }}" style="display: block; text-align: center; padding: 5px 20px; border: 1px solid #ebebeb; background-color: #ebebeb;">Yol Tarifi Al</a>
             </div>
         </div>
     @endforeach

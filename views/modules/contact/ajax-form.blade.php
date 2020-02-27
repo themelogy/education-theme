@@ -2,7 +2,7 @@
     <h3 class="title">{{ trans('themes::contact.write us') }}</h3>
     <p>{{ trans('themes::contact.write us desc') }}</p>
 
-    <div class="alert alert-success" role="alert" v-show="success">
+    <div class="alert alert-success" role="alert" v-show="success" v-bind:id="'contact-form-'+id">
         @{{ successMessage }}
     </div>
 
@@ -77,6 +77,7 @@
         new Vue({
             el: '#contact_form',
             data: {
+                id: '',
                 input: {
                     first_name: '',
                     last_name: '',
@@ -98,6 +99,7 @@
                     axios.post('{{ route('api.contact.send') }}', this.$data.input)
                         .then(response => {
                             this.successMessage = response.data.message;
+                            this.id = response.data.id;
                             this.success = true;
                             this.resetForm();
                             this.ajaxStart(false);

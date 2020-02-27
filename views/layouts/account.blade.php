@@ -14,7 +14,9 @@
 
 @include('partials.scripts')
 
-@include('partials.components.popup')
+@if(isset($page))
+	@include('partials.components.popup')
+@endif
 </body>
 
 </html>

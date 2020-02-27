@@ -1,8 +1,3 @@
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHW8Q32"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <noscript id="deferred-styles">
 @stack('styles')
 </noscript>
@@ -22,12 +17,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {!! Theme::script("js/vendors/jquery.shuffle.min.js") !!}
 {!! Theme::script("js/vendors/jquery.stellar.min.js") !!}
 {!! Theme::script("js/vendors/magnific-popup/jquery.magnific-popup.min.js") !!}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
+
+<!-- cdnjs -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 <script>
-$(document).ready(function() {
-  $("img").unveil();
-});
+        $(function() {
+        $('.lazy').Lazy();
+    });
 </script>
+
+
 @stack('scripts')
 {!! Theme::script("js/scripts.js") !!}
 <script async>
@@ -44,5 +44,3 @@ $(document).ready(function() {
     else window.addEventListener('load', loadDeferredStyles);
 </script>
 @stack('js_inline')
-
-@include('partials.analytics')

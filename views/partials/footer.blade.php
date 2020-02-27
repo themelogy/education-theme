@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-3 widget">
                     <div class="footer-logo">
-                        <img src="{{ Theme::url('img/logos/logo3.svg?v=1') }}" alt="" style="width: 100%;"/>
+                        <img src="{{ Theme::url('img/logos/logo3.svg?v=1') }}" alt="" style="width: 100%; max-height: 100px;"/>
                     </div>
                     @include('partials.components.social', ['class'=>'social-link tt-animate ltr text-left m-top-10'])
                     <p style="font-size: 0.8em; line-height: 1.5em; text-align: justify;">{!! strip_tags(Block::get('footer-intro')) !!}</p>
@@ -79,4 +79,4 @@
     </div>
 </div>
 
-@includeIf('core::cookie-law'))
+@includeIf('core::cookie-law')
