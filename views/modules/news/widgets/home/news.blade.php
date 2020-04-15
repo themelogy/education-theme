@@ -4,7 +4,7 @@
             @newsLatestPosts(12, 'home.latest')
         </div>
         <div class="col-md-3">
-            @newsFindByCategory('duyuru', 6, 'home.announcements')
+            @videoLatest(6)
         </div>
     </div>
 </section>

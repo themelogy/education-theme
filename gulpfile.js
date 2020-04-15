@@ -112,6 +112,8 @@ gulp.task('vendor', function () {
     gulp.src([vendor_dir+'/jssocials/dist/**/*']).pipe(gulp.dest(assets_vendor_dir+"/jssocials"));
     //Lightbox
     gulp.src([vendor_dir+'/lightbox2/dist/**/*']).pipe(gulp.dest(assets_vendor_dir+"/lightbox2"));
+    //Lightbox-gallery
+    gulp.src([vendor_dir+'/lightgallery/dist/**/*']).pipe(gulp.dest(assets_vendor_dir+"/lightgallery"));
 
     //Main.js
     gulp.src(vendor_dir + "/main.js").pipe(gulp.dest(js_dir));

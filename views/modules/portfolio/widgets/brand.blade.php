@@ -4,7 +4,7 @@
             @foreach($brands as $brand)
                 <div class="border-box">
                     <a target="_blank" href="{{ $brand->website }}">
-                        <img class="lazy" data-src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
+                        <img src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
                     </a>
                 </div>
             @endforeach
