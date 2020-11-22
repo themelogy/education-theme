@@ -48,11 +48,11 @@ $news-slider-bg-color: $announcement-slider-bg-color;
 $news-slider-txt-color: darken(grey, 20%) !important;
 
 //Header
-$topbar-bg-color: #1A77D5;
+$topbar-bg-color: #ffffff;
 $topbar-txt-color: #ffffff;
-$topbar-link-color: #ffffff;
+$topbar-link-color: #3D464F;
 $topbar-link-hover: $default-compare-color;
-$topbar-social-color: #ffffff;
+$topbar-social-color: #3D464F;
 $topbar-social-hover-color: $default-compare-color;
 
 $topbar-ticker-strong-title: $topbar-link-hover;
@@ -98,11 +98,11 @@ $footer-social-link-hover: #1A77D5 !important;
 $footer-social-link-hover-txt: $default-theme-color;
 
 //Footer Second
-$second-footer-bg-color: #1A77D5;
-$second-footer-txt-color: #ffffff !important;
-$second-footer-link-color: #ffffff !important;
+$second-footer-bg-color: $footer-bg-color;
+$second-footer-link-color: $footer-txt-color;
+$footer-link-color: #3D464F !important;
 $second-footer-link-hover: $default-compare-color;
-$second-footer-social-link-color: #ffffff;
+$second-footer-social-link-color: #3D464F;
 $second-footer-social-link-hover: $default-theme-color;
 
 //Back To Top

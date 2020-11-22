@@ -5,8 +5,8 @@
 @stack('css_inline')
 <!-- jQuery -->
 {!! Theme::script("js/jquery.min.js") !!}
-{!! Theme::script("js/bootstrap.min.js", ['defer']) !!}
-{!! Theme::script("js/materialize.min.js", ['defer']) !!}
+{!! Theme::script("js/bootstrap.min.js") !!}
+{!! Theme::script("js/materialize.min.js") !!}
 {!! Theme::script("js/vendors/jquery.easing.min.js") !!}
 {!! Theme::script("js/vendors/smoothscroll.min.js") !!}
 {!! Theme::script("js/vendors/bootstrap-tabcollapse.min.js") !!}
@@ -48,3 +48,25 @@ po.src = '//destek.jaletezer.k12.tr/index.php/tur/chat/getstatus/(click)/interna
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>
+
+<style>
+@media only screen and (max-width: 640px) {
+    #lhc_status_container {
+        position: fixed;
+        top: inherit;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 2px;
+        box-shadow: none;
+        border: 1px solid #cfcfcf;
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .has-header-search .menuzord-responsive .showhide {
+        margin-right: 0 !important;
+    }
+}
+</style>

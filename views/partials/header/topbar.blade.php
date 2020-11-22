@@ -50,7 +50,7 @@
                     </ul>
                 </div>
                 @endif
-                @inject("menu", "\Modules\Menu\Services\MenuService")
+{{--                 @inject("menu", "\Modules\Menu\Services\MenuService")
                 <div class="quick-menu">
                     <a class="dropdown-button btn bold-500 waves-effect waves-light"
                        href="#"
@@ -62,7 +62,7 @@
                         <i class="fa fa-bars m-rgt-10"></i> {{ $menu->title("ust-hizli-erisim") }} <i class="fa fa-angle-down m-lft-5"></i>
                     </a>
                     {!! Menu::render("ust-hizli-erisim", \Themes\Education\Presenter\TopMenuPresenter::class) !!}
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

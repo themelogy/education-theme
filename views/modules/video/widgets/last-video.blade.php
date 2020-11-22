@@ -1,5 +1,5 @@
 <div class="announcement">
-    <h3 class="title padding-20 no-margin z-depth-1 text-uppercase"><i class="fa fa-paint-brush m-rgt-10" aria-hidden="true"></i> {{ trans_choice('themes::news.announcement',[1]) }}</h3>
+    <h3 class="title padding-20 no-margin z-depth-1 text-uppercase"><i class="fa fa-paint-brush m-rgt-10" aria-hidden="true"></i> {{ trans('SANAT') }}</h3>
     <div class="announcement-grid-navigation">
         <a class="prev"><i class="fa fa-angle-left"></i></a>
         <a class="next"><i class="fa fa-angle-right"></i></a>

@@ -3,7 +3,7 @@
         <div class="clients-grid p-top-bot-20">
             @foreach($brands as $brand)
                 <div class="border-box">
-                    <a target="_blank" href="{{ $brand->website }}">
+                    <a target="_blank" href="{{ $brand->website }}" data-position="bottom" data-tooltip="{{ $brand->title }}" class="tooltipped">
                         <img src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
                     </a>
                 </div>
@@ -19,8 +19,8 @@
                 nav: false,
                 dots: false,
                 autoplay: true,
-                autoplayTimeout: 1500,
-                autoplaySpeed: 2000,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 500,
                 lazyLoad: true,
                 responsive: {
                     0: {
@@ -35,5 +35,19 @@
                 }
             });
         });
+      $(document).ready(function(){
+        $('.tooltipped').tooltip();
+      });
     </script>
+    <style>
+.material-tooltip .backdrop{
+    background-color: #DB0000;
+}
+.material-tooltip 
+{
+    font-family: Arial, sans-serif;
+}
+
+
+    </style>
 @endpush

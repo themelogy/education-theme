@@ -24,6 +24,7 @@
     padding-bottom: 50px;
     position: relative;
     background-color: $footer-bg-color;
+    border-bottom: darken($footer-bg-color, 10%);
     @if (lightness($footer-bg-color)<50) {
       .overlay {
         background: url("../img/backgrounds/footer-bg.png");

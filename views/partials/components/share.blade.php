@@ -8,7 +8,7 @@
             shareIn: "popup",
             showLabel: false,
             showCount: "inside",
-            shares: ["twitter", "facebook", "whatsapp"]
+            shares: ["twitter", "facebook", "whatsapp", "linkedin"]
         });
     </script>
 @endpush

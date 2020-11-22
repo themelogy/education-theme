@@ -36,6 +36,7 @@ Top Bar
 .top-bar {
   height: 46px;
   background-color: $topbar-bg-color;
+  border-bottom: 1px solid $footer-bg-color;
   .topbar-cta {
     li {
       display: inline-block;
