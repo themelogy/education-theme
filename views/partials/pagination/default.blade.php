@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <ul class="pagination post-pagination text-center mt-50">
+    <ul class="pagination post-pagination text-center">
         <!-- Previous Page Link -->
         @if ($paginator->onFirstPage())
             <li class="disabled hide">&laquo;</li>

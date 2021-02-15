@@ -18,6 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TGP25CM');</script>
 <!-- End Google Tag Manager -->
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98121507-3">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98121507-3');
+</script>
+
 <script async>
     WebFontConfig = { google: {
             families: ['Roboto:400,300,100,500,700:latin-ext', 'Great Vibes'
@@ -46,9 +57,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {!! Theme::style("css/materialize.css") !!}
     {!! Theme::style("css/bootstrap.css") !!}
-    {!! Theme::style("css/style.css?v=3") !!}
+    {!! Theme::style("css/style.css") !!}
 @else
-    {!! Theme::style("css/all.min.css?v=160") !!}
+    {!! Theme::style("css/all.min.css?v=50") !!}
 @endif
 
 <!--[if lt IE 9]>

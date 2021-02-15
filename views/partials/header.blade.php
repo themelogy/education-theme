@@ -11,7 +11,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {{-- @include('partials.header.search') --}}
             <div id="materialize-menu" class="menuzord">
                 <a href="{{ url(locale()) }}" class="logo-brand">
-                    <img src="{{ Theme::url('img/logos/logo3.svg?v=1') }}" alt="{{ setting('theme::company-name') }}">
+                    <img src="{{ Theme::url('img/logos/logo3.svg') }}" alt="{{ setting('theme::company-name') }}">
                 </a>
                 {!! Menu::render('header', \Themes\Education\Presenter\HeaderMenuPresenter::class) !!}
             </div>

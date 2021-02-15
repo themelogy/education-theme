@@ -79,4 +79,4 @@
     </div>
 </div>
 
-@includeIf('core::cookie-law')
+{{-- @includeIf('core::cookie-law') --}}

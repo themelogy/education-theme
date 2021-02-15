@@ -21,7 +21,6 @@
                 autoplay: true,
                 autoplayTimeout: 5000,
                 autoplaySpeed: 500,
-                lazyLoad: true,
                 responsive: {
                     0: {
                         items: 1

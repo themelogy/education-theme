@@ -27,6 +27,7 @@
                 </header>
 
                 <div class="entry-content">
+                    @if(@$post->settings->show_image)
                     @php $images = $post->present()->images(600, null,'resize',80); @endphp
 
                     @if(count($images)==1)
@@ -36,9 +37,11 @@
                             </a>
                         @endif
                     @endif
+                    @endif
 
                     {!! $post->content !!}
 
+                    @if(@$post->settings->show_image)
                     @if(count($images)>1)
                         <div class="fotorama m-top-50"
                              data-allowfullscreen="true"
@@ -55,6 +58,7 @@
                         {!! Theme::style('js/vendors/fotorama/fotorama.css') !!}
                         {!! Theme::script('js/vendors/fotorama/fotorama.js') !!}
                         @endpush
+                    @endif
                     @endif
 
                     <div class="clearfix"></div>

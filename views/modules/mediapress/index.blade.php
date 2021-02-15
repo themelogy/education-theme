@@ -21,11 +21,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-3 left-side">
-                    @include('mediapress::partials.sidebar')
-                </div>
-
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="content md-padding-40 text-justify">
                         <div class="row">
                             @foreach($medias as $media)

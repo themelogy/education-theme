@@ -5,7 +5,7 @@
 <div class="address-grid m-bot-30">
     @foreach(app('locations') as $location)
         <div class="contact-info z-depth-1">
-            @if($img = $location->present()->firstImage(100,100,'fit',80))
+            @if($img = $location->present()->firstImage(100,100,'fit',70))
                 <h4 class="title" style="font-size: 13px; margin-bottom: 0; height: 100px; padding-bottom: 0; padding-left: 110px; line-height: 13px; padding-top: 20px;">
                     <img class="logo" src="{{ $img }}" alt="{{ $location->name }}" style="position: absolute; left:5px; top:0; width: 100px; height: 100px; margin: 0; padding: 0;"/>
                     {{ $location->name }}

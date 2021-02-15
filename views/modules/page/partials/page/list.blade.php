@@ -10,7 +10,7 @@
     $list_pages     = $page->children()->orderBy('position')->paginate($list_per_page);
 @endphp
 
-<div class="content md-padding-40 text-justify default-blog grid-blog grid-page">
+<div class="content md-padding-40 text-justify default-blog grid-blog">
     @if($cover_image)
         <div class="row">
             <div class="col-md-12 m-bot-20">

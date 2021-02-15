@@ -19,12 +19,7 @@
     <section class="section-padding md-p-top-100 section-page">
         <div class="container">
             <div class="row">
-
-                <div class="col-md-3 left-side">
-                    @include('mediapress::partials.sidebar')
-                </div>
-
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="content md-padding-40 text-justify">
                         <h2 class="title align-left"><span class="label label-default m-rgt-10">{{ $media->brand }}</span> {{ $media->title }}</h2>
 						<span class="date">{{ $media->release_at->formatLocalized('%d %B %Y') }}</span><br/>
