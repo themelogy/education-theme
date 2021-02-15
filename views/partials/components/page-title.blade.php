@@ -45,8 +45,8 @@
             }
         }
     @endphp
-    <section class="page-title page-title-bg-overlay dark-4 p-top-30 p-bot-20 md-p-top-150 md-p-bot-100"
-             style="background: url({{ $coverImage }});">
+    <section class="page-title page-title-bg-overlay dark-4 p-top-30 p-bot-20 md-p-top-150 md-p-bot-100 lazy"
+             data-src="{{ $coverImage }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-md-offset-3">

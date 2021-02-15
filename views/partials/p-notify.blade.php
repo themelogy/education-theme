@@ -22,8 +22,8 @@
     @endphp
 @endif
 
-{!! Theme::style('css/pnotify.css') !!}
-{!! Theme::script('js/pnotify.js') !!}
+{!! Theme::style('vendor/pnotify/pnotify.css') !!}
+{!! Theme::script('vendor/pnotify/pnotify.js') !!}
 
 @if(Session::has('success') || Session::has('error') || Session::has('warning'))
     <script>

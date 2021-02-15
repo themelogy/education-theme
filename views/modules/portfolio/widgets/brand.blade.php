@@ -4,7 +4,7 @@
             @foreach($brands as $brand)
                 <div class="border-box">
                     <a target="_blank" href="{{ $brand->website }}" data-position="bottom" data-tooltip="{{ $brand->title }}" class="tooltipped">
-                        <img src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
+                        <img class="owl-lazy" data-src="{{ $brand->present()->firstImage(null, 110, 'resize', 80) }}" alt="{{ $brand->title }}">
                     </a>
                 </div>
             @endforeach
@@ -18,6 +18,7 @@
                 loop: true,
                 nav: false,
                 dots: false,
+                lazyLoad: true,
                 autoplay: true,
                 autoplayTimeout: 5000,
                 autoplaySpeed: 500,

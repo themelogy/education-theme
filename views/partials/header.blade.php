@@ -1,6 +1,6 @@
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGP25CM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLS4FWB"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 @include('partials.header.topbar')
@@ -20,8 +20,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 @push('scripts')
-{!! Theme::script("js/vendors/menuzord.js") !!}
-{!! Theme::script("js/vendors/equalheight.js") !!}
+{!! Theme::script("plugins/menuzord.js") !!}
+{!! Theme::script("plugins/equalheight.js") !!}
 @endpush
 
 @if(LaravelLocalization::getCurrentLocale()=="en")

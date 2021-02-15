@@ -1,4 +1,30 @@
-<script type="text/x-template" id="modal-template">
+<!-- app -->
+<div id="popup">
+    <modal v-if="showModal" @close="showModal = false">
+    <span slot="counter">@{{ counter }}</span>
+    @if(isset($popup->settings->show_header))
+        <h3 slot="header" class="white-text">{{ $popup->title }}</h3>
+    @endif
+    <div slot="body">
+        @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type == 'image')
+            <a target="{{ $popup->present()->link('link_target') }}" href="{{ $popup->present()->link('link_url') }}">
+                {!! $popup->present()->content !!}
+            </a>
+        @else
+            {!! $popup->present()->content !!}
+        @endif
+    </div>
+    @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type != 'image')
+        <div slot="footer">
+            <a target="{{ $popup->present()->link('link_target') }}" class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
+                {{ $popup->present()->link('link_title') }}
+            </a>
+        </div>
+        @endif
+        </modal>
+</div>
+
+<script type="text/x-template" id="modal-template" async>
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
@@ -36,34 +62,8 @@
     </transition>
 </script>
 
-<!-- app -->
-<div id="popup">
-    <modal v-if="showModal" @close="showModal = false">
-    <span slot="counter">@{{ counter }}</span>
-    @if(isset($popup->settings->show_header))
-        <h3 slot="header" class="white-text">{{ $popup->title }}</h3>
-    @endif
-    <div slot="body">
-        @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type == 'image')
-            <a target="{{ $popup->present()->link('link_target') }}" href="{{ $popup->present()->link('link_url') }}">
-                {!! $popup->present()->content !!}
-            </a>
-        @else
-            {!! $popup->present()->content !!}
-        @endif
-    </div>
-    @if($popup->present()->link('link_title') != null && $popup->present()->link('link_url') != null && $popup->design_type != 'image')
-        <div slot="footer">
-            <a target="{{ $popup->present()->link('link_target') }}" class="btn btn-primary red" href="{{ $popup->present()->link('link_url') }}">
-                {{ $popup->present()->link('link_title') }}
-            </a>
-        </div>
-        @endif
-        </modal>
-</div>
-
-<script src="{{ Module::asset('popup:js/vue.min.js') }}"></script>
 <script src="{{ Module::asset('popup:js/js.cookie.min.js') }}"></script>
+<script src="{{ Module::asset('popup:js/vue.min.js') }}"></script>
 <script>
     Vue.component('modal', {
         template: '#modal-template',

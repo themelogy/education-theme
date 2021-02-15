@@ -5,7 +5,7 @@
                 @foreach($pages as $page)
                     <div class="col-md-{{ $page->settings->column_box ?? 4 }} col-sm-6 col-xs-12">
                         <div class="featured-box text-center z-depth-2">
-                            <div class="overlay-image" style="background-image: url({{ $page->present()->firstImage(380,300,'fit',50) }})"></div>
+                            <div class="overlay-image lazy" data-src="{{ $page->present()->firstImage(380,300,'fit',50) }}"></div>
                             <div class="featured-wrapper">
                                 <div class="intro-header">
                                     <i class="material-icons white-text">{{ $page->settings->icon ?? null }}</i>
